@@ -48,12 +48,32 @@ body {
 #category {
   height: 300px;
 }
+#combos {
+  height: 600px;
+}
 #combos img {
-  height: 500px;
+  height: 400px;
   object-fit: cover;
 }
 .carousel-indicators {
   z-index: 0;
 }
-.carousel-item {
+
+.accordion-button {
+  background-color: transparent !important;
+}
+#curva-footer {
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  left: 0;
+  border-width: 0 100vw 5.3vw 0;
+  border-style: solid;
+  border-color: #212529 transparent #212529 transparent;
+}
+.faq-height{
+  height: 400px;
+}
+.li-footer{
+  list-style: none;
 }

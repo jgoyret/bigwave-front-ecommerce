@@ -2,6 +2,8 @@ import React from "react";
 import NavBarApp from "../components/NavBarApp";
 import Slider from "../components/Slider";
 import Carousel from "react-bootstrap/Carousel";
+import Questions from "../components/Questions";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -79,40 +81,41 @@ function Home() {
           </div>
         </div>
       </section>
-      <section
-        className="container d-flex mt-5 bg-secondary justify-content-center"
-        id="combos"
-      >
-        <div className="me-5">
-          <h4>Pick your combo</h4>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div>
-          <Carousel className="ms-5" fade>
-            <Carousel.Item>
-              <img
-                src="https://quieronatural.uy/wp-content/uploads/2024/05/jugo.jpg"
-                alt="..."
-                text="First slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                src="https://quieronatural.uy/wp-content/uploads/2024/05/snack.jpg"
-                alt="..."
-                text="First slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                src="https://quieronatural.uy/wp-content/uploads/2024/05/ferche_2024_imagene_para_tienda_online_de_combo_de_venta_nombre_0a84e35f-c0b4-4452-ad1b-ce00c4fdd63e-430x430.png"
-                alt="..."
-                text="First slide"
-              />
-            </Carousel.Item>
-          </Carousel>
+      <section className="container mt-5 text-center" id="combos">
+        <div className="row align-items-center justify-content-center">
+          <div className="col-md-4 mb-3">
+            <h4>Pick your combo</h4>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div className="col-md-8">
+            <Carousel fade>
+              <Carousel.Item>
+                <img
+                  src="public/jugo-removebg-preview.png"
+                  alt="Jugo"
+                  className="d-block w-100 rounded"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  src="public/jugo-removebg-preview.png"
+                  alt="Snack"
+                  className="d-block w-100 rounded"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  src="public/snack-removebg-preview.png"
+                  alt="Combo"
+                  className="d-block w-100 rounded shadow"
+                />
+              </Carousel.Item>
+            </Carousel>
+          </div>
         </div>
       </section>
+      <Questions />
+      <Footer />
     </>
   );
 }
