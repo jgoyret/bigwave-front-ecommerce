@@ -1,13 +1,15 @@
 body {
   margin: 0;
-  background-color: #242424;
-  color: rgba(255, 255, 255, 0.87);
+  background-color: #ecf5f9;
+  color: rgb(0, 0, 0);
+  height: 100vh;
 }
 
 .slider-animation {
   animation: moving 10s ease-in-out forwards;
   transition: width linear infinite;
   transform: translateX(100%);
+  background-color: black !important;
 }
 @keyframes moving {
   from {
@@ -36,6 +38,22 @@ body {
   border-color: #ecf5f9 transparent #ecf5f9 transparent;
 }
 .div-curva {
-  background: #ecf5f9 !important;
   height: 200px;
+}
+
+.category-item:hover {
+  scale: 1.1;
+  transition: 0.3s all ease;
+}
+#category {
+  height: 300px;
+}
+#combos img {
+  height: 500px;
+  object-fit: cover;
+}
+.carousel-indicators {
+  z-index: 0;
+}
+.carousel-item {
 }

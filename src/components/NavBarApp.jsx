@@ -9,7 +9,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 function NavBarApp() {
   return (
     <>
-      <Navbar expand="lg" className="bg-transparent position-fixed w-100">
+      <Navbar expand="lg" className="bg-transparent position-fixed w-100 z-3">
         <Container fluid>
           <Navbar.Brand href="/">Logo</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -21,7 +21,7 @@ function NavBarApp() {
             >
               <NavDropdown title="Shop" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action1">
-                  Nuts,cereals and seeds
+                  Nuts, cereals and seeds
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action2">
                   Sugars and substitutes
@@ -39,7 +39,6 @@ function NavBarApp() {
               </NavDropdown>
 
               <Nav.Link href="#action2">About this project</Nav.Link>
-             
             </Nav>
             <Form className="d-flex">
               <Form.Control
@@ -51,8 +50,8 @@ function NavBarApp() {
               <Button variant="outline-success">Search</Button>
             </Form>
             <Nav.Link href="#action2">
-                <i className="bi bi-person text-success ms-5"></i>
-              </Nav.Link>
+              <i className="bi bi-person text-success ms-5"></i>
+            </Nav.Link>
             <NavLink>
               <i className="bi bi-cart text-success ms-4 "></i>
             </NavLink>
