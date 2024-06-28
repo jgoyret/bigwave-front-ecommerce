@@ -28,12 +28,12 @@ function Login() {
                 controlId="formBasicCheckbox"
               >
                 <Form.Check type="checkbox" label="Remember me" />
-                <Link className="text-decoration-none fw-bold">
-                  Forgot your password?
+                <Link to={"/register"} className="text-decoration-none fw-bold">
+                 Not register yet?
                 </Link>
               </Form.Group>
               <Button className="w-100" variant="primary" type="submit">
-                Submit
+                Login
               </Button>
             </Form>
           </div>
