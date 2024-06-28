@@ -3,9 +3,12 @@ body {
   background-color: #ecf5f9;
   color: rgb(0, 0, 0);
   min-height: 100vh;
+<<<<<<< Updated upstream
 }
 html {
   scroll-behavior: smooth;
+=======
+>>>>>>> Stashed changes
 }
 .slider {
   height: 30px;
@@ -43,16 +46,15 @@ html {
   }
 }
 .navbar {
-  position: fixed;
+  position: sticky;
   width: 100%;
   z-index: 1000;
   background-color: transparent !important;
-  transition: background-color 0.3s ease;
 }
 #header-image {
   background-image: url("https://wildwoodhealth.org/wp-content/uploads/sites/7/2019/12/market-gallery-1.jpg");
   background-size: cover;
-  height: 100vh;
+  height: 800px;
 }
 #curva {
   bottom: 0;
@@ -102,4 +104,7 @@ html {
 }
 .li-footer {
   list-style: none;
+}
+#team {
+  margin-bottom: 200px;
 }

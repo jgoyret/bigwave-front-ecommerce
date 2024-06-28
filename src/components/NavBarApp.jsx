@@ -39,7 +39,7 @@ function NavBarApp() {
                 <NavDropdown.Item href="#action7">Snacks</NavDropdown.Item>
               </NavDropdown>
 
-              <Nav.Link href="#action2">About this project</Nav.Link>
+              <Nav.Link href="/about-this-project">About this project</Nav.Link>
             </Nav>
             <Form className="d-flex">
               <Form.Control
