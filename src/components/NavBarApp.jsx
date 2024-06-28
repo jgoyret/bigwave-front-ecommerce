@@ -49,7 +49,7 @@ function NavBarApp() {
               />
               <Button variant="outline-success">Search</Button>
             </Form>
-            <Nav.Link href="#action2">
+            <Nav.Link href="/login">
               <i className="bi bi-person text-success ms-5"></i>
             </Nav.Link>
             <NavLink>

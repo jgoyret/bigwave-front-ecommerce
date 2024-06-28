@@ -88,24 +88,24 @@ function Home() {
             <p>Lorem ipsum dolor sit amet.</p>
           </div>
           <div className="col-md-8">
-            <Carousel fade>
+            <Carousel>
               <Carousel.Item>
                 <img
-                  src="public/jugo-removebg-preview.png"
+                  src="/jugo-removebg-preview.png"
                   alt="Jugo"
                   className="d-block w-100 rounded"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  src="public/jugo-removebg-preview.png"
+                  src="/jugo-removebg-preview.png"
                   alt="Snack"
                   className="d-block w-100 rounded"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
-                  src="public/snack-removebg-preview.png"
+                  src="/snack-removebg-preview.png"
                   alt="Combo"
                   className="d-block w-100 rounded shadow"
                 />
