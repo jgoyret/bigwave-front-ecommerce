@@ -4,14 +4,33 @@ body {
   color: rgb(0, 0, 0);
   height: 100vh;
 }
-
-.slider-animation {
-  animation: moving 10s ease-in-out forwards;
-  transition: width linear infinite;
-  transform: translateX(100%);
-  background-color: black !important;
+html {
+  scroll-behavior: smooth;
 }
-@keyframes moving {
+.slider {
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+}
+.slider-animation span {
+  display: inline-block;
+}
+.slider-animation a {
+  text-decoration: none;
+  color: white;
+}
+.slider-animation a:hover {
+  color: orange;
+}
+.slider-animation {
+  height: 100%;
+  align-items: center;
+  white-space: nowrap;
+  animation: slider 20s linear infinite;
+  transform: translateX(100%);
+  color: white;
+}
+@keyframes slider {
   from {
     -moz-transform: translateX(100%);
     -webkit-transform: translateX(100%);
@@ -23,10 +42,17 @@ body {
     transform: translateX(-100%);
   }
 }
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent !important;
+  transition: background-color 0.3s ease;
+}
 #header-image {
   background-image: url("https://wildwoodhealth.org/wp-content/uploads/sites/7/2019/12/market-gallery-1.jpg");
   background-size: cover;
-  height: 800px;
+  height: 100vh;
 }
 #curva {
   bottom: 0;
@@ -71,9 +97,9 @@ body {
   border-style: solid;
   border-color: #212529 transparent #212529 transparent;
 }
-.faq-height{
+.faq-height {
   height: 400px;
 }
-.li-footer{
+.li-footer {
   list-style: none;
 }
