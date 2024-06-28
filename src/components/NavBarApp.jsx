@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 function NavBarApp() {
   return (
     <>
-      <Navbar expand="lg" className="navbar">
+      <Navbar expand="lg" className="navbar position-sticky">
         <Container fluid>
           <Navbar.Brand href="/">Logo</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
