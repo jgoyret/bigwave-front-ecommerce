@@ -105,3 +105,14 @@ html {
 #team {
   margin-bottom: 200px;
 }
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  place-items: center;
+  gap: 20px;
+}
+img-products {
+  width: 100%;
+  object-fit: cover;
+  
+}

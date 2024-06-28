@@ -22,21 +22,24 @@ function NavBarApp() {
             >
               <NavDropdown title="Shop" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action1">
-                  Nuts, cereals and seeds
+                  <Link to={"/products"}> All products</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action2">
+                  Nuts, cereals and seeds
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action3">
                   Sugars and substitutes
                 </NavDropdown.Item>
 
-                <NavDropdown.Item href="#action3">
+                <NavDropdown.Item href="#action4">
                   Dairy, plant based milk
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action4">Superfoods</NavDropdown.Item>
-                <NavDropdown.Item href="#action5">
+                <NavDropdown.Item href="#action5">Superfoods</NavDropdown.Item>
+                <NavDropdown.Item href="#action6">
                   Pantry & spices
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action6">Beverages</NavDropdown.Item>
-                <NavDropdown.Item href="#action7">Snacks</NavDropdown.Item>
+                <NavDropdown.Item href="#action7">Beverages</NavDropdown.Item>
+                <NavDropdown.Item href="#action8">Snacks</NavDropdown.Item>
               </NavDropdown>
 
               <Nav.Link href="/about-this-project">About this project</Nav.Link>
