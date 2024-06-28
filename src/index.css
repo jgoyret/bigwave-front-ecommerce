@@ -2,7 +2,7 @@ body {
   margin: 0;
   background-color: #ecf5f9;
   color: rgb(0, 0, 0);
-  height: 100vh;
+  min-height: 100vh;
 }
 html {
   scroll-behavior: smooth;

@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from "react-router-dom";
 
 function NavBarApp() {
   return (
@@ -49,9 +50,9 @@ function NavBarApp() {
               />
               <Button variant="outline-success">Search</Button>
             </Form>
-            <Nav.Link href="/login">
+            <Link to={"/login"}>
               <i className="bi bi-person text-success ms-5"></i>
-            </Nav.Link>
+            </Link>
             <NavLink>
               <i className="bi bi-cart text-success ms-4 "></i>
             </NavLink>
