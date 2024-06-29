@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NavBarApp from "../components/NavBarApp";
-import Product from "../components/Product";
+import ProductModel from "../components/ProductModel";
 import axios from "axios";
 
 function AllProducts() {
@@ -23,7 +23,7 @@ function AllProducts() {
       {products && (
         <div className="products-container">
           {products.map((product) => {
-            return <Product key={product.id} product={product} />;
+            return <ProductModel key={product.id} product={product} />;
           })}
         </div>
       )}

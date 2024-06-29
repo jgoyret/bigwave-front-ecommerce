@@ -1,4 +1,5 @@
-import { NavLink } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { DropdownItem, NavLink } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -6,8 +7,22 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import Category from "../pages/Category";
 
 function NavBarApp() {
+  const [categories, setCategories] = useState();
+
+  useEffect(() => {
+    const getCategories = async () => {
+      const response = await axios({
+        url: "http://localhost:3000/categories",
+        method: "get",
+      });
+      setCategories(response.data);
+    };
+    getCategories();
+  }, []);
   return (
     <>
       <Navbar expand="lg" className="navbar position-sticky">
@@ -21,25 +36,21 @@ function NavBarApp() {
               navbarScroll
             >
               <NavDropdown title="Shop" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action1">
-                  <Link to={"/products"}> All products</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action2">
-                  Nuts, cereals and seeds
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action3">
-                  Sugars and substitutes
-                </NavDropdown.Item>
-
-                <NavDropdown.Item href="#action4">
-                  Dairy, plant based milk
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action5">Superfoods</NavDropdown.Item>
-                <NavDropdown.Item href="#action6">
-                  Pantry & spices
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action7">Beverages</NavDropdown.Item>
-                <NavDropdown.Item href="#action8">Snacks</NavDropdown.Item>
+                <DropdownItem href="/products">All products</DropdownItem>
+                {categories && (
+                  <div>
+                    {categories.map((category) => {
+                      return (
+                        <DropdownItem
+                          href={`/categories/${category.slug}`}
+                          key={category.id}
+                        >
+                          {category.name}
+                        </DropdownItem>
+                      );
+                    })}
+                  </div>
+                )}
               </NavDropdown>
 
               <Nav.Link href="/about-this-project">About this project</Nav.Link>
