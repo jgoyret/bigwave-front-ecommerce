@@ -26,7 +26,7 @@ function App() {
       element: <AllProducts />,
     },
     {
-      path: "/categories/:id",
+      path: "/categories/:slug",
       element: <Category />,
     },
     {

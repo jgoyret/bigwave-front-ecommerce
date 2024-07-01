@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 function ProductModel({ product }) {
   return (
     <>
-      <div className="container">
-        <div className="card" style={{ width: 300 }}>
+      <div className="">
+        <div className="card border-0 shadow" style={{ width: 300 }}>
           <Link to={`/products/${product.slug}`}>
             <img
               style={{ width: 300, height: 300 }}

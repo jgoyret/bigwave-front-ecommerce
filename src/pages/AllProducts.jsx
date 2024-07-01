@@ -21,7 +21,7 @@ function AllProducts() {
       <NavBarApp />
       <h2 className="text-center">All products</h2>
       {products && (
-        <div className="products-container">
+        <div className="products-container container mt-4">
           {products.map((product) => {
             return <ProductModel key={product.id} product={product} />;
           })}

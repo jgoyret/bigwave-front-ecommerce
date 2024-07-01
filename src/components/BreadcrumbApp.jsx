@@ -1,14 +1,17 @@
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 
-function BreadcrumbApp() {
+function BreadcrumbApp({ product }) {
+ 
   return (
-    <Breadcrumb>
-      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
-        Library
-      </Breadcrumb.Item>
-      <Breadcrumb.Item active>Data</Breadcrumb.Item>
-    </Breadcrumb>
+    product && (
+      <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href={`/categories/${product.Category.slug}`}>
+          {product.Category.name}
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>{product.name}</Breadcrumb.Item>
+      </Breadcrumb>
+    )
   );
 }
 

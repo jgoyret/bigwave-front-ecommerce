@@ -2,21 +2,20 @@ import React, { useEffect, useState } from "react";
 import NavBarApp from "../components/NavBarApp";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import ProductModel from "../components/ProductModel";
 
 function Category() {
   const [category, SetCategory] = useState();
   const params = useParams();
+ 
 
   useEffect(() => {
     const getCategory = async () => {
       const response = await axios({
-        url: `http://localhost:3000/categories/`,
+        url: `http://localhost:3000/categories/${params.slug}`,
         method: "get",
       });
-      SetCategory(
-        response.data.filter((category) => category.name === params.id)
-      );
-      console.log(params.id);
+      SetCategory(response.data);
     };
     getCategory();
   }, []);
@@ -35,11 +34,14 @@ function Category() {
           </div>
         </div>
       </header>
-      <div className="products-container">
-        <p>
-          Vista de categoria individual, falta clasificar productos segun
-          categorias
-        </p>
+      <div className="">
+        {category && (
+          <div className="products-container mt-5">
+            {category.map((c) => {
+              return <ProductModel key={c.id} product={c} />;
+            })}
+          </div>
+        )}
       </div>
     </>
   );
