@@ -1,5 +1,6 @@
 import React from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { Link } from "react-router-dom";
 
 function Cart({ show, handleClose }) {
   return (
@@ -39,7 +40,9 @@ function Cart({ show, handleClose }) {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Tempora, aut.
               </p>
-              <button className="btn btn-success w-100">Checkout</button>
+              <Link to={"/checkout"} className="btn btn-success w-100">
+                Checkout
+              </Link>
               <p className="text-center mt-3">
                 or <a href="">Continue Shopping</a>
               </p>

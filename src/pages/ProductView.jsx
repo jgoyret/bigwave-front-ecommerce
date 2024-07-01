@@ -23,21 +23,27 @@ function ProductView() {
     product && (
       <>
         <NavBarApp />
-        <div className="container mt-5 d-flex">
-          <div>
-            <img
-              className="rounded shadow object-fit-cover"
-              style={{ width: 500, height: 700 }}
-              src={product.image}
-            />
+        <div className="container mt-5">
+          <div className="row">
+            <div className="col-md-10 col-lg-6">
+              <img
+                className="img-fluid rounded shadow object-fit-cover"
+                src={product.image}
+                alt={product.name}
+              />
+            </div>
+            <div className="col-md-10 col-lg-6">
+              <BreadcrumbApp product={product} />
+              <h3 className="fs-1 fw-bold">{product.name}</h3>
+              <p className="fs-2">$ {product.price}</p>
+              <p className="fs-3 fw-light">{product.description}</p>
+              <div className="d-flex align-items-center">
+                <button className="btn btn-primary me-4">Add to cart</button>
+                <i className="bi bi-suit-heart fs-3"></i>
+              </div>
+            </div>
           </div>
-          <div className="ms-4">
-            <BreadcrumbApp product={product} />
-            <h3 className="fs-1 fw-bold">{product.name}</h3>
-            <p className="fs-2">$ {product.price}</p>
-            <p className="fs-3">{product.description}</p>
-            <button className="btn btn-primary">Add to cart</button>
-          </div>
+          <div className="border border-danger"></div>
         </div>
       </>
     )

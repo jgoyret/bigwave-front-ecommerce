@@ -1,4 +1,3 @@
-import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Breadcrumbs from "@mui/joy/Breadcrumbs";
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/joy";
@@ -7,7 +6,7 @@ function BreadcrumbApp({ product }) {
   return (
     product && (
       <>
-        <Breadcrumbs aria-label="breadcrumbs">
+        <Breadcrumbs sx={{ paddingLeft: 0 }} aria-label="breadcrumbs">
           <Link to={"/products"} color="neutral">
             All Categories
           </Link>

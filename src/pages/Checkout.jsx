@@ -157,7 +157,7 @@ function Checkout() {
 							<div className="col-3">
 								<img
 									className="cart-image img-fluid object-fit-cover w-100 h-100"
-									src="../../public/jugo-removebg-preview.png"
+									src="/jugo-removebg-preview.png"
 									alt="Card image cap"
 								></img>
 							</div>
