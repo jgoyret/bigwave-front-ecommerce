@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import BreadcrumbApp from "../components/BreadcrumbApp";
 
-function Product() {
+function ProductView() {
   const [product, setProduct] = useState(null);
   const params = useParams();
 
@@ -15,7 +15,6 @@ function Product() {
         method: "get",
       });
       setProduct(response.data);
-    
     };
     getProduct();
   }, []);
@@ -27,7 +26,7 @@ function Product() {
         <div className="container mt-5 d-flex">
           <div>
             <img
-              className="rounded object-fit-cover"
+              className="rounded shadow object-fit-cover"
               style={{ width: 500, height: 700 }}
               src={product.image}
             />
@@ -45,4 +44,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default ProductView;
