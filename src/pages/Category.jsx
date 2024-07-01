@@ -5,6 +5,7 @@ import axios from "axios";
 
 function Category() {
   const [category, SetCategory] = useState();
+  const params = useParams();
 
   useEffect(() => {
     const getCategory = async () => {
@@ -12,8 +13,10 @@ function Category() {
         url: `http://localhost:3000/categories/`,
         method: "get",
       });
-      SetCategory(response.data);
-    
+      SetCategory(
+        response.data.filter((category) => category.name === params.id)
+      );
+      console.log(params.id);
     };
     getCategory();
   }, []);
@@ -21,6 +24,17 @@ function Category() {
   return (
     <>
       <NavBarApp />
+      <header>
+        <div
+          className="d-flex h-25 justify-content-center position-relative"
+          id="header-image"
+        >
+          <div className="ms-5 text-center fw-bold">
+            <h2>Nombre de la categoria</h2>
+            <p>Categories</p>
+          </div>
+        </div>
+      </header>
       <div className="products-container">
         <p>
           Vista de categoria individual, falta clasificar productos segun

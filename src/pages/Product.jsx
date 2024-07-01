@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import NavBarApp from "../components/NavBarApp";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import BreadcrumbApp from "../components/BreadcrumbApp";
 
 function Product() {
   const [product, setProduct] = useState([]);
@@ -24,12 +25,13 @@ function Product() {
       <div className="container mt-5 d-flex">
         <div>
           <img
-            className="rounded"
+            className="rounded object-fit-cover"
             style={{ width: 500, height: 700 }}
-            src="https://previews.123rf.com/images/wirestock/wirestock2303/wirestock230302776/199480754-un-disparo-vertical-de-deliciosa-granola-vegana-saludable-con-nueces-pecanas-en-un-taz%C3%B3n-de-fruta.jpg"
+            src={product.image}
           />
         </div>
         <div className="ms-4">
+          <BreadcrumbApp />
           <h3 className="fs-1 fw-bold">{product.name}</h3>
           <p className="fs-2">$ {product.price}</p>
           <p className="fs-3">{product.description}</p>

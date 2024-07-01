@@ -35,7 +35,7 @@ function Footer() {
           </div>
         </div>
         <hr />
-        <div className="d-flex justify-content-between">
+        <div className="d-flex container border justify-content-between">
           <div>
             <span className="text-white">Returns</span>
             <span className="ms-3">Privacy Policy</span>
