@@ -111,12 +111,12 @@ body {
 #team {
   margin-bottom: 200px;
 }
-.products-container {
+/* .products-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
   place-items: center;
-  gap: 30px;
-}
+  gap: 20px;
+} */
 .img-products {
   width: 100%;
   object-fit: cover;

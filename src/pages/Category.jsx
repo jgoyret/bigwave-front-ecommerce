@@ -3,6 +3,7 @@ import NavBarApp from "../components/NavBarApp";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import ProductModel from "../components/ProductModel";
+import "./styles/Products.css";
 
 
 function Category() {

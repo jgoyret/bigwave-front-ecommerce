@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import NavBarApp from "../components/NavBarApp";
 import ProductModel from "../components/ProductModel";
 import axios from "axios";
+import "./styles/Products.css";
 
 function AllProducts() {
   const [products, setProducts] = useState([]);
