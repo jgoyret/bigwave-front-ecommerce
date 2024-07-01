@@ -1,8 +1,19 @@
 body {
   margin: 0;
-  background-color: #ecf5f9;
+  background-color: var(--customLightGreen);
   color: rgb(0, 0, 0);
   min-height: 100vh;
+}
+:root {
+  --customBlue: #718da1;
+  --customLightGreen: hsl(138, 30%, 89%);
+  --customBeige: #d0d88a;
+  --customGreen: #aad054;
+  --customDarkGreen: #68844a;
+}
+.btnColor {
+  background-color: var(--customBlue);
+  color: white;
 }
 .slider {
   height: 30px;
@@ -40,13 +51,11 @@ body {
   }
 }
 .navbar {
-  position: sticky;
   width: 100%;
-  z-index: 1000;
   background-color: transparent !important;
 }
 #header-image {
-  background-image: url("https://wildwoodhealth.org/wp-content/uploads/sites/7/2019/12/market-gallery-1.jpg");
+  background-image: url("/delicioso-desayuno-yogurt-frutas_23-2148529414.jpg");
   background-size: cover;
   height: 800px;
 }
@@ -106,7 +115,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
   place-items: center;
-  gap: 20px;
+  gap: 30px;
 }
 .img-products {
   width: 100%;
@@ -121,4 +130,7 @@ ol a {
   list-style: none;
   text-decoration: none;
   color: #212529;
+}
+.MuiCard-root a {
+  text-decoration: none !important;
 }

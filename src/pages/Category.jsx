@@ -4,10 +4,10 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import ProductModel from "../components/ProductModel";
 
+
 function Category() {
   const [category, SetCategory] = useState();
   const params = useParams();
- 
 
   useEffect(() => {
     const getCategory = async () => {
@@ -29,20 +29,20 @@ function Category() {
           id="header-image"
         >
           <div className="ms-5 text-center fw-bold">
-            <h2>Nombre de la categoria</h2>
-            <p>Categories</p>
+            <h2 className="text-capitalize">
+              {params.slug.replace(/-/g, " ")}
+            </h2>
           </div>
         </div>
       </header>
-      <div className="">
-        {category && (
-          <div className="products-container mt-5">
-            {category.map((c) => {
-              return <ProductModel key={c.id} product={c} />;
-            })}
-          </div>
-        )}
-      </div>
+     
+      {category && (
+        <div className="products-container container mt-5">
+          {category.map((c) => {
+            return <ProductModel key={c.id} product={c} />;
+          })}
+        </div>
+      )}
     </>
   );
 }
