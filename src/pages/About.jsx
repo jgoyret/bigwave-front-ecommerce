@@ -5,7 +5,6 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
-import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
 import NavBarApp from "../components/NavBarApp";
@@ -95,7 +94,8 @@ function About() {
               />
               <h5>Nuts, cereals and seeds</h5>
               <p>
-                <i class="bi bi-linkedin"></i> <i class="bi bi-github"></i>
+                <i className="bi bi-linkedin"></i>{" "}
+                <i className="bi bi-github"></i>
               </p>
             </div>
             <div className="category-item">
@@ -105,7 +105,8 @@ function About() {
               />
               <h5>Nuts, cereals and seeds</h5>
               <p>
-                <i class="bi bi-linkedin"></i> <i class="bi bi-github"></i>
+                <i className="bi bi-linkedin"></i>{" "}
+                <i className="bi bi-github"></i>
               </p>
             </div>
             <div className="category-item">

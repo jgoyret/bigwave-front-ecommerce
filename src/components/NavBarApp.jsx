@@ -8,9 +8,8 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Category from "../pages/Category";
 
-function NavBarApp() {
+function NavBarApp({ handleShowCart }) {
   const [categories, setCategories] = useState();
 
   useEffect(() => {
@@ -67,7 +66,7 @@ function NavBarApp() {
             <Link to={"/login"}>
               <i className="bi bi-person text-success ms-5"></i>
             </Link>
-            <NavLink>
+            <NavLink className="nav-link" to="#" onClick={handleShowCart}>
               <i className="bi bi-cart text-success ms-4 "></i>
             </NavLink>
           </Navbar.Collapse>

@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBarApp from "../components/NavBarApp";
 import Slider from "../components/Slider";
 import Carousel from "react-bootstrap/Carousel";
 import Questions from "../components/Questions";
 import Footer from "../components/Footer";
+import Cart from "../components/Cart";
 
 function Home() {
+  const [showCart, setShowCart] = useState(false);
+  const handleCloseCart = () => setShowCart(false);
+  const handleShowCart = () => setShowCart(true);
+
   return (
     <>
       <Slider />
-      <NavBarApp />
+      <NavBarApp handleShowCart={handleShowCart} />
+      <Cart show={showCart} handleClose={handleCloseCart} />
       <header>
         <div
           className="d-flex align-items-center position-relative"
