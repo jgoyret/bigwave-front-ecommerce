@@ -15,44 +15,11 @@ body {
   background-color: var(--customBlue);
   color: white;
 }
-.slider {
-  height: 30px;
-  overflow: hidden;
-  position: relative;
-}
-.slider-animation span {
-  display: inline-block;
-  margin-right: 30px;
-}
-.slider-animation a {
-  text-decoration: none;
-  color: white;
-}
-.slider-animation a:hover {
-  color: orange;
-}
-.slider-animation {
-  height: 100%;
-  align-items: center;
-  white-space: nowrap;
-  animation: slider 10s linear infinite;
-  color: white;
-}
-@keyframes slider {
-  from {
-    -moz-transform: translateX(0%);
-    -webkit-transform: translateX(0%);
-    transform: translateX(0%);
-  }
-  to {
-    -moz-transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-}
+
 .navbar {
   width: 100%;
   background-color: transparent !important;
+  z-index: 1000;
 }
 #header-image {
   background-image: url("/delicioso-desayuno-yogurt-frutas_23-2148529414.jpg");
@@ -66,7 +33,7 @@ body {
   left: 0;
   border-width: 0 100vw 5.3vw 0;
   border-style: solid;
-  border-color: #ecf5f9 transparent #ecf5f9 transparent;
+  border-color: var(--customLightGreen) transparent var(--customLightGreen) transparent;
 }
 .div-curva {
   height: 200px;

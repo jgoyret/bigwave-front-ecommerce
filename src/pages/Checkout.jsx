@@ -8,11 +8,16 @@ import {
 	Button,
 	Stack,
 } from '@mui/material';
+import NavBarApp from '../components/NavBarApp';
+import { Nav } from 'react-bootstrap';
+import Footer from '../components/Footer';
+import '../styles/Checkout.css';
 
 function Checkout() {
 	return (
 		<>
-			<div className="container">
+			<NavBarApp />
+			<div className="container container-content">
 				<div className="row">
 					<div className="col-6">
 						<h3>Contact Information</h3>
@@ -195,6 +200,7 @@ function Checkout() {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 }
