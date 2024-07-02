@@ -10,7 +10,7 @@
   border-radius: 10px;
   text-align: center;
   color: #fff;
-  font-family: "Poppins", sans-serif;
+  font-family: "Axiforma", sans-serif;
   transition: all 0.3s ease;
 }
 
@@ -143,7 +143,6 @@ img {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font: 30px/32px "Roboto", sans-serif;
   padding: 2rem;
   background: url(../images/border.png) no-repeat center;
 }
@@ -163,4 +162,9 @@ img {
 .heading h3:after {
   margin-left: 80px;
   margin-right: -100%;
+}
+
+#stepper .css-1uzq1qw-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed,
+#stepper .css-1uzq1qw-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+  color: green !important;
 }
