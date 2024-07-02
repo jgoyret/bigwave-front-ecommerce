@@ -7,7 +7,7 @@ function Footer() {
         <div className="d-flex align-items-center position-relative">
           <div className="position-absolute" id="curva-footer"></div>
         </div>
-        <div className="d-flex container text-center mt-5 justify-content-around div-curva">
+        <div className="d-flex container text-center mt-2 justify-content-around div-curva">
           <div>
             <h5>About</h5>
             <ul className="list-group">
