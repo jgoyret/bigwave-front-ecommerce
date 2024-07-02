@@ -62,13 +62,17 @@ function Footer() {
           </div>
 
           <div className="d-flex flex-column w-50 justify-content-center">
-            <h5>SUBSCRIBE TO OUR MAILING LIST</h5>
-            <form className="form-inline">
-              <div className="d-flex">
-                <input className="form-control" style={{ flex: "1" }}></input>
-                <button className="btn btn-primary">Sign Up</button>
-              </div>
-            </form>
+            <p>SUBSCRIBE TO OUR MAILING LIST</p>
+            <div class="input-container">
+              <input
+                required=""
+                placeholder="Email Address"
+                type="email"
+              ></input>
+              <button class="invite-btn" type="button">
+                Suscribe
+              </button>
+            </div>
           </div>
         </div>
         <hr />
