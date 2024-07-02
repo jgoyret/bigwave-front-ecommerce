@@ -42,9 +42,12 @@ function Questions() {
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item className="bg-transparent" eventKey="4">
-            <Accordion.Header>What is Bigwave’s sustainability philosophy?</Accordion.Header>
+            <Accordion.Header>
+              What is Bigwave’s sustainability philosophy?
+            </Accordion.Header>
             <Accordion.Body>
-            Bigwave is dedicated to being a responsible business with a focus on the environment, product quality and supply chain transparency.
+              Bigwave is dedicated to being a responsible business with a focus
+              on the environment, product quality and supply chain transparency.
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>

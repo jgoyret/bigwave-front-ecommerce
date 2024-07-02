@@ -81,7 +81,7 @@ function Home() {
         </div>
       </header>
       <section id="category container">
-        <div className="text-center mt-5 row">
+        <div className="text-center my-5 row">
           <div className="col">
             <h3>FIND YOUR HEALTHY</h3>
             <p>Shop by category</p>
@@ -139,39 +139,6 @@ function Home() {
               />
               <h5>Snacks</h5>
             </div>
-          </div>
-        </div>
-      </section>
-      <section className="container mt-5 text-center" id="combos">
-        <div className="row align-items-center justify-content-center">
-          <div className="col-md-4 mb-3">
-            <h4>Pick your combo</h4>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-          <div className="col-md-8">
-            <Carousel>
-              <Carousel.Item>
-                <img
-                  src="/jugo-removebg-preview.png"
-                  alt="Jugo"
-                  className="d-block w-100 rounded"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  src="/jugo-removebg-preview.png"
-                  alt="Snack"
-                  className="d-block w-100 rounded"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  src="/snack-removebg-preview.png"
-                  alt="Combo"
-                  className="d-block w-100 rounded shadow"
-                />
-              </Carousel.Item>
-            </Carousel>
           </div>
         </div>
       </section>
