@@ -6,6 +6,7 @@ import StepLabel from "@mui/material/StepLabel";
 import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import "./styles/AboutUs.css";
 
 import NavBarApp from "../components/NavBarApp";
 import Footer from "../components/Footer";
@@ -45,7 +46,7 @@ function About() {
     <>
       <NavBarApp />
       <div className="container d-flex mt-5">
-        <div>
+        <div className="col-md-9" id="aboutText">
           <h1>About this project</h1>
           <p>
             El presente sitio de e-commerce es un proyecto desarrollado por
@@ -55,7 +56,7 @@ function About() {
             Node.js, Express, React.js, SQL, MongoDB y Git.
           </p>
         </div>
-        <div id="stepper">
+        <div id="stepper" className="col-md-3">
           <Box>
             <Stepper activeStep={activeStep} orientation="vertical">
               {steps.map((step, index) => (
@@ -87,57 +88,113 @@ function About() {
         <div className="text-center mt-5">
           <h3>Team</h3>
           <div className="d-flex justify-content-evenly mt-5">
-            <div className="category-item">
-              <img
-                src="https://www.sprouts.com/wp-content/uploads/2022/10/Attribute-Gluten-Free-1.png"
-                alt=""
-              />
-              <h5>Nuts, cereals and seeds</h5>
-              <p>
-                <i className="bi bi-linkedin"></i>{" "}
-                <i className="bi bi-github"></i>
+            <div className="card-client">
+              <div className="user-picture">
+                <img
+                  className=""
+                  src="https://avatars.githubusercontent.com/jgoyret"
+                  alt=""
+                />
+              </div>
+              <p className="name-client">
+                {" "}
+                Juan Goyret
+                <span>Full stack developer, King of the pirates</span>
               </p>
+              <div className="social-media">
+                <a href="#">
+                  <i className="bi bi-github"></i>
+                  <span className="tooltip-social">Github</span>
+                </a>
+                <a href="#">
+                  <i className="bi bi-linkedin"></i>{" "}
+                  <span className="tooltip-social">LinkedIn</span>
+                </a>
+              </div>
             </div>
-            <div className="category-item">
-              <img
-                src="https://www.sprouts.com/wp-content/uploads/2022/10/Attribute-Gluten-Free-1.png"
-                alt=""
-              />
-              <h5>Nuts, cereals and seeds</h5>
-              <p>
-                <i className="bi bi-linkedin"></i>{" "}
-                <i className="bi bi-github"></i>
+            <div className="card-client">
+              <div className="user-picture">
+                <img className="" src="./snack-removebg-preview.png" alt="" />
+              </div>
+              <p className="name-client">
+                {" "}
+                Ignacio Kaprielian
+                <span>Desarrollador Web</span>
               </p>
+              <div className="social-media">
+                <a href="#">
+                  <i className="bi bi-github"></i>
+                  <span className="tooltip-social">Github</span>
+                </a>
+                <a href="#">
+                  <i className="bi bi-linkedin"></i>{" "}
+                  <span className="tooltip-social">LinkedIn</span>
+                </a>
+              </div>
             </div>
-            <div className="category-item">
-              <img
-                src="https://www.sprouts.com/wp-content/uploads/2022/10/Attribute-Organic-1.png"
-                alt=""
-              />
-              <h5>Sugars and substitutes</h5>
-              <p>
-                <i class="bi bi-linkedin"></i> <i class="bi bi-github"></i>
+            <div className="card-client">
+              <div className="user-picture">
+                <img className="" src="./snack-removebg-preview.png" alt="" />
+              </div>
+              <p className="name-client">
+                {" "}
+                Sofía Viera
+                <span>Desarrollador Web</span>
               </p>
+              <div className="social-media">
+                <a href="#">
+                  <i className="bi bi-github"></i>
+                  <span className="tooltip-social">Github</span>
+                </a>
+                <a href="#">
+                  <i className="bi bi-linkedin"></i>{" "}
+                  <span className="tooltip-social">LinkedIn</span>
+                </a>
+              </div>
             </div>
-            <div className="category-item">
-              <img
-                src="https://www.sprouts.com/wp-content/uploads/2022/10/Attribute-Plant-Based-1.png"
-                alt=""
-              />
-              <h5>Dairy, plant based milk</h5>
-              <p>
-                <i class="bi bi-linkedin"></i> <i class="bi bi-github"></i>
+            <div className="card-client">
+              <div className="user-picture">
+                <img
+                  className=""
+                  src="https://avatars.githubusercontent.com/rodriguezadrian"
+                  alt=""
+                />
+              </div>
+              <p className="name-client">
+                {" "}
+                Adrián Rodríguez
+                <span>Desarrollador Web</span>
               </p>
+              <div className="social-media">
+                <a href="#">
+                  <i className="bi bi-github"></i>
+                  <span className="tooltip-social">Github</span>
+                </a>
+                <a href="#">
+                  <i className="bi bi-linkedin"></i>{" "}
+                  <span className="tooltip-social">LinkedIn</span>
+                </a>
+              </div>
             </div>
-            <div className="category-item">
-              <img
-                src="https://www.sprouts.com/wp-content/uploads/2022/10/Attribute-Keto-1.png"
-                alt=""
-              />
-              <h5>Pantry & spices</h5>
-              <p>
-                <i class="bi bi-linkedin"></i> <i class="bi bi-github"></i>
+            <div className="card-client">
+              <div className="user-picture">
+                <img className="" src="./Guilleperi.jpg" alt="" />
+              </div>
+              <p className="name-client">
+                {" "}
+                Guillermo Peri
+                <span>Desarrollador Web</span>
               </p>
+              <div className="social-media">
+                <a href="#">
+                  <i className="bi bi-github"></i>
+                  <span className="tooltip-social">Github</span>
+                </a>
+                <a href="#">
+                  <i className="bi bi-linkedin"></i>{" "}
+                  <span className="tooltip-social">LinkedIn</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

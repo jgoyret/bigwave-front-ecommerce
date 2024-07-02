@@ -108,9 +108,7 @@ body {
 .li-footer {
   list-style: none;
 }
-#team {
-  margin-bottom: 200px;
-}
+
 /* .products-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
