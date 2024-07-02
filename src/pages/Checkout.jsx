@@ -196,6 +196,12 @@ function Checkout() {
 								<p className="fw-bold">115 USD</p>
 							</div>
 							<button className="btn btn-primary">Confirm Order</button>
+
+							<img
+								src="../../public/QR.png"
+								alt="QR"
+								className="d-flex justify-content-center align-items-center w-50 h-50"
+							/>
 						</div>
 					</div>
 				</div>
