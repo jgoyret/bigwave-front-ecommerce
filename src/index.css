@@ -20,7 +20,7 @@ body {
 .navbar {
   width: 100%;
   background-color: transparent !important;
-  z-index: 1000;
+  z-index: 100;
 }
 #header-image {
   background-image: url("/delicioso-desayuno-yogurt-frutas_23-2148529414.jpg");

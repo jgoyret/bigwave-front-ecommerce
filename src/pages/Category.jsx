@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import ProductModel from "../components/ProductModel";
 import "../styles/Products.css";
+import ProductsNavbar from "./ProductsNavbar";
 
 function Category() {
   const [category, SetCategory] = useState();
@@ -35,14 +36,16 @@ function Category() {
           </div>
         </div>
       </header>
-
-      {category && (
-        <div className="products-container container mt-5">
-          {category.map((c) => {
-            return <ProductModel key={c.id} product={c} />;
-          })}
-        </div>
-      )}
+      <div className="d-flex justify-content-center">
+        <ProductsNavbar />
+        {category && (
+          <div className="products-container container mt-5">
+            {category.map((c) => {
+              return <ProductModel key={c.id} product={c} />;
+            })}
+          </div>
+        )}
+      </div>
     </>
   );
 }
