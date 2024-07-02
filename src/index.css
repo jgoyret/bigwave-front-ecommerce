@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  background-color: var(--customLightGreen);
+  /* #ecf5f9 */
+  background-color: #ebebeb;
   color: rgb(0, 0, 0);
   min-height: 100vh;
   font-family: "Axiforma", sans-serif;
@@ -16,12 +17,87 @@ body {
   background-color: var(--customBlue);
   color: white;
 }
-
+.slider-animation a:hover {
+  color: #d0d88a;
+}
+.slider-animation {
+  height: 100%;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll 30s cubic-bezier(0.5, 0.5, 0.5, 0.5) infinite;
+  color: white;
+}
+@keyframes scroll {
+  from {
+    -moz-transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  to {
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
 .navbar {
   width: 100%;
   background-color: transparent !important;
   z-index: 100;
 }
+.banner-font {
+  font-family: "Knewave", system-ui;
+}
+.cta {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 #header-image {
   background-image: url("/delicioso-desayuno-yogurt-frutas_23-2148529414.jpg");
   background-size: cover;
@@ -34,19 +110,26 @@ body {
   left: 0;
   border-width: 0 100vw 5.3vw 0;
   border-style: solid;
-  border-color: var(--customLightGreen) transparent var(--customLightGreen)
-    transparent;
+  border-color: #ebebeb transparent #ebebeb transparent;
 }
 .div-curva {
   height: 200px;
 }
-
+.category-item {
+  width: 300px;
+}
 .category-item:hover {
   scale: 1.1;
   transition: 0.3s all ease;
 }
 #category {
   height: 300px;
+}
+.category-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 #combos {
   height: 600px;

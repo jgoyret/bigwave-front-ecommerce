@@ -10,21 +10,24 @@ import "../styles/AboutUs.css";
 
 import NavBarApp from "../components/NavBarApp";
 import Footer from "../components/Footer";
+import { colors } from "@mui/material";
 
 function About() {
   const steps = [
     {
       label: "Course extension",
-      description: `El proyecto fue desarrollado en tan sólo 3 semanas, durante noviembre de 2022. El mismo se dividió en sprints (Scrum) de una semana de duración.`,
+      description:
+        "The project was developed in just 3 weeks, during July 2024. It was divided into one-week-long sprints (Scrum).",
     },
     {
       label: "Technologies",
       description:
-        "Para el Front-End del sitio se desarrolló una aplicación en React (usando Create-React-App) mientras que para el Back-End se desarrolló una REST API hecha con Node.js, Express, SQL y Git/GitHub.",
+        "For the Front-End of the site, an application was developed in React (using Create-React-App), while for the Back-End a REST API was developed with Node.js, Express, SQL, and Git/GitHub.",
     },
     {
       label: "Distribution of tasks",
-      description: `Para la organización de tareas durante el proyecto se utilizó Trello. Esto permitió que cada integrante del equipo estuviese permanentemente al tanto del estado del proyecto así como de las tareas que debía realizar.`,
+      description:
+        "For task organization during the project, Trello was used. This allowed each team member to always be aware of the project's status as well as the tasks they needed to complete.",
     },
   ];
 
@@ -62,15 +65,27 @@ function About() {
             <Stepper activeStep={activeStep} orientation="vertical">
               {steps.map((step, index) => (
                 <Step key={step.label}>
-                  <StepLabel>{step.label}</StepLabel>
+                  <StepLabel
+                    StepIconProps={{
+                      sx: {
+                        color: "green",
+                      },
+                    }}
+                  >
+                    {step.label}
+                  </StepLabel>
                   <StepContent>
                     <Typography>{step.description}</Typography>
                     <Box>
                       <div>
-                        <Button onClick={handleNext}>
+                        <Button onClick={handleNext} sx={{ color: "green" }}>
                           {index === steps.length - 1 ? "Finish" : "Continue"}
                         </Button>
-                        <Button disabled={index === 0} onClick={handleBack}>
+                        <Button
+                          disabled={index === 0}
+                          onClick={handleBack}
+                          sx={{ color: "green", ml: 1 }}
+                        >
                           Back
                         </Button>
                       </div>
@@ -80,7 +95,9 @@ function About() {
               ))}
             </Stepper>
             {activeStep === steps.length && (
-              <Button onClick={handleReset}>Reset</Button>
+              <Button sx={{ color: "green" }} onClick={handleReset}>
+                Reset
+              </Button>
             )}
           </Box>
         </div>
@@ -110,7 +127,7 @@ function About() {
                   <i className="bi bi-github"></i>
                   <span className="tooltip-social">Github</span>
                 </a>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/juan-goyret-892b422ab/?originalSubdomain=uy">
                   <i className="bi bi-linkedin"></i>{" "}
                   <span className="tooltip-social">LinkedIn</span>
                 </a>
@@ -134,7 +151,7 @@ function About() {
                   <i className="bi bi-github"></i>
                   <span className="tooltip-social">Github</span>
                 </a>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/ignacio-kaprielian-elmasian-a03bb41b8/?originalSubdomain=uy">
                   <i className="bi bi-linkedin"></i>{" "}
                   <span className="tooltip-social">LinkedIn</span>
                 </a>
@@ -159,7 +176,7 @@ function About() {
                   <i className="bi bi-github"></i>
                   <span className="tooltip-social">Github</span>
                 </a>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/sof%C3%ADavierasosa/">
                   <i className="bi bi-linkedin"></i>{" "}
                   <span className="tooltip-social">LinkedIn</span>
                 </a>
@@ -183,7 +200,7 @@ function About() {
                   <i className="bi bi-github"></i>
                   <span className="tooltip-social">Github</span>
                 </a>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/adrianrg99/">
                   <i className="bi bi-linkedin"></i>{" "}
                   <span className="tooltip-social">LinkedIn</span>
                 </a>
@@ -207,7 +224,7 @@ function About() {
                   <i className="bi bi-github"></i>
                   <span className="tooltip-social">Github</span>
                 </a>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/guille-peri-415214154/">
                   <i className="bi bi-linkedin"></i>{" "}
                   <span className="tooltip-social">LinkedIn</span>
                 </a>
