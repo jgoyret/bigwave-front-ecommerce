@@ -131,6 +131,9 @@ img {
   background-position: center;
   box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
 }
+#aboutText p {
+  width: 63%;
+}
 .heading {
   position: relative;
 }
