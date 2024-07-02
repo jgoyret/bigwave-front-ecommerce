@@ -1,0 +1,35 @@
+.slider {
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+}
+.slider-animation span {
+  display: inline-block;
+  margin-right: 30px;
+}
+.slider-animation a {
+  text-decoration: none;
+  color: white;
+}
+.slider-animation a:hover {
+  color: orange;
+}
+.slider-animation {
+  height: 100%;
+  align-items: center;
+  white-space: nowrap;
+  animation: slider 10s linear infinite;
+  color: white;
+}
+@keyframes slider {
+  from {
+    -moz-transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  to {
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
