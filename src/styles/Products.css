@@ -21,7 +21,7 @@
 
 .product-card:hover {
   transform: scale(1.01);
-  background-color: var(--custom-blue);
+  background-color: #718da155;
   color: var(--custom-green);
 }
 
@@ -52,7 +52,7 @@
 .btn-txt {
   z-index: 1;
   font-weight: 800;
-  letter-spacing: 4px;
+  /* letter-spacing: 3px; */
 }
 
 .type1::after {
@@ -72,10 +72,36 @@
 .button-add:hover {
   box-shadow: 1px 1px 200px #252525;
   color: #fff;
-  border: none;
+  /* border: none; */
 }
 
 .type1:hover::after {
   visibility: visible;
   transform: scale(100) translateX(2px);
+}
+
+.side-list-filter {
+  background-color: var(--custom-ligth-green);
+  max-width: 300px;
+  min-width: 300px;
+  border-radius: 5px;
+  padding-top: 5vh;
+  margin-left: 5vw;
+}
+
+.side-list-filter li,
+.side-list-filter a {
+  list-style: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .side-list-filter {
+    display: none;
+  }
 }
