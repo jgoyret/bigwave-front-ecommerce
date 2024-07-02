@@ -6,7 +6,7 @@ import StepLabel from "@mui/material/StepLabel";
 import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import "./styles/AboutUs.css";
+import "../styles/AboutUs.css";
 
 import NavBarApp from "../components/NavBarApp";
 import Footer from "../components/Footer";
@@ -49,11 +49,12 @@ function About() {
         <div className="col-md-9" id="aboutText">
           <h1>About this project</h1>
           <p>
-            El presente sitio de e-commerce es un proyecto desarrollado por
-            estudiantes del Coding Bootcamp de Hack Academy. El Bootcamp es un
-            programa educativo extremadamente práctico de 3 meses y full-time,
-            donde los estudiantes invierten más de 600 horas a aprender sobre
-            Node.js, Express, React.js, SQL, MongoDB y Git.
+            The following e-commerce site is a project developed by students of
+            the Coding Bootcamp at Hack Academy. The Bootcamp is an immersive
+            and extremely practical program, consisting of a full-time schedule
+            over 3 months. During this period, students invest more than 600
+            hours in learning about Node.js, Express, React.js, SQL, MongoDB,
+            and Git.
           </p>
         </div>
         <div id="stepper" className="col-md-3">
@@ -86,7 +87,9 @@ function About() {
       </div>
       <div id="team">
         <div className="text-center mt-5">
-          <h3>Team</h3>
+          <div className="heading">
+            <h3>Meet the Team</h3>
+          </div>
           <div className="d-flex justify-content-evenly mt-5">
             <div className="card-client">
               <div className="user-picture">
@@ -99,10 +102,11 @@ function About() {
               <p className="name-client">
                 {" "}
                 Juan Goyret
-                <span>Full stack developer, King of the pirates</span>
+                <span>Full stack developer</span>{" "}
+                <span> King of the pirates</span>
               </p>
               <div className="social-media">
-                <a href="#">
+                <a href="https://github.com/jgoyret">
                   <i className="bi bi-github"></i>
                   <span className="tooltip-social">Github</span>
                 </a>
@@ -114,15 +118,19 @@ function About() {
             </div>
             <div className="card-client">
               <div className="user-picture">
-                <img className="" src="./snack-removebg-preview.png" alt="" />
+                <img
+                  className=""
+                  src="https://avatars.githubusercontent.com/nachokapre"
+                  alt=""
+                />
               </div>
               <p className="name-client">
                 {" "}
                 Ignacio Kaprielian
-                <span>Desarrollador Web</span>
+                <span>Full stack developer</span> <span> King of flow</span>
               </p>
               <div className="social-media">
-                <a href="#">
+                <a href="https://github.com/nachokapre">
                   <i className="bi bi-github"></i>
                   <span className="tooltip-social">Github</span>
                 </a>
@@ -134,15 +142,20 @@ function About() {
             </div>
             <div className="card-client">
               <div className="user-picture">
-                <img className="" src="./snack-removebg-preview.png" alt="" />
+                <img
+                  className=""
+                  src="https://avatars.githubusercontent.com/sofiviera"
+                  alt=""
+                />
               </div>
               <p className="name-client">
                 {" "}
                 Sofía Viera
-                <span>Desarrollador Web</span>
+                <span>Full stack developer</span>{" "}
+                <span> Queen of Nutrition</span>
               </p>
               <div className="social-media">
-                <a href="#">
+                <a href="https://github.com/sofiviera">
                   <i className="bi bi-github"></i>
                   <span className="tooltip-social">Github</span>
                 </a>
@@ -163,10 +176,10 @@ function About() {
               <p className="name-client">
                 {" "}
                 Adrián Rodríguez
-                <span>Desarrollador Web</span>
+                <span>Full stack developer</span> <span> King of code</span>
               </p>
               <div className="social-media">
-                <a href="#">
+                <a href="https://github.com/rodriguezadrian">
                   <i className="bi bi-github"></i>
                   <span className="tooltip-social">Github</span>
                 </a>
@@ -178,15 +191,19 @@ function About() {
             </div>
             <div className="card-client">
               <div className="user-picture">
-                <img className="" src="./Guilleperi.jpg" alt="" />
+                <img
+                  className=""
+                  src="https://avatars.githubusercontent.com/Guillexxxs"
+                  alt=""
+                />
               </div>
               <p className="name-client">
                 {" "}
                 Guillermo Peri
-                <span>Desarrollador Web</span>
+                <span>Full stack developer</span> <span> King of booze</span>
               </p>
               <div className="social-media">
-                <a href="#">
+                <a href="https://github.com/Guillexxxs">
                   <i className="bi bi-github"></i>
                   <span className="tooltip-social">Github</span>
                 </a>
