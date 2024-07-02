@@ -18,6 +18,18 @@ function Slider() {
           <span>
             Save up to 15% with <a href="">Subscribe & Save</a>{" "}
           </span>
+          <span>Free Shipping on orders $50+</span>
+          <span>
+            Save up to 15% with <a href="">Subscribe & Save</a>
+          </span>
+          <span>Free Shipping on orders $50+</span>
+          <span>
+            Save up to 15% with <a href="">Subscribe & Save</a>{" "}
+          </span>
+          <span>Free Shipping on orders $50+</span>
+          <span>
+            Save up to 15% with <a href="">Subscribe & Save</a>{" "}
+          </span>
         </div>
       </div>
     </>
