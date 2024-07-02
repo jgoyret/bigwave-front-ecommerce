@@ -5,7 +5,6 @@ import axios from "axios";
 import ProductModel from "../components/ProductModel";
 import "../styles/Products.css";
 
-
 function Category() {
   const [category, SetCategory] = useState();
   const params = useParams();
@@ -36,7 +35,7 @@ function Category() {
           </div>
         </div>
       </header>
-     
+
       {category && (
         <div className="products-container container mt-5">
           {category.map((c) => {

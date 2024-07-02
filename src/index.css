@@ -3,6 +3,7 @@ body {
   background-color: var(--customLightGreen);
   color: rgb(0, 0, 0);
   min-height: 100vh;
+  font-family: "Axiforma", sans-serif;
 }
 :root {
   --customBlue: #718da1;
