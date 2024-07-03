@@ -121,19 +121,23 @@ html {
   width: 300px;
 }
 .category-item p {
+  transition: 0.5s all ease;
   font-weight: bold;
   color: #212529;
   margin-top: 20px;
 }
-.category-item:hover {
-  scale: 1.1;
-  transition: 0.3s all ease;
-}
+
 .category-image {
+  transition: 0.5s all ease;
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.category-image:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(5px 5px 10px #000000);
 }
 .accordion-button {
   background-color: transparent !important;
