@@ -6,6 +6,7 @@ import ProductModel from "../components/ProductModel";
 import "../styles/Products.css";
 import ProductsNavbar from "./ProductsNavbar";
 import Footer from "../components/Footer";
+import BreadcrumbApp from "../components/BreadcrumbApp";
 
 function Category() {
   const [category, setCategory] = useState();
@@ -28,9 +29,9 @@ function Category() {
     <>
       <NavBarApp />
       <div className="container-main-products">
-        <header>
+        {/* <header>
           <div
-            className="d-flex h-25 justify-content-center position-relative "
+            className="d-flex h-100 justify-content-center position-relative "
             id="header-image"
           >
             <div className="ms-5 text-center fw-bold">
@@ -39,7 +40,7 @@ function Category() {
               </h2>
             </div>
           </div>
-        </header>
+        </header> */}
         <div className="d-flex justify-content-center my-5">
           <ProductsNavbar />
           {category && (

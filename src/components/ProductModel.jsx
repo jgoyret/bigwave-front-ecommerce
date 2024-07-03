@@ -26,10 +26,10 @@ function ProductModel({ product }) {
             <div className="d-flex align-items-center w-100 p-2">
               <div className="fs-4">
                 <i className="bi bi-dash-circle fs-5"></i>
-                <span className="ms-1">0</span>
-                <i className="ms-1 bi bi-plus-circle fs-5"></i>
+                <span className="mx-2">0</span>
+                <i className="bi bi-plus-circle fs-5"></i>
               </div>
-              <button className=" w-50 button-add type1">
+              <button className=" w-25 button-add type1">
                 <i className="bi bi-cart2 fs-4"></i>
                 {/* <span className="btn-txt ms-3">Add to cart</span> */}
               </button>
