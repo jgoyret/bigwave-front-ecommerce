@@ -19,7 +19,7 @@ function Checkout() {
 			<NavBarApp />
 			<div className="container container-content">
 				<div className="row">
-					<div className="col-6">
+					<div className="col-md-12 col-lg-6">
 						<h3>Contact Information</h3>
 						<Box component="form" onSubmit="">
 							<TextField
@@ -156,10 +156,10 @@ function Checkout() {
 							</div>
 						</Box>
 					</div>
-					<div className="col-6 ">
+					<div className="col-md-12 col-lg-6 ">
 						<h3>Order Summary</h3>
 						<div className="flex-row row card object-fit-cover shadow">
-							<div className="col-3">
+							<div className=" col-3">
 								<img
 									className="cart-image img-fluid object-fit-cover w-100 h-100"
 									src="/jugo-removebg-preview.png"
