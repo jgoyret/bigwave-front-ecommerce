@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function ProductsNavbar() {
   const [categories, setCategories] = React.useState([]);
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     const getCategories = async () => {
@@ -21,16 +22,15 @@ function ProductsNavbar() {
       <div className="side-list-filter mt-4">
         <div>Categories</div>
         <ul>
-          <li>
-            <a href="/products">All products</a>
-          </li>
+          <li onClick={() => navigate("/products")}>All products</li>
           {categories.length > 0 &&
             categories.map((category) => {
               return (
-                <li key={category.id}>
-                  <Link to={`/categories/${category.slug}`}>
-                    {category.name}
-                  </Link>
+                <li
+                  onClick={() => navigate(`/categories/${category.slug}`)}
+                  key={category.id}
+                >
+                  {category.name}
                 </li>
               );
             })}

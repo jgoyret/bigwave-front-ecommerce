@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NavBarApp from "../components/NavBarApp";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import ProductModel from "../components/ProductModel";
 import "../styles/Products.css";
@@ -9,6 +9,7 @@ import ProductsNavbar from "./ProductsNavbar";
 function Category() {
   const [category, setCategory] = useState();
   const params = useParams();
+  const location = useLocation();
 
   useEffect(() => {
     const getCategory = async () => {
@@ -20,7 +21,7 @@ function Category() {
       console.log(response.data);
     };
     getCategory();
-  }, []);
+  }, [location.pathname]);
 
   return (
     <>
