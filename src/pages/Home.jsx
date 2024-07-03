@@ -148,7 +148,7 @@ function Home() {
                       src={category.thumbnail}
                       alt={category.name}
                     />
-                    <h5>{category.name}</h5>
+                    <p>{category.name}</p>
                   </Link>
                 </div>
               );

@@ -120,9 +120,10 @@ html {
 .category-item {
   width: 300px;
 }
-.category-item h5 {
+.category-item p {
   font-weight: bold;
   color: #212529;
+  margin-top: 20px;
 }
 .category-item:hover {
   scale: 1.1;
