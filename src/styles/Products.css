@@ -5,6 +5,10 @@
   --custom-green: #aad054;
   --custom-dark-green: #68844a;
 }
+
+.container-main-products {
+  margin-inline: 5vh;
+}
 .products-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 330px));

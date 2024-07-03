@@ -7,7 +7,7 @@ import "../styles/Products.css";
 import ProductsNavbar from "./ProductsNavbar";
 
 function Category() {
-  const [category, SetCategory] = useState();
+  const [category, setCategory] = useState();
   const params = useParams();
 
   useEffect(() => {
@@ -16,7 +16,8 @@ function Category() {
         url: `http://localhost:3000/categories/${params.slug}`,
         method: "get",
       });
-      SetCategory(response.data);
+      setCategory(response.data);
+      console.log(response.data);
     };
     getCategory();
   }, []);
@@ -36,7 +37,7 @@ function Category() {
           </div>
         </div>
       </header>
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center container-main-products">
         <ProductsNavbar />
         {category && (
           <div className="products-container container mt-5">

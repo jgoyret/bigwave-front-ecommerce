@@ -21,7 +21,6 @@ function ProductsNavbar() {
       <div className="side-list-filter mt-4">
         <div>Categories</div>
         <ul>
-          {/* <li>Categories</li> */}
           <li>
             <a href="/products">All products</a>
           </li>
