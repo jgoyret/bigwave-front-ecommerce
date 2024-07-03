@@ -79,7 +79,7 @@ function Home() {
           </div>
         </div>
       </header>
-      <section className="container" id="category container">
+      <section className="container" id="category">
         <div className="text-center my-5 row">
           <div className="col">
             <h3>FIND YOUR HEALTHY</h3>
