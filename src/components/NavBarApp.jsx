@@ -44,7 +44,7 @@ function NavBarApp({ handleShowCart }) {
     <>
       <Navbar
         expand="lg"
-        className={`sticky-top navbar ${scrolled ? "scrolled" : ""}`}
+        className={`navbar ${scrolled ? "scrolled" : ""}`}
         id="navbar"
       >
         <Container>

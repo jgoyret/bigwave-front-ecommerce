@@ -19,10 +19,16 @@ function Home() {
   const handleCloseCart = () => setShowCart(false);
   const handleShowCart = () => setShowCart(true);
 
-  const playerRef = useRef(null);
+  const starRef = useRef(null);
+  const plantRef = useRef(null);
+  const chartRef = useRef(null);
+  const truckRef = useRef(null);
 
   useEffect(() => {
-    playerRef.current?.playFromBeginning();
+    starRef.current?.playFromBeginning();
+    plantRef.current?.playFromBeginning();
+    chartRef.current?.playFromBeginning();
+    truckRef.current?.playFromBeginning();
 
     //llamada para obtener las categorias
     const getCategories = async () => {
@@ -37,12 +43,12 @@ function Home() {
 
   return (
     <>
-      <Slider />
       <NavBarApp handleShowCart={handleShowCart} />
+      <Slider />
       <Cart show={showCart} handleClose={handleCloseCart} />
       <header>
         <div
-          className="d-flex align-items-center position-relative"
+          className="d-flex align-items-center position-relative "
           id="header-image"
         >
           <div className="ms-5 fw-bold">
@@ -71,22 +77,22 @@ function Home() {
         </div>
         <div className="d-flex text-center container justify-content-around div-curva text-dark mt-5">
           <div className="d-flex flex-column align-items-center">
-            <Player ref={playerRef} size={96} icon={star} trigger="hover" />
+            <Player ref={starRef} size={96} icon={star} trigger="hover" />
             <h5>We are Premium</h5>
             <p>We offer the best products with quality controls</p>
           </div>
           <div className="d-flex flex-column align-items-center">
-            <Player ref={playerRef} size={96} icon={plant} trigger="hover" />
+            <Player ref={plantRef} size={96} icon={plant} trigger="hover" />
             <h5>We are Natural</h5>
             <p>We offer the best products with quality controls</p>
           </div>
           <div className="d-flex flex-column align-items-center">
-            <Player ref={playerRef} size={96} icon={chart} trigger="hover" />
+            <Player ref={chartRef} size={96} icon={chart} trigger="hover" />
             <h5>We are efficients</h5>
             <p>We offer the best products with quality controls</p>
           </div>
           <div className="d-flex flex-column align-items-center">
-            <Player ref={playerRef} size={96} icon={truck} trigger="hover" />
+            <Player ref={truckRef} size={96} icon={truck} trigger="hover" />
             <h5>We are top</h5>
             <p>We offer the best products with quality controls</p>
           </div>
