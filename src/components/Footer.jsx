@@ -4,7 +4,7 @@ import "../styles/footer.css";
 function Footer() {
   return (
     <>
-      <footer className="mt-5 bg-dark text-white">
+      <footer className="bg-dark text-white">
         <div className="d-flex align-items-center position-relative">
           <div className="position-absolute" id="curva-footer"></div>
         </div>
