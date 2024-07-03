@@ -25,7 +25,7 @@ function AllProducts() {
         <ProductsNavbar />
         <div>
           {products && (
-            <div className="products-container container mt-4">
+            <div className="products-container container mt-4 justify-content-center">
               {products.map((product) => {
                 return <ProductModel key={product.id} product={product} />;
               })}

@@ -14,9 +14,7 @@ function ProductModel({ product }) {
             />
           </Link>
           <div className="product-card-body">
-            <h5 className="card-title px-0">
-              {product.name}
-            </h5>
+            <h5 className="card-title px-0">{product.name}</h5>
             <p className="card-text">
               Price: $ <span>{product.price}</span>
             </p>

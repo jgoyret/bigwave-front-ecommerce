@@ -7,9 +7,9 @@
 }
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  grid-template-columns: repeat(auto-fit, minmax(330px, 330px));
   place-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 
 .product-card {
@@ -80,16 +80,16 @@
   transform: scale(100) translateX(2px);
 }
 .side-list-filter {
-  background-color: var(--custom-ligth-green);
+  /* background-color: var(--custom-ligth-green); */
   max-width: 300px;
   min-width: 300px;
   border-radius: 5px;
-  padding-top: 2vh;
+  padding-top: 1vh;
   padding-bottom: 2vh;
   margin-left: 5vw;
   height: fit-content;
   /* box-shadow: 1px 1px 2px #252525; */
-  box-sizing: border-box; /* Asegura que el padding y el borde estén incluidos en el ancho y la altura */
+  box-sizing: border-box;
 }
 
 .side-list-filter a {
@@ -134,27 +134,42 @@
 }
 
 .side-list-filter div {
-  background-color: rgba(44, 44, 44, 0.1);
-  padding: 10px;
   letter-spacing: 2px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
-  font-size: 1.5rem;
-  /* border: 1px solid #131313; */
-  /* border-radius: 5px; */
-  border-bottom: 1px solid #131313;
-  border-top: 1px solid #131313;
+  font-size: 1.2rem;
   font-weight: bold;
-  /* margin-bottom: 1rem; */
-  /* margin: 1.8rem; */
-  margin-top: 0.5rem;
-  margin-bottom: 1.8rem;
+  margin: 1.8rem;
+  margin-top: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: rgb(100, 100, 100);
+  padding: 10px 20px;
+  backdrop-filter: blur(10px);
+  text-transform: uppercase;
 }
 
 @media (max-width: 1024px) {
   .side-list-filter {
     display: none;
+  }
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    place-items: center;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+    place-items: center;
+    gap: 30px;
   }
 }
