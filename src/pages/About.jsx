@@ -49,57 +49,59 @@ function About() {
     <>
       <NavBarApp />
       <div className="container d-flex mt-5">
-        <div className="col-md-9" id="aboutText">
-          <h1>About this project</h1>
-          <p>
-            The following e-commerce site is a project developed by students of
-            the Coding Bootcamp at Hack Academy. The Bootcamp is an immersive
-            and extremely practical program, consisting of a full-time schedule
-            over 3 months. During this period, students invest more than 600
-            hours in learning about Node.js, Express, React.js, SQL, MongoDB,
-            and Git.
-          </p>
-        </div>
-        <div id="stepper" className="col-md-3">
-          <Box>
-            <Stepper activeStep={activeStep} orientation="vertical">
-              {steps.map((step, index) => (
-                <Step key={step.label}>
-                  <StepLabel
-                    StepIconProps={{
-                      sx: {
-                        color: "green",
-                      },
-                    }}
-                  >
-                    {step.label}
-                  </StepLabel>
-                  <StepContent>
-                    <Typography>{step.description}</Typography>
-                    <Box>
-                      <div>
-                        <Button onClick={handleNext} sx={{ color: "green" }}>
-                          {index === steps.length - 1 ? "Finish" : "Continue"}
-                        </Button>
-                        <Button
-                          disabled={index === 0}
-                          onClick={handleBack}
-                          sx={{ color: "green", ml: 1 }}
-                        >
-                          Back
-                        </Button>
-                      </div>
-                    </Box>
-                  </StepContent>
-                </Step>
-              ))}
-            </Stepper>
-            {activeStep === steps.length && (
-              <Button sx={{ color: "green" }} onClick={handleReset}>
-                Reset
-              </Button>
-            )}
-          </Box>
+        <div className="row">
+          <div className="col-12 col-md-8" id="aboutText">
+            <h1>About this project</h1>
+            <p>
+              The following e-commerce site is a project developed by students
+              of the Coding Bootcamp at Hack Academy. The Bootcamp is an
+              immersive and extremely practical program, consisting of a
+              full-time schedule over 3 months. During this period, students
+              invest more than 600 hours in learning about Node.js, Express,
+              React.js, SQL, MongoDB, and Git.
+            </p>
+          </div>
+          <div id="stepper" className="col-12 col-md-4">
+            <Box>
+              <Stepper activeStep={activeStep} orientation="vertical">
+                {steps.map((step, index) => (
+                  <Step key={step.label}>
+                    <StepLabel
+                      StepIconProps={{
+                        sx: {
+                          color: "green",
+                        },
+                      }}
+                    >
+                      {step.label}
+                    </StepLabel>
+                    <StepContent>
+                      <Typography>{step.description}</Typography>
+                      <Box>
+                        <div>
+                          <Button onClick={handleNext} sx={{ color: "green" }}>
+                            {index === steps.length - 1 ? "Finish" : "Continue"}
+                          </Button>
+                          <Button
+                            disabled={index === 0}
+                            onClick={handleBack}
+                            sx={{ color: "green", ml: 1 }}
+                          >
+                            Back
+                          </Button>
+                        </div>
+                      </Box>
+                    </StepContent>
+                  </Step>
+                ))}
+              </Stepper>
+              {activeStep === steps.length && (
+                <Button sx={{ color: "green" }} onClick={handleReset}>
+                  Reset
+                </Button>
+              )}
+            </Box>
+          </div>
         </div>
       </div>
       <div id="team">
@@ -107,127 +109,129 @@ function About() {
           <div className="heading">
             <h3>Meet the Team</h3>
           </div>
-          <div className="d-flex justify-content-evenly mt-5">
-            <div className="card-client">
-              <div className="user-picture">
-                <img
-                  className=""
-                  src="https://avatars.githubusercontent.com/jgoyret"
-                  alt=""
-                />
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="card-client col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2">
+                <div className="user-picture">
+                  <img
+                    className=""
+                    src="https://avatars.githubusercontent.com/jgoyret"
+                    alt=""
+                  />
+                </div>
+                <p className="name-client">
+                  {" "}
+                  Juan Goyret
+                  <span>Full stack developer</span>{" "}
+                  <span> King of the pirates</span>
+                </p>
+                <div className="social-media">
+                  <a href="https://github.com/jgoyret">
+                    <i className="bi bi-github"></i>
+                    <span className="tooltip-social">Github</span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/juan-goyret-892b422ab/?originalSubdomain=uy">
+                    <i className="bi bi-linkedin"></i>{" "}
+                    <span className="tooltip-social">LinkedIn</span>
+                  </a>
+                </div>
               </div>
-              <p className="name-client">
-                {" "}
-                Juan Goyret
-                <span>Full stack developer</span>{" "}
-                <span> King of the pirates</span>
-              </p>
-              <div className="social-media">
-                <a href="https://github.com/jgoyret">
-                  <i className="bi bi-github"></i>
-                  <span className="tooltip-social">Github</span>
-                </a>
-                <a href="https://www.linkedin.com/in/juan-goyret-892b422ab/?originalSubdomain=uy">
-                  <i className="bi bi-linkedin"></i>{" "}
-                  <span className="tooltip-social">LinkedIn</span>
-                </a>
+              <div className="card-client col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2">
+                <div className="user-picture">
+                  <img
+                    className=""
+                    src="https://avatars.githubusercontent.com/nachokapre"
+                    alt=""
+                  />
+                </div>
+                <p className="name-client">
+                  {" "}
+                  Ignacio Kaprielian
+                  <span>Full stack developer</span> <span> King of flow</span>
+                </p>
+                <div className="social-media">
+                  <a href="https://github.com/nachokapre">
+                    <i className="bi bi-github"></i>
+                    <span className="tooltip-social">Github</span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/ignacio-kaprielian-elmasian-a03bb41b8/?originalSubdomain=uy">
+                    <i className="bi bi-linkedin"></i>{" "}
+                    <span className="tooltip-social">LinkedIn</span>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div className="card-client">
-              <div className="user-picture">
-                <img
-                  className=""
-                  src="https://avatars.githubusercontent.com/nachokapre"
-                  alt=""
-                />
+              <div className="card-client col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2">
+                <div className="user-picture">
+                  <img
+                    className=""
+                    src="https://avatars.githubusercontent.com/sofiviera"
+                    alt=""
+                  />
+                </div>
+                <p className="name-client">
+                  {" "}
+                  Sofía Viera
+                  <span>Full stack developer</span>{" "}
+                  <span> Queen of Nutrition</span>
+                </p>
+                <div className="social-media">
+                  <a href="https://github.com/sofiviera">
+                    <i className="bi bi-github"></i>
+                    <span className="tooltip-social">Github</span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/sof%C3%ADavierasosa/">
+                    <i className="bi bi-linkedin"></i>{" "}
+                    <span className="tooltip-social">LinkedIn</span>
+                  </a>
+                </div>
               </div>
-              <p className="name-client">
-                {" "}
-                Ignacio Kaprielian
-                <span>Full stack developer</span> <span> King of flow</span>
-              </p>
-              <div className="social-media">
-                <a href="https://github.com/nachokapre">
-                  <i className="bi bi-github"></i>
-                  <span className="tooltip-social">Github</span>
-                </a>
-                <a href="https://www.linkedin.com/in/ignacio-kaprielian-elmasian-a03bb41b8/?originalSubdomain=uy">
-                  <i className="bi bi-linkedin"></i>{" "}
-                  <span className="tooltip-social">LinkedIn</span>
-                </a>
+              <div className="card-client col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2">
+                <div className="user-picture">
+                  <img
+                    className=""
+                    src="https://avatars.githubusercontent.com/rodriguezadrian"
+                    alt=""
+                  />
+                </div>
+                <p className="name-client">
+                  {" "}
+                  Adrián Rodríguez
+                  <span>Full stack developer</span> <span> King of code</span>
+                </p>
+                <div className="social-media">
+                  <a href="https://github.com/rodriguezadrian">
+                    <i className="bi bi-github"></i>
+                    <span className="tooltip-social">Github</span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/adrianrg99/">
+                    <i className="bi bi-linkedin"></i>{" "}
+                    <span className="tooltip-social">LinkedIn</span>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div className="card-client">
-              <div className="user-picture">
-                <img
-                  className=""
-                  src="https://avatars.githubusercontent.com/sofiviera"
-                  alt=""
-                />
-              </div>
-              <p className="name-client">
-                {" "}
-                Sofía Viera
-                <span>Full stack developer</span>{" "}
-                <span> Queen of Nutrition</span>
-              </p>
-              <div className="social-media">
-                <a href="https://github.com/sofiviera">
-                  <i className="bi bi-github"></i>
-                  <span className="tooltip-social">Github</span>
-                </a>
-                <a href="https://www.linkedin.com/in/sof%C3%ADavierasosa/">
-                  <i className="bi bi-linkedin"></i>{" "}
-                  <span className="tooltip-social">LinkedIn</span>
-                </a>
-              </div>
-            </div>
-            <div className="card-client">
-              <div className="user-picture">
-                <img
-                  className=""
-                  src="https://avatars.githubusercontent.com/rodriguezadrian"
-                  alt=""
-                />
-              </div>
-              <p className="name-client">
-                {" "}
-                Adrián Rodríguez
-                <span>Full stack developer</span> <span> King of code</span>
-              </p>
-              <div className="social-media">
-                <a href="https://github.com/rodriguezadrian">
-                  <i className="bi bi-github"></i>
-                  <span className="tooltip-social">Github</span>
-                </a>
-                <a href="https://www.linkedin.com/in/adrianrg99/">
-                  <i className="bi bi-linkedin"></i>{" "}
-                  <span className="tooltip-social">LinkedIn</span>
-                </a>
-              </div>
-            </div>
-            <div className="card-client">
-              <div className="user-picture">
-                <img
-                  className=""
-                  src="https://avatars.githubusercontent.com/Guillexxxs"
-                  alt=""
-                />
-              </div>
-              <p className="name-client">
-                {" "}
-                Guillermo Peri
-                <span>Full stack developer</span> <span> King of booze</span>
-              </p>
-              <div className="social-media">
-                <a href="https://github.com/Guillexxxs">
-                  <i className="bi bi-github"></i>
-                  <span className="tooltip-social">Github</span>
-                </a>
-                <a href="https://www.linkedin.com/in/guille-peri-415214154/">
-                  <i className="bi bi-linkedin"></i>{" "}
-                  <span className="tooltip-social">LinkedIn</span>
-                </a>
+              <div className="card-client col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2">
+                <div className="user-picture">
+                  <img
+                    className=""
+                    src="https://avatars.githubusercontent.com/Guillexxxs"
+                    alt=""
+                  />
+                </div>
+                <p className="name-client">
+                  {" "}
+                  Guillermo Peri
+                  <span>Full stack developer</span> <span> King of booze</span>
+                </p>
+                <div className="social-media">
+                  <a href="https://github.com/Guillexxxs">
+                    <i className="bi bi-github"></i>
+                    <span className="tooltip-social">Github</span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/guille-peri-415214154/">
+                    <i className="bi bi-linkedin"></i>{" "}
+                    <span className="tooltip-social">LinkedIn</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 .card-client {
+  margin: 1rem;
   background: #68844a;
-  width: 15rem;
+  width: 14rem;
   padding-top: 25px;
   padding-bottom: 25px;
   padding-left: 20px;
@@ -116,7 +117,6 @@ img {
 }
 
 #stepper {
-  margin-left: 1.5rem;
   box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
 }
 
@@ -126,7 +126,7 @@ img {
 }
 
 #aboutText {
-  padding: 5rem;
+  padding: 2rem;
   background-image: url("/delicioso-desayuno-yogurt-frutas_23-2148529414.jpg");
   background-position: center;
   box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
@@ -143,7 +143,6 @@ img {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  padding: 2rem;
   background: url(../images/border.png) no-repeat center;
 }
 .heading h3:before,
