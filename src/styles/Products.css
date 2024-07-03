@@ -8,6 +8,7 @@
 
 .container-main-products {
   margin-inline: 5vh;
+  padding-top: 70px;
 }
 .products-container {
   display: grid;

@@ -21,7 +21,7 @@ function AllProducts() {
   return (
     <>
       <NavBarApp />
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center container-main-products">
         <ProductsNavbar />
         <div>
           {products && (
