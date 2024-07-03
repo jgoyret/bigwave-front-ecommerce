@@ -25,7 +25,7 @@ function ProductView() {
     product && (
       <>
         <NavBarApp />
-        <div className="container">
+        <div className="container container-productview">
           <div className="row container">
             <div className="col-md-10 col-lg-5 mt-3 p-0 container-img">
               <img
