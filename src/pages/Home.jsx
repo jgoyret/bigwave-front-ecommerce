@@ -6,10 +6,10 @@ import Footer from "../components/Footer";
 import Cart from "../components/Cart";
 
 import { Player } from "@lordicon/react";
-import plant from "../wired-outline-1827-growing-plant.json";
-import star from "../wired-outline-237-star-rating.json";
-import chart from "../wired-outline-153-bar-chart.json";
-import truck from "../wired-outline-497-truck-delivery.json";
+import plant from "../icons/wired-outline-1827-growing-plant.json";
+import star from "../icons/wired-outline-237-star-rating.json";
+import chart from "../icons/wired-outline-153-bar-chart.json";
+import truck from "../icons/wired-outline-497-truck-delivery.json";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -25,10 +25,10 @@ function Home() {
   const truckRef = useRef(null);
 
   useEffect(() => {
-    starRef.current?.playFromBeginning();
-    plantRef.current?.playFromBeginning();
-    chartRef.current?.playFromBeginning();
-    truckRef.current?.playFromBeginning();
+    // starRef.current?.play();
+    // plantRef.current?.play();
+    // chartRef.current?.play();
+    // truckRef.current?.play();
 
     //llamada para obtener las categorias
     const getCategories = async () => {
@@ -38,8 +38,13 @@ function Home() {
       });
       setCategories(response.data);
     };
+
     getCategories();
   }, []);
+
+  const handleAnimationIcon = (iconRef) => {
+    iconRef.current?.playFromBeginning();
+  };
 
   return (
     <>
@@ -76,25 +81,51 @@ function Home() {
           <div className="position-absolute" id="curva"></div>
         </div>
         <div className="d-flex text-center container justify-content-around div-curva text-dark mt-5">
-          <div className="d-flex flex-column align-items-center">
-            <Player ref={starRef} size={96} icon={star} trigger="hover" />
-            <h5>We are Premium</h5>
-            <p>We offer the best products with quality controls</p>
+          <div
+            className="d-flex flex-column align-items-center"
+            onMouseEnter={() => handleAnimationIcon(starRef)}
+          >
+            <Player
+              ref={starRef}
+              loading="interaction"
+              size={96}
+              icon={star}
+              trigger="hover"
+            />
+            <h5>We are premium</h5>
+            <p className=" d-none d-md-inline">
+              Premium quality products with excelent controls
+            </p>
           </div>
-          <div className="d-flex flex-column align-items-center">
+          <div
+            className="d-flex flex-column align-items-center"
+            onMouseEnter={() => handleAnimationIcon(plantRef)}
+          >
             <Player ref={plantRef} size={96} icon={plant} trigger="hover" />
-            <h5>We are Natural</h5>
-            <p>We offer the best products with quality controls</p>
+            <h5>We are natural</h5>
+            <p className=" d-none d-md-inline">
+              100% natural ingredients for a healthier lifestyle
+            </p>
           </div>
-          <div className="d-flex flex-column align-items-center">
+          <div
+            className="d-flex flex-column align-items-center"
+            onMouseEnter={() => handleAnimationIcon(chartRef)}
+          >
             <Player ref={chartRef} size={96} icon={chart} trigger="hover" />
             <h5>We are efficients</h5>
-            <p>We offer the best products with quality controls</p>
+            <p className=" d-none d-md-inline">
+              Efficient and reliable service for your needs
+            </p>
           </div>
-          <div className="d-flex flex-column align-items-center">
+          <div
+            className="d-flex flex-column align-items-center"
+            onMouseEnter={() => handleAnimationIcon(truckRef)}
+          >
             <Player ref={truckRef} size={96} icon={truck} trigger="hover" />
-            <h5>We are top</h5>
-            <p>We offer the best products with quality controls</p>
+            <h5>We are fast</h5>
+            <p className=" d-none d-md-inline">
+              Fast and secure delivery to your doorstep
+            </p>
           </div>
         </div>
       </header>

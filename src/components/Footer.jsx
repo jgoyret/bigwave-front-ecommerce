@@ -60,7 +60,7 @@ function Footer() {
             </div>
 
             <div className="col-12 col-md-3 mb-4">
-              <h5>SUBSCRIBE TO OUR MAILING LIST</h5>
+              <p>SUBSCRIBE TO OUR MAILING LIST</p>
               <div className="input-container">
                 <input
                   required

@@ -5,6 +5,7 @@ import axios from "axios";
 import ProductModel from "../components/ProductModel";
 import "../styles/Products.css";
 import ProductsNavbar from "./ProductsNavbar";
+import Footer from "../components/Footer";
 
 function Category() {
   const [category, setCategory] = useState();
@@ -26,28 +27,31 @@ function Category() {
   return (
     <>
       <NavBarApp />
-      <header>
-        <div
-          className="d-flex h-25 justify-content-center position-relative"
-          id="header-image"
-        >
-          <div className="ms-5 text-center fw-bold">
-            <h2 className="text-capitalize">
-              {params.slug.replace(/-/g, " ")}
-            </h2>
+      <div className="container-main-products">
+        <header>
+          <div
+            className="d-flex h-25 justify-content-center position-relative "
+            id="header-image"
+          >
+            <div className="ms-5 text-center fw-bold">
+              <h2 className="text-capitalize">
+                {params.slug.replace(/-/g, " ")}
+              </h2>
+            </div>
           </div>
+        </header>
+        <div className="d-flex justify-content-center my-5">
+          <ProductsNavbar />
+          {category && (
+            <div className="products-container container mt-5">
+              {category.map((c) => {
+                return <ProductModel key={c.id} product={c} />;
+              })}
+            </div>
+          )}
         </div>
-      </header>
-      <div className="d-flex justify-content-center container-main-products">
-        <ProductsNavbar />
-        {category && (
-          <div className="products-container container mt-5">
-            {category.map((c) => {
-              return <ProductModel key={c.id} product={c} />;
-            })}
-          </div>
-        )}
       </div>
+      <Footer />
     </>
   );
 }

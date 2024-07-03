@@ -4,6 +4,7 @@ import ProductModel from "../components/ProductModel";
 import axios from "axios";
 import "../styles/Products.css";
 import ProductsNavbar from "./ProductsNavbar";
+import Footer from "../components/Footer";
 
 function AllProducts() {
   const [products, setProducts] = useState([]);
@@ -33,6 +34,7 @@ function AllProducts() {
           )}
         </div>
       </div>
+      <Footer />
     </>
   );
 }

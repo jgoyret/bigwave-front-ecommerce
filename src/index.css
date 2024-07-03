@@ -103,6 +103,7 @@ html {
   background-image: url("/delicioso-desayuno-yogurt-frutas_23-2148529414.jpg");
   background-size: cover;
   height: 800px;
+  background-position: center;
 }
 #curva {
   bottom: 0;
@@ -144,6 +145,7 @@ html {
   border-width: 0 100vw 5.3vw 0;
   border-style: solid;
   border-color: #212529 transparent #212529 transparent;
+  margin-bottom: 24px;
 }
 .faq-height {
   height: 400px;
