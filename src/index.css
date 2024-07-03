@@ -119,6 +119,10 @@ html {
 .category-item {
   width: 300px;
 }
+.category-item h5 {
+  font-weight: bold;
+  color: #212529;
+}
 .category-item:hover {
   scale: 1.1;
   transition: 0.3s all ease;

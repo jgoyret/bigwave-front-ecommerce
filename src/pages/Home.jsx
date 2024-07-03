@@ -10,9 +10,12 @@ import plant from "../wired-outline-1827-growing-plant.json";
 import star from "../wired-outline-237-star-rating.json";
 import chart from "../wired-outline-153-bar-chart.json";
 import truck from "../wired-outline-497-truck-delivery.json";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Home() {
   const [showCart, setShowCart] = useState(false);
+  const [categories, setCategories] = useState([]);
   const handleCloseCart = () => setShowCart(false);
   const handleShowCart = () => setShowCart(true);
 
@@ -20,6 +23,17 @@ function Home() {
 
   useEffect(() => {
     playerRef.current?.playFromBeginning();
+
+    //llamada para obtener las categorias
+    const getCategories = async () => {
+      const response = await axios({
+        url: "http://localhost:3000/categories",
+        method: "get",
+      });
+      console.log(response.data);
+      setCategories(response.data);
+    };
+    getCategories();
   }, []);
 
   return (
@@ -36,8 +50,8 @@ function Home() {
             <h1 className="banner-title mb-4">
               Your <span className="banner-font">healthy life</span> starts here
             </h1>
-            <button class="cta">
-              <span class="hover-underline-animation"> Shop now </span>
+            <button className="cta">
+              <span className="hover-underline-animation"> Shop now </span>
               <svg
                 id="arrow-horizontal"
                 xmlns="http://www.w3.org/2000/svg"
@@ -86,58 +100,20 @@ function Home() {
             <p>Shop by category</p>
           </div>
           <div className="row g-3 ms-auto justify-content-center">
-            <div className="col-6 col-sm-4 col-md-3 p-3 category-item">
-              <img
-                className="category-image"
-                src="/granola.png"
-                alt="bowl of granola"
-              />
-              <h5>Nuts, cereals and seeds</h5>
-            </div>
-            <div className="col-6 col-sm-4 col-md-3 p-3 category-item">
-              <img
-                className="category-image"
-                src="/jar-of-honey.png"
-                alt="jar of honey"
-              />
-              <h5>Sugars and substitutes</h5>
-            </div>
-            <div className="col-6 col-sm-4 col-md-3 p-3 category-item">
-              <img
-                className="category-image"
-                src="/dairy-product.png"
-                alt="bottle of milk"
-              />
-              <h5>Dairy, plant based milk</h5>
-            </div>
-            <div className="col-6 col-sm-4 col-md-3 p-3 category-item">
-              <img className="category-image" src="/spices.png" alt="spices" />
-              <h5>Pantry & spices</h5>
-            </div>
-            <div className="col-6 col-sm-4 col-md-3 p-3 category-item">
-              <img
-                className="category-image"
-                src="/açaí-fruit.png"
-                alt="açaí fruit"
-              />
-              <h5>Superfoods</h5>
-            </div>
-            <div className="col-6 col-sm-4 col-md-3 p-3 category-item">
-              <img
-                className="category-image"
-                src="/coffee.png"
-                alt="iced coffee"
-              />
-              <h5>Beverages</h5>
-            </div>
-            <div className="col-6 col-sm-4 col-md-3 p-3 category-item">
-              <img
-                className="category-image"
-                src="/potato-chips.png"
-                alt="bowl of potato chips"
-              />
-              <h5>Snacks</h5>
-            </div>
+            {categories.map((category) => {
+              return (
+                <div className="col-6 col-sm-4 col-md-3 p-3 category-item">
+                  <Link to={`/categories/${category.slug}`}>
+                    <img
+                      className="category-image"
+                      src={category.thumbnail}
+                      alt={category.name}
+                    />
+                    <h5>{category.name}</h5>
+                  </Link>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
