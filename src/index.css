@@ -121,6 +121,10 @@ html {
 .category-item {
   width: 300px;
 }
+.category-header {
+  height: 200px !important;
+  margin-top: 100px;
+}
 .category-item p {
   transition: 0.5s all ease;
   font-weight: bold;

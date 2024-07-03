@@ -28,10 +28,10 @@ function Category() {
   return (
     <>
       <NavBarApp />
-      <div className="container-main-products">
-        {/* <header>
+      <div className="container">
+        <header>
           <div
-            className="d-flex h-100 justify-content-center position-relative "
+            className="d-flex category-header justify-content-center align-items-center position-relative "
             id="header-image"
           >
             <div className="ms-5 text-center fw-bold">
@@ -40,7 +40,7 @@ function Category() {
               </h2>
             </div>
           </div>
-        </header> */}
+        </header>
         <div className="d-flex justify-content-center my-5">
           <ProductsNavbar />
           {category && (
