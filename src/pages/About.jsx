@@ -48,7 +48,7 @@ function About() {
   return (
     <>
       <NavBarApp />
-      <div className="container d-flex mt-5">
+      <div className="container container-about d-flex">
         <div className="row">
           <div className="col-12 col-md-8" id="aboutText">
             <h1>About this project</h1>
