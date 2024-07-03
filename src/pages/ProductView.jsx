@@ -48,7 +48,7 @@ function ProductView() {
                     <i className="ms-2 bi bi-plus-circle"></i>
                   </div>
                   <button className="ms-4 w-50 button-add type1">
-                    <i class="bi bi-cart2"></i>
+                    <i className="bi bi-cart2"></i>
                     <span className="btn-txt ms-3">Add to cart</span>
                   </button>
                   <i className="bi bi-suit-heart ms-3 fs-3"></i>

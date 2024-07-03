@@ -30,7 +30,6 @@ function Home() {
         url: "http://localhost:3000/categories",
         method: "get",
       });
-      console.log(response.data);
       setCategories(response.data);
     };
     getCategories();
@@ -102,7 +101,10 @@ function Home() {
           <div className="row g-3 ms-auto justify-content-center">
             {categories.map((category) => {
               return (
-                <div className="col-6 col-sm-4 col-md-3 p-3 category-item">
+                <div
+                  key={category.id}
+                  className="col-6 col-sm-4 col-md-3 p-3 category-item"
+                >
                   <Link to={`/categories/${category.slug}`}>
                     <img
                       className="category-image"

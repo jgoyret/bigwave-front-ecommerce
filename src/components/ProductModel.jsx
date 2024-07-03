@@ -4,7 +4,7 @@ function ProductModel({ product }) {
   return (
     <>
       <div className="product-card">
-        <div className="card shadow p-0 bg-danger" style={{ width: 300 }}>
+        <div className="card shadow p-0" style={{ width: 300 }}>
           <Link to={`/products/${product.slug}`}>
             <img
               style={{ width: 300, height: 300 }}
