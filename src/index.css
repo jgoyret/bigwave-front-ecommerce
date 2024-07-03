@@ -99,6 +99,9 @@ html {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+#category-healthy {
+  margin-top: 80px;
+}
 
 #header-image {
   background-image: url("/delicioso-desayuno-yogurt-frutas_23-2148529414.jpg");
@@ -120,6 +123,7 @@ html {
 }
 .category-item {
   width: 300px;
+  padding-left: 0px !important;
 }
 .category-header {
   height: 200px !important;
@@ -158,6 +162,7 @@ html {
   margin-bottom: 24px;
 }
 .faq-height {
+  margin-top: 80px;
   height: 400px;
 }
 .li-footer {

@@ -129,18 +129,18 @@ function Home() {
           </div>
         </div>
       </header>
-      <section className="container" id="category">
-        <div className="text-center my-5 row">
-          <div className="col">
+      <section className="container" id="category-healthy">
+        <div className="text-center my-5">
+          <div>
             <h3>FIND YOUR HEALTHY</h3>
             <p>Shop by category</p>
           </div>
-          <div className="row g-3 ms-auto justify-content-center">
+          <div className="row px-0 mx-0 g-3">
             {categories.map((category) => {
               return (
                 <div
                   key={category.id}
-                  className="col-6 col-sm-4 col-md-3 p-3 category-item"
+                  className="col-12 col-sm-6 col-md-4 col-lg-3 p-3 category-item"
                 >
                   <Link to={`/categories/${category.slug}`}>
                     <img

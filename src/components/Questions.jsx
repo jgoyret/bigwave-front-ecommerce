@@ -3,7 +3,7 @@ import Accordion from "react-bootstrap/Accordion";
 function Questions() {
   return (
     <>
-      <div className="container faq-height w-50">
+      <div className="container faq-height">
         <h3 className="text-center">FAQ's</h3>
         <Accordion>
           <Accordion.Item className="bg-transparent" eventKey="0">
