@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import NavBarApp from "../components/NavBarApp";
 import Slider from "../components/Slider";
-import Carousel from "react-bootstrap/Carousel";
 import Questions from "../components/Questions";
 import Footer from "../components/Footer";
 import Cart from "../components/Cart";
@@ -80,7 +79,7 @@ function Home() {
           </div>
         </div>
       </header>
-      <section id="category container">
+      <section className="container" id="category container">
         <div className="text-center my-5 row">
           <div className="col">
             <h3>FIND YOUR HEALTHY</h3>

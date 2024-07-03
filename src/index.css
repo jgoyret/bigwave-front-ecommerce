@@ -121,26 +121,12 @@ body {
   scale: 1.1;
   transition: 0.3s all ease;
 }
-#category {
-  height: 300px;
-}
 .category-image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
 }
-#combos {
-  height: 600px;
-}
-#combos img {
-  height: 400px;
-  object-fit: cover;
-}
-.carousel-indicators {
-  z-index: 0;
-}
-
 .accordion-button {
   background-color: transparent !important;
 }

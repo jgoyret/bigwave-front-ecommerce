@@ -24,55 +24,53 @@ function NavBarApp({ handleShowCart }) {
   }, []);
   return (
     <>
-      <div className="container">
-        <Navbar expand="lg" className="navbar position-sticky">
-          <Container fluid>
-            <Navbar.Brand href="/">Logo</Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
-              <Nav
-                className="me-auto my-2 my-lg-0"
-                style={{ maxHeight: "100px" }}
-                navbarScroll
-              >
-                <NavDropdown title="Shop" id="navbarScrollingDropdown">
-                  <DropdownItem href="/products">All products</DropdownItem>
-                  {categories && (
-                    <div>
-                      {categories.map((category) => {
-                        return (
-                          <DropdownItem
-                            href={`/categories/${category.slug}`}
-                            key={category.id}
-                          >
-                            {category.name}
-                          </DropdownItem>
-                        );
-                      })}
-                    </div>
-                  )}
-                </NavDropdown>
-                <Nav.Link href="/about-this-project">About this project</Nav.Link>
-              </Nav>
-              <Form className="d-flex">
-                <Form.Control
-                  type="search"
-                  placeholder="Search"
-                  className="me-2 bg-transparent"
-                  aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-              </Form>
-              <Link to={"/login"}>
-                <i className="bi bi-person text-success ms-5"></i>
-              </Link>
-              <NavLink className="nav-link" onClick={handleShowCart}>
-                <i className="bi bi-cart text-success ms-4 "></i>
-              </NavLink>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-      </div>
+      <Navbar expand="lg" className="navbar">
+        <Container>
+          <Navbar.Brand href="/">BigWave</Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Nav
+              className="me-auto my-2 my-lg-0"
+              style={{ maxHeight: "100px" }}
+              navbarScroll
+            >
+              <NavDropdown title="Shop" id="navbarScrollingDropdown">
+                <DropdownItem href="/products">All products</DropdownItem>
+                {categories && (
+                  <div>
+                    {categories.map((category) => {
+                      return (
+                        <DropdownItem
+                          href={`/categories/${category.slug}`}
+                          key={category.id}
+                        >
+                          {category.name}
+                        </DropdownItem>
+                      );
+                    })}
+                  </div>
+                )}
+              </NavDropdown>
+              <Nav.Link href="/about-this-project">About this project</Nav.Link>
+            </Nav>
+            <Form className="d-flex">
+              <Form.Control
+                type="search"
+                placeholder="Search"
+                className="me-2 bg-transparent"
+                aria-label="Search"
+              />
+              <Button variant="outline-dark">Search</Button>
+            </Form>
+            <Link to={"/login"}>
+              <i className="bi bi-person text-secondary ms-5 fs-3"></i>
+            </Link>
+            <NavLink className="nav-link" onClick={handleShowCart}>
+              <i className="bi bi-cart text-secondary ms-4 fs-4 "></i>
+            </NavLink>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </>
   );
 }

@@ -70,7 +70,7 @@ function Footer() {
                 type="email"
               ></input>
               <button class="invite-btn" type="button">
-                Suscribe
+                Subscribe
               </button>
             </div>
           </div>

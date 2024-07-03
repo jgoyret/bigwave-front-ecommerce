@@ -27,7 +27,7 @@ function ProductView() {
         <NavBarApp />
         <div className="container">
           <div className="row container">
-            <div className="col-md-10 col-lg-5 mt-3">
+            <div className="col-md-10 col-lg-5 mt-3 p-0 container-img">
               <img
                 style={{ width: 500, height: 500 }}
                 className="img-fluid rounded shadow object-fit-cover"
@@ -35,12 +35,12 @@ function ProductView() {
                 alt={product.name}
               />
             </div>
-            <div className="col-md-10 col-lg-7  p-0">
+            <div className="col-md-10 col-lg-7 p-0 ms-4">
               <BreadcrumbApp product={product} />
               <section>
                 <h3 className="fs-1 fw-bold">{product.name}</h3>
                 <p className="fs-2">$ {product.price}</p>
-                <p className="fs-3 fw-light">{product.description}</p>
+                <p className="fs-4 fw-light">{product.description}</p>
                 <div className="d-flex align-items-center">
                   <div className="fs-4">
                     <i className="bi bi-dash-circle"></i>
@@ -54,7 +54,7 @@ function ProductView() {
                   <i className="bi bi-suit-heart ms-3 fs-3"></i>
                 </div>
               </section>
-              <section className="d-flex section-div">
+              <section className="d-flex section-div mt-2">
                 <div className="w-25 text-center section-card shadow rounded mt-5">
                   <i className="bi bi-truck fs-5"></i>
                   <p>Free Shipping</p>
