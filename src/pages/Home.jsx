@@ -112,7 +112,7 @@ function Home() {
             onMouseEnter={() => handleAnimationIcon(chartRef)}
           >
             <Player ref={chartRef} size={96} icon={chart} trigger="hover" />
-            <h5>We are efficients</h5>
+            <h5>We are efficient</h5>
             <p className=" d-none d-md-inline">
               Efficient and reliable service for your needs
             </p>
