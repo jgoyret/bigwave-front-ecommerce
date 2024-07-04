@@ -22,7 +22,7 @@ function CartProduct() {
             <div className="d-flex justify-content-between">
               <p>Quantity: 1</p>
 
-              <i class="bi bi-trash"></i>
+              <i className="bi bi-trash"></i>
             </div>
           </div>
         </div>

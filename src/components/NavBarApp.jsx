@@ -7,9 +7,14 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "../styles/navbar.css";
+import Cart from "./Cart";
+import CartProduct from "./CartProduct";
 
-function NavBarApp({ handleShowCart }) {
+function NavBarApp() {
   const [categories, setCategories] = useState();
+  const [showCart, setShowCart] = useState(false);
+  const handleCloseCart = () => setShowCart(false);
+  const handleShowCart = () => setShowCart(true);
 
   useEffect(() => {
     const getCategories = async () => {
@@ -96,6 +101,8 @@ function NavBarApp({ handleShowCart }) {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <Cart show={showCart} handleClose={handleCloseCart} />
+    
     </>
   );
 }
