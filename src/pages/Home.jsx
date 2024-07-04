@@ -135,7 +135,7 @@ function Home() {
             <h3>FIND YOUR HEALTHY</h3>
             <p>Shop by category</p>
           </div>
-          <div className="row px-0 mx-0 g-3">
+          <div className="row px-0 mx-0 d-flex justify-content-center g-3">
             {categories.map((category) => {
               return (
                 <div
