@@ -41,14 +41,14 @@ function Login() {
 
         <div className="p-5 rounded shadow w-100 w-sm-75 w-md-50 w-lg-25 mt-3 mb-5">
           <div>
-            <h5>Usuarios de prueba</h5>
+            <h5>User Credentials</h5>
             <p>
-              Para simplificar el accesso a la aplicacion, se proporcionan los
-              siguientes usuarios de prueba:
+              To simplify access to the application, the following test user
+              is provided:
             </p>
           </div>
           <div>
-            <h6>Iniciar sesion como comprador</h6>
+            <h6>Log in as a buyer</h6>
             <ul>
               <li>Email: maria.perez@gmail.com</li>
               <li>Password: 1234</li>

@@ -14,11 +14,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 function Home() {
-  const [showCart, setShowCart] = useState(false);
   const [categories, setCategories] = useState([]);
-  const handleCloseCart = () => setShowCart(false);
-  const handleShowCart = () => setShowCart(true);
-
+  
   const starRef = useRef(null);
   const plantRef = useRef(null);
   const chartRef = useRef(null);
@@ -48,9 +45,9 @@ function Home() {
 
   return (
     <>
-      <NavBarApp handleShowCart={handleShowCart} />
+      <NavBarApp />
       <Slider />
-      <Cart show={showCart} handleClose={handleCloseCart} />
+    
       <header>
         <div
           className="d-flex align-items-center position-relative "
