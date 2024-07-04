@@ -136,6 +136,7 @@ function About() {
                   </a>
                 </div>
               </div>
+
               <div className="card-client col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2">
                 <div className="user-picture">
                   <img

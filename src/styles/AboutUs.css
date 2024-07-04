@@ -1,31 +1,67 @@
 .card-client {
+  position: relative; /* Necesario para el pseudo-elemento */
   margin: 1rem;
-  background: #68844a;
+  background-image: url(https://www.acquabella.com/wp-content/uploads/2022/09/TEXTURA-WAVE-ACQUABELLA.jpg);
   width: 14rem;
   padding-top: 25px;
   padding-bottom: 25px;
   padding-left: 20px;
   padding-right: 20px;
-  border: 4px solid #3a4d25;
-  box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
   border-radius: 10px;
+  border: #000000 1px solid;
   text-align: center;
   color: #fff;
-  font-family: "Axiforma", sans-serif;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  /* opacity: ; */
+}
+
+.card-client::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 10px;
+  filter: blur(1px) sepia(50%);
+  z-index: -1;
+}
+
+.card-client::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: #000000d2 2px solid;
+  border-radius: 10px;
+
+  z-index: -1;
+}
+
+.card-client {
+  position: relative;
+  z-index: 1;
 }
 
 .card-client:hover {
-  transform: translateY(-10px);
+  /* animation: rotateCard 2s linear; */
+  box-shadow: #0000003f 0px 10px 10px 0px;
+  transform: translate3d(0, -10px, 0);
+  cursor: pointer;
 }
-.container-about{
-  margin-top: 100px;
+
+.card-client:hover {
+  animation-play-state: running;
+  animation-fill-mode: forwards;
 }
 
 .user-picture {
   overflow: hidden;
   width: 6rem;
-  border: 4px solid #68844a;
+  /* filter: drop-shadow(0 0 10px #000000); */
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -59,7 +95,7 @@
   width: 100%;
   height: 2px;
   margin: 20px 0;
-  background: #68844a;
+  background: #464646;
 }
 
 .social-media a {
@@ -134,9 +170,11 @@ img {
   background-position: center;
   box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
 }
+
 #aboutText p {
   width: 63%;
 }
+
 .heading {
   position: relative;
 }
@@ -148,6 +186,7 @@ img {
   text-overflow: ellipsis;
   background: url(../images/border.png) no-repeat center;
 }
+
 .heading h3:before,
 .heading h3:after {
   content: "";
@@ -157,10 +196,12 @@ img {
   height: 0;
   vertical-align: middle;
 }
+
 .heading h3:before {
   margin-left: -100%;
   margin-right: 80px;
 }
+
 .heading h3:after {
   margin-left: 80px;
   margin-right: -100%;
@@ -169,4 +210,8 @@ img {
 #stepper .css-1uzq1qw-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed,
 #stepper .css-1uzq1qw-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
   color: green !important;
+}
+
+.container-about {
+  padding-top: 100px;
 }
