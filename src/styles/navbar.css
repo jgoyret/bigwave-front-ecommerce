@@ -7,9 +7,10 @@
 }
 #navbar.scrolled {
   position: fixed !important;
-  background-color: rgba(204, 219, 208, 0.867) !important;
+  background-color: rgba(226, 232, 228, 0.873) !important;
   top: 0 !important;
 }
+
 .group {
   display: flex;
   line-height: 28px;
