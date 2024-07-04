@@ -103,9 +103,9 @@ function Checkout() {
                 variant="outlined"
                 fullWidth
               >
-                <MenuItem >Credit Card</MenuItem>
-                <MenuItem >Bitcoin</MenuItem>
-                <MenuItem >Paypal</MenuItem>
+                <MenuItem>Credit Card</MenuItem>
+                <MenuItem>Bitcoin</MenuItem>
+                <MenuItem>Paypal</MenuItem>
               </Select>
               <div className="mb-3">
                 <TextField
@@ -187,12 +187,9 @@ function Checkout() {
                 <p className="fw-bold">115 USD</p>
               </div>
               <button className="btn btn-primary">Confirm Order</button>
-
-              <img
-                src="../QR.png"
-                alt="QR"
-                className="d-flex justify-content-center align-items-center w-50 h-50"
-              />
+              <div className="d-flex justify-content-center align-items-center w-50 m-5">
+                <img src="../QR.png" alt="QR" className=" w-100 h-100" />
+              </div>
             </div>
           </div>
         </div>

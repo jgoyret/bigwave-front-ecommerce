@@ -146,7 +146,7 @@ html {
 
 .category-image:hover {
   transform: scale(1.1);
-  filter: drop-shadow(5px 5px 10px #000000);
+  filter: drop-shadow(5px 5px 10px #00000057);
 }
 .accordion-button {
   background-color: transparent !important;
