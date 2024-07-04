@@ -61,3 +61,40 @@
   border-bottom: 2px solid #1111115e;
   transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
 }
+@media (max-width: 992px) {
+  .icon {
+    position: relative;
+    padding-left: 0px !important;
+    margin-bottom: 5px;
+  }
+  #navbar {
+    background: rgba(226, 232, 228, 0.873) !important;
+    top: 0;
+  }
+
+  .input-wrap {
+    display: flex;
+  }
+  .navbar-toggler {
+    box-shadow: none !important;
+  }
+  .cart-resp {
+    display: none;
+  }
+  .cart-responsive {
+    display: block;
+    margin-left: auto !important;
+    margin-right: 15px;
+  }
+}
+@media (min-width: 992px) {
+  .cart-responsive {
+    display: none;
+  }
+  .icon {
+    position: absolute;
+    right: 180px;
+    height: 0;
+    align-items: start;
+  }
+}

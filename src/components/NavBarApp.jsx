@@ -54,6 +54,9 @@ function NavBarApp() {
       >
         <Container>
           <Navbar.Brand href="/">BigWave</Navbar.Brand>
+          <NavLink className="nav-link cart-responsive" onClick={handleShowCart}>
+              <i className="bi bi-cart text-dark fs-4"></i>
+            </NavLink>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -80,14 +83,14 @@ function NavBarApp() {
               </NavDropdown>
               <Nav.Link href="/about-this-project">About this project</Nav.Link>
             </Nav>
-            <div className="input-wrapper">
+            <Nav.Link className="input-wrap">
               <button className="icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  height="25px"
-                  width="25px"
+                  height="20px"
+                  width="20px"
                 >
                   <path
                     stroke-linejoin="round"
@@ -111,18 +114,18 @@ function NavBarApp() {
                 name="text"
                 type="text"
               ></input>
-            </div>
-            <Link to={"/login"}>
-              <i className="bi bi-person text-dark ms-5 fs-3"></i>
-            </Link>
+            </Nav.Link>
+
+            <NavLink to={"/login"}>
+              <i className="bi bi-person text-dark  fs-3"></i>
+            </NavLink>
             <NavLink className="nav-link" onClick={handleShowCart}>
-              <i className="bi bi-cart text-dark ms-4 fs-4 "></i>
+              <i className="bi bi-cart cart-resp text-dark mx-2 fs-4 "></i>
             </NavLink>
           </Navbar.Collapse>
         </Container>
       </Navbar>
       <Cart show={showCart} handleClose={handleCloseCart} />
-    
     </>
   );
 }
