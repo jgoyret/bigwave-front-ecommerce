@@ -13,16 +13,16 @@ function CartProduct() {
             />
           </div>
         </div>
-
         <div className="card-content">
           <div className="product-name mt-3">Almonds</div>
           <div className="product-description ">
-            <p className="fw-bold">$20</p>
+            <p className="fw-bold">
+              $ <span>20</span>
+            </p>
             <div className="d-flex justify-content-between">
-              <p>Qty: 1</p>
-              <button className="btn-view-cart" type="button">
-                Remove
-              </button>
+              <p>Quantity: 1</p>
+
+              <i class="bi bi-trash"></i>
             </div>
           </div>
         </div>

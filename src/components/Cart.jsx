@@ -18,17 +18,25 @@ function Cart({ show, handleClose }) {
               <hr />
               <div className="d-flex justify-content-between">
                 <h6>Subtotal</h6>
-                <p>Price: $20</p>
+                <p>
+                  Price: $ <span>20</span>
+                </p>
               </div>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Tempora, aut.
               </p>
-              <Link to={"/checkout"} className="btn btn-checkout-cart w-100">
+              <Link
+                to={"/checkout"}
+                className="btn btn-checkout-cart py-2 w-100"
+              >
                 Checkout
               </Link>
               <p className="text-center mt-3">
-                or <a href="">Continue Shopping</a>
+                or
+                <button onClick={handleClose} className="btn">
+                  Continue Shopping
+                </button>
               </p>
             </div>
           </div>
