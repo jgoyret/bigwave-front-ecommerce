@@ -3,6 +3,7 @@ import NavBarApp from "../components/NavBarApp";
 
 import Footer from "../components/Footer";
 import "../styles/Checkout.css";
+import CountrySelect from "../components/CountrySelect";
 
 function Checkout() {
   return (
@@ -44,8 +45,8 @@ function Checkout() {
               <div className="mb-3">
                 <TextField
                   className="bg-white"
-                  id="adress"
-                  label="Adress"
+                  id="address"
+                  label="Address"
                   type="text"
                   variant="outlined"
                   fullWidth
@@ -60,14 +61,7 @@ function Checkout() {
                   variant="outlined"
                   fullWidth
                 />
-                <TextField
-                  className="bg-white"
-                  id="country"
-                  label="Country"
-                  type="text"
-                  variant="outlined"
-                  fullWidth
-                />
+                <CountrySelect />
               </div>
               <div className="d-flex mb-3">
                 <TextField
