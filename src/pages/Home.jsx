@@ -30,7 +30,7 @@ function Home() {
     //llamada para obtener las categorias
     const getCategories = async () => {
       const response = await axios({
-        url: "http://localhost:3000/categories",
+        url: `${import.meta.env.VITE_API_URL}/categories`,
         method: "get",
       });
       setCategories(response.data);

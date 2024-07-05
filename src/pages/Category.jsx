@@ -16,7 +16,7 @@ function Category() {
   useEffect(() => {
     const getCategory = async () => {
       const response = await axios({
-        url: `http://localhost:3000/categories/${params.slug}`,
+        url: `${import.meta.env.VITE_API_URL}/categories/${params.slug}`,
         method: "get",
       });
       setCategory(response.data);

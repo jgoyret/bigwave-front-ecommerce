@@ -13,7 +13,7 @@ function ProductView() {
   useEffect(() => {
     const getProduct = async () => {
       const response = await axios({
-        url: `http://localhost:3000/products/${params.slug}`,
+        url: `${import.meta.env.VITE_API_URL}/products/${params.slug}`,
         method: "get",
       });
       setProduct(response.data);

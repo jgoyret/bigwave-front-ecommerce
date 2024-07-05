@@ -19,7 +19,7 @@ function NavBarApp() {
   useEffect(() => {
     const getCategories = async () => {
       const response = await axios({
-        url: "http://localhost:3000/categories",
+        url: `${import.meta.env.VITE_API_URL}/categories`,
         method: "get",
       });
       setCategories(response.data);
@@ -54,9 +54,12 @@ function NavBarApp() {
       >
         <Container>
           <Navbar.Brand href="/">BigWave</Navbar.Brand>
-          <NavLink className="nav-link cart-responsive" onClick={handleShowCart}>
-              <i className="bi bi-cart text-dark fs-4"></i>
-            </NavLink>
+          <NavLink
+            className="nav-link cart-responsive"
+            onClick={handleShowCart}
+          >
+            <i className="bi bi-cart text-dark fs-4"></i>
+          </NavLink>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
