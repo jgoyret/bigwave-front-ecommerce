@@ -2,14 +2,27 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../redux/cartReducer";
 import { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ProductModel({ product }) {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const [units, setUnits] = useState(0);
+  const [units, setUnits] = useState(1);
+
+  const handleAddToCart = () => {
+    if (units <= 0) {
+      toast.info("Units must be higher than 1");
+    } else {
+      dispatch(addToCart({ ...product, quantity: units }));
+      toast.success("Product added to the cart");
+      setUnits(1);
+    }
+  };
 
   return (
     <>
+     
       <div className="product-card">
         <div
           className="card shadow p-0 position-relative"
@@ -43,7 +56,7 @@ function ProductModel({ product }) {
                 ></i>
               </div>
               <button
-                onClick={() => dispatch(addToCart(product))}
+                onClick={handleAddToCart}
                 className=" w-25 button-add type1"
               >
                 <i className="bi bi-cart2 fs-4"></i>
