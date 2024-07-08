@@ -10,11 +10,13 @@ import "../styles/navbar.css";
 import Cart from "./Cart";
 import CartProduct from "./CartProduct";
 
+
 function NavBarApp() {
   const [categories, setCategories] = useState();
   const [showCart, setShowCart] = useState(false);
   const handleCloseCart = () => setShowCart(false);
   const handleShowCart = () => setShowCart(true);
+ 
 
   useEffect(() => {
     const getCategories = async () => {

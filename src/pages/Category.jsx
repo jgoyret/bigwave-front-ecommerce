@@ -20,7 +20,6 @@ function Category() {
         method: "get",
       });
       setCategory(response.data);
-      console.log(response.data);
     };
     getCategory();
   }, [location.pathname]);

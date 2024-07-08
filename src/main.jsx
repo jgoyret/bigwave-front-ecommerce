@@ -4,9 +4,19 @@ import App from "./App.jsx";
 import "./index.css";
 import "./styles/fonts.css";
 import "./styles/transitions.css";
+import { Provider } from "react-redux";
+import store from "./redux/storeConfig.js";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
+
+const persistor = persistStore(store);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <App />
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
