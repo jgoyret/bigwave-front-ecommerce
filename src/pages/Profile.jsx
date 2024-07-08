@@ -2,8 +2,6 @@ import NavBarApp from "../components/NavBarApp";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Fab from "@mui/material/Fab";
-import EditIcon from "@mui/icons-material/Edit";
 
 function Profile() {
   const token = useSelector((state) => state.user.token);
@@ -34,12 +32,7 @@ function Profile() {
       <NavBarApp />
       <div className="mt-5">
         <h3>
-          My profile{" "}
-          <span>
-            <Fab color="secondary" aria-label="edit">
-              <EditIcon />
-            </Fab>
-          </span>
+          My profile <span></span>
         </h3>
         <p>Firstname: {loggedUser.firstname}</p>
         <p>Lastname: {loggedUser.lastname}</p>
