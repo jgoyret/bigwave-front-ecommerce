@@ -4,8 +4,17 @@ import NavBarApp from "../components/NavBarApp";
 import Footer from "../components/Footer";
 import "../styles/Checkout.css";
 import CountrySelect from "../components/CountrySelect";
+import { useSelector } from "react-redux";
+import {
+  removeFromCart,
+  addQuantity,
+  removeQuantity,
+} from "../redux/cartReducer";
+import { useDispatch } from "react-redux";
 
 function Checkout() {
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   return (
     <>
       <NavBarApp />
@@ -143,25 +152,52 @@ function Checkout() {
           </div>
           <div className="col-md-12 col-lg-6 ">
             <h3>Order Summary</h3>
-            <div className="flex-row row card object-fit-cover shadow">
-              <div className=" col-3">
-                <img
-                  className="cart-image img-fluid object-fit-cover w-100 h-100"
-                  src="/jugo-removebg-preview.png"
-                  alt="Card image cap"
-                ></img>
-              </div>
-              <div className="col-9">
-                <div className="d-flex justify-content-between mb-5 pt-3">
-                  <h6 className="card-title">Pack Picada - Humus</h6>
-                  <i className="bi bi-trash"></i>
+            {cart.map((item) => (
+              <div className="flex-row row card object-fit-cover shadow">
+                <div className=" col-3">
+                  <img
+                    className="cart-image img-fluid object-fit-cover w-100 h-100"
+                    src={item.image}
+                    alt="Card image cap"
+                  ></img>
                 </div>
-                <div className="d-flex justify-content-between">
-                  <p className="fw-bold">35 USD</p>
-                  <p>Qty: 1</p>
-                </div>
-              </div>
+                <div className="col-9">
+                  <div className="card-content">
+                    <div className="product-name mt-3 fs-5">{item.name}</div>
+                    <div className="product-description ">
+                      <p className="fw-bold">
+                        $ <span>{(item.price * item.quantity).toFixed(2)}</span>
+                      </p>
+                      <div className="d-flex justify-content-between">
+                        <p>
+                          Quantity:{" "}
+                          <i
+                            onClick={() =>
+                              dispatch(removeQuantity({ id: item.id }))
+                            }
+                            className="bi bi-dash-circle"
+                          ></i>{" "}
+                          {item.quantity}{" "}
+                          <i
+                            onClick={() =>
+                              dispatch(addQuantity({ id: item.id }))
+                            }
+                            className="bi bi-plus-circle"
+                          ></i>
+                        </p>
 
+                        <i
+                          onClick={() => dispatch(removeFromCart(item.id))}
+                          className="bi bi-trash"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+            <hr />
+            <div>
               <hr />
               <div className="d-flex strong justify-content-between">
                 <p>Subtotal</p>
