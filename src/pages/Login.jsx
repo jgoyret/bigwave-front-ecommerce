@@ -7,23 +7,27 @@ import Footer from '../components/Footer';
 import '../styles/Login.css';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import login from '../redux/userSlice';
+import { login } from '../redux/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
 	const dispatch = useDispatch();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-
+	const navigate = useNavigate();
 	const handleLogin = async (e) => {
 		e.preventDefault();
 		try {
 			const response = await axios({
-				url: `${import.meta.env.VITE_API_URL}/tokens`,
+				url: `${import.meta.env.VITE_API_URL}/tokens/user`,
 				method: 'post',
 				data: { email, password },
 			});
+
 			if (response.data.token) {
+				console.log(`estoy en el if`);
 				dispatch(login(response.data));
+				navigate('/');
 			}
 		} catch (error) {
 			console.log(error);
