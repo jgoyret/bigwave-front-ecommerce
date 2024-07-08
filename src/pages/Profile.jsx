@@ -8,6 +8,7 @@ function Profile() {
   const [loggedUser, setLoggedUser] = useState();
 
   useEffect(() => {
+    // console.log(token);
     const getUser = async () => {
       try {
         const response = await axios({
@@ -34,10 +35,25 @@ function Profile() {
         <h3>
           My profile <span></span>
         </h3>
-        <p>Firstname: {loggedUser.firstname}</p>
-        <p>Lastname: {loggedUser.lastname}</p>
-        {/* <p>Address: {loggedUser.address}</p> */}
-        <p>Email: {loggedUser.email}</p>
+
+        {loggedUser && (
+          <div className="container">
+            <div className="row">
+              <div className="col-12 col-md-6">
+                <h4>Personal information</h4>
+                <p>
+                  <strong>Name:</strong> {loggedUser.firstname}
+                </p>
+                <p>
+                  <strong>Lastname:</strong> {loggedUser.lastname}
+                </p>
+                <p>
+                  <strong>Email:</strong> {loggedUser.email}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
