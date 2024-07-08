@@ -3,8 +3,16 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
 import CartProduct from "./CartProduct";
 import "../styles/cart.css";
+import { useSelector } from "react-redux";
 
 function Cart({ show, handleClose }) {
+  const cart = useSelector((state) => state.cart);
+
+  const totalAmount = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+
   return (
     <>
       <Offcanvas show={show} onHide={handleClose} placement="end">
@@ -18,9 +26,7 @@ function Cart({ show, handleClose }) {
               <hr />
               <div className="d-flex justify-content-between">
                 <h6>Subtotal</h6>
-                <p>
-                  Price: $ <span>20</span>
-                </p>
+                <span>{totalAmount.toFixed(2)}</span>
               </div>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
