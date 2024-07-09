@@ -5,10 +5,28 @@ import axios from "axios";
 import BreadcrumbApp from "../components/BreadcrumbApp";
 import Footer from "../components/Footer";
 import "../styles/productview.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../redux/cartReducer";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ProductView() {
+  const cart = useSelector((state) => state.cart);
   const [product, setProduct] = useState(null);
   const params = useParams();
+  const [units, setUnits] = useState(1);
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    if (units <= 0) {
+      toast.info("Units must be higher than 1");
+    } else {
+      dispatch(addToCart({ ...product, quantity: units }));
+      toast.success("Product added to the cart");
+      setUnits(1);
+    }
+  };
 
   useEffect(() => {
     const getProduct = async () => {
@@ -43,13 +61,24 @@ function ProductView() {
                 <p className="fs-4 fw-light">{product.description}</p>
                 <div className="d-flex align-items-center">
                   <div className="fs-4">
-                    <i className="bi bi-dash-circle"></i>
-                    <span className="ms-2">0</span>
-                    <i className="ms-2 bi bi-plus-circle"></i>
+                    <i
+                      className="bi bi-dash-circle"
+                      onClick={() => setUnits(units - 1)}
+                    ></i>
+                    <span className="ms-2 user-select-none">{units}</span>
+                    <i
+                      className="ms-2 bi bi-plus-circle"
+                      onClick={() => setUnits(units + 1)}
+                    ></i>
                   </div>
-                  <button className="ms-4 w-50 button-add type1">
+                  <button
+                    className="ms-4 w-50 button-add type1"
+                    onClick={handleAddToCart}
+                  >
                     <i className="bi bi-cart2"></i>
-                    <span className="btn-txt ms-3">Add to cart</span>
+                    <span className="btn-txt ms-3 user-select-none">
+                      Add to cart
+                    </span>
                   </button>
                   <i className="bi bi-suit-heart ms-3 fs-3"></i>
                 </div>

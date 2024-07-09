@@ -18,6 +18,10 @@ function Category() {
       const response = await axios({
         url: `${import.meta.env.VITE_API_URL}/categories/${params.slug}`,
         method: "get",
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+          "Content-Type": "application/json",
+        },
       });
       setCategory(response.data);
     };

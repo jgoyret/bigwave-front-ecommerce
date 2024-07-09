@@ -19,9 +19,22 @@ function AllProducts() {
     };
     getProducts();
   }, []);
+
   return (
     <>
       <NavBarApp />
+      <div className="container">
+        <header>
+          <div
+            className="d-flex category-header justify-content-center align-items-center position-relative "
+            id="header-image"
+          >
+            <div className="ms-5 text-center fw-bold">
+              <h2 className="text-capitalize">All products</h2>
+            </div>
+          </div>
+        </header>
+      </div>
       <div className="d-flex justify-content-center container-main-products">
         <ProductsNavbar />
         <div>

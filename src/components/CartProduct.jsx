@@ -18,7 +18,8 @@ function CartProduct() {
             <div className="card-icon">
               <div>
                 <img
-                  className="img-fluid object-fit-cover rounded-circle shadow"
+                  className="img-fluid object-fit-cover rounded shadow"
+                  style={{ aspectRatio: 1 / 1 }}
                   src={item.image}
                   alt={`imagen de ${item.name}`}
                 />

@@ -22,7 +22,6 @@ function ProductModel({ product }) {
 
   return (
     <>
-     
       <div className="product-card">
         <div
           className="card shadow p-0 position-relative"
@@ -60,7 +59,6 @@ function ProductModel({ product }) {
                 className=" w-25 button-add type1"
               >
                 <i className="bi bi-cart2 fs-4"></i>
-                {/* <span className="btn-txt ms-3">Add to cart</span> */}
               </button>
             </div>
           </div>
