@@ -96,7 +96,6 @@ function Profile() {
             "Content-Type": "application/json",
           },
         });
-        console.log(response.data);
         setLoggedUser(response.data);
       } catch (error) {
         console.log(error);
@@ -147,7 +146,10 @@ function Profile() {
               <h3>My Orders</h3>
             </div>
             {loggedUser.Orders.map((order) => (
-              <div className="container border border-dark d-flex">
+              <div
+                key={order.id}
+                className="container border border-dark d-flex"
+              >
                 <div className="row">
                   <div className="col">Número:{order.id}</div>
                   <div className="col">{order.createdAt}</div>
@@ -156,7 +158,7 @@ function Profile() {
                   <div className="col">{order.totalAmount}</div>
                   <ul>
                     {order.products.map((item) => (
-                      <li>
+                      <li key={item.id}>
                         {item.name} x {item.quantity}
                       </li>
                     ))}

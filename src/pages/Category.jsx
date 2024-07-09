@@ -7,8 +7,10 @@ import "../styles/Products.css";
 import ProductsNavbar from "./ProductsNavbar";
 import Footer from "../components/Footer";
 import BreadcrumbApp from "../components/BreadcrumbApp";
+import { useSelector } from "react-redux";
 
 function Category() {
+  const user = useSelector((state) => state.user);
   const [category, setCategory] = useState();
   const params = useParams();
   const location = useLocation();
@@ -27,7 +29,6 @@ function Category() {
     };
     getCategory();
   }, [location.pathname]);
-  console.log(category);
   return (
     <>
       <NavBarApp />
