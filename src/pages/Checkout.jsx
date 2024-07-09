@@ -15,6 +15,7 @@ import axios from "axios";
 
 function Checkout() {
   const cart = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.user);
   const { id, name, price, quantity, categoryId } = cart;
 
   const dispatch = useDispatch();
@@ -27,15 +28,35 @@ function Checkout() {
   const taxes = 20;
   const totalAmount = (subTotal + taxes + shipping).toFixed(2);
 
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    username: "",
+    address: "",
+    city: "",
+    state: "",
+    postalcode: "",
+    phone: "",
+  });
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const handleAddOrder = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/orders`,
         {
+          userId: user.id,
           products: cart,
+          form: formData,
           totalAmount: totalAmount,
-          address: "Jose ellauri",
+          address: formData.address,
         }
       );
 
@@ -59,9 +80,12 @@ function Checkout() {
               <TextField
                 className="bg-transparent"
                 id="email"
+                name="email"
                 label="Email"
                 type="email"
                 variant="outlined"
+                value={formData.email}
+                onChange={handleChange}
                 fullWidth
               />
               <hr />
@@ -70,17 +94,23 @@ function Checkout() {
                 <TextField
                   className="bg-transparent"
                   id="firstname"
+                  name="firstname"
                   label="First Name"
                   type="text"
                   variant="outlined"
+                  value={formData.firstname}
+                  onChange={handleChange}
                   fullWidth
                 />
                 <TextField
                   className="bg-transparent"
                   id="lastname"
+                  name="lastname"
                   label="Last Name"
                   type="text"
                   variant="outlined"
+                  value={formData.lastname}
+                  onChange={handleChange}
                   fullWidth
                 />
               </div>
@@ -88,9 +118,12 @@ function Checkout() {
                 <TextField
                   className="bg-transparent"
                   id="address"
+                  name="address"
                   label="Address"
                   type="text"
                   variant="outlined"
+                  value={formData.address}
+                  onChange={handleChange}
                   fullWidth
                 />
               </div>
@@ -98,9 +131,12 @@ function Checkout() {
                 <TextField
                   className="bg-transparent"
                   id="city"
+                  name="city"
                   label="City"
                   type="text"
                   variant="outlined"
+                  value={formData.city}
+                  onChange={handleChange}
                   fullWidth
                 />
                 <CountrySelect />
@@ -109,26 +145,35 @@ function Checkout() {
                 <TextField
                   className="bg-transparent"
                   id="state"
+                  name="state"
                   label="State"
                   type="text"
                   variant="outlined"
+                  value={formData.state}
+                  onChange={handleChange}
                   fullWidth
                 />
                 <TextField
                   className="bg-transparent"
                   id="postalcode"
+                  name="postalcode"
                   label="Postal Code"
                   type="text"
                   variant="outlined"
+                  value={formData.postalcode}
+                  onChange={handleChange}
                   fullWidth
                 />
               </div>
               <TextField
                 className="bg-transparent"
                 id="phone"
+                name="phone"
                 label="Phone"
                 type="text"
                 variant="outlined"
+                value={formData.phone}
+                onChange={handleChange}
                 fullWidth
               />
               <hr />
