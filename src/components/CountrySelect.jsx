@@ -2,14 +2,13 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import "../styles/CountrySelect.css";
 
 export default function CountrySelect() {
   return (
     <div id="countrySelect">
       <Autocomplete
         id="country-select-demo"
-        sx={{ width: 320, backgroundColor: "transparent" }}
+        sx={{ width: 208, backgroundColor: "transparent" }}
         options={countries}
         autoHighlight
         getOptionLabel={(option) => option.label}
