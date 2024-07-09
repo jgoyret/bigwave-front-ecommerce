@@ -49,16 +49,21 @@ function Checkout() {
   const handleAddOrder = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/orders`,
-        {
+      const response = await axios({
+        url: `${import.meta.env.VITE_API_URL}/orders`,
+        method: "POST",
+        data: {
           userId: user.id,
           products: cart,
           form: formData,
           totalAmount: totalAmount,
           address: formData.address,
-        }
-      );
+        },
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+          "Content-Type": "application/json",
+        },
+      });
 
       if (response.status === 200) {
         console.log("Order created");
