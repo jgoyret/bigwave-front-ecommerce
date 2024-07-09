@@ -8,9 +8,13 @@ const userSlice = createSlice({
 			console.log(action.payload);
 			return (state = action.payload);
 		},
+		logout(state) {
+			console.log('estamos en logout');
+			return (state = {});
+		},
 	},
 });
 
 const { actions, reducer } = userSlice;
-export const { login } = actions;
+export const { login, logout } = actions;
 export default reducer;
