@@ -9,6 +9,7 @@ import Category from "./pages/Category";
 import Checkout from "./pages/Checkout";
 import ErrorPage from "./pages/ErrorPage";
 import Profile from "./pages/Profile";
+import OrderGreetings from "./pages/OrderGreetings";
 
 function App() {
   const router = createBrowserRouter([
@@ -47,6 +48,10 @@ function App() {
     {
       path: "/my-profile",
       element: <Profile />,
+    },
+    {
+      path: "/order-completed",
+      element: <OrderGreetings />,
     },
     {
       path: "*",

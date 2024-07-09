@@ -12,6 +12,7 @@ import {
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Checkout() {
   const cart = useSelector((state) => state.cart);
@@ -19,6 +20,7 @@ function Checkout() {
   const { id, name, price, quantity, categoryId } = cart;
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const subTotal = cart.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -64,9 +66,9 @@ function Checkout() {
           "Content-Type": "application/json",
         },
       });
-
       if (response.status === 200) {
         console.log("Order created");
+        navigate("/order-completed");
       } else {
         console.log("there was a problem with your order");
       }
