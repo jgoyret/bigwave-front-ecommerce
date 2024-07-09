@@ -9,7 +9,7 @@ export default function CountrySelect() {
     <div id="countrySelect">
       <Autocomplete
         id="country-select-demo"
-        sx={{ width: 300 }}
+        sx={{ width: 320, backgroundColor: "transparent" }}
         options={countries}
         autoHighlight
         getOptionLabel={(option) => option.label}
@@ -35,6 +35,7 @@ export default function CountrySelect() {
         }}
         renderInput={(params) => (
           <TextField
+            sx={{ backgroundColor: "transparent" }}
             {...params}
             label="Choose a country"
             inputProps={{

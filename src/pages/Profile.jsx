@@ -8,7 +8,7 @@ function Profile() {
   const [loggedUser, setLoggedUser] = useState();
 
   useEffect(() => {
-    // console.log(token);
+   
     const getUser = async () => {
       try {
         const response = await axios({
