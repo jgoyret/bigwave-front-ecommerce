@@ -15,6 +15,8 @@ import axios from "axios";
 
 function Checkout() {
   const cart = useSelector((state) => state.cart);
+  const { id, name, price, quantity, categoryId } = cart;
+
   const dispatch = useDispatch();
 
   const subTotal = cart.reduce(
@@ -23,7 +25,7 @@ function Checkout() {
   );
   const shipping = 30;
   const taxes = 20;
-  const finalPrice = (subTotal + taxes + shipping).toFixed(2);
+  const totalAmount = (subTotal + taxes + shipping).toFixed(2);
 
   const handleAddOrder = async (e) => {
     e.preventDefault();
@@ -31,7 +33,9 @@ function Checkout() {
       const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/orders`,
         {
-          cart,
+          products: cart,
+          totalAmount: totalAmount,
+          address: "Jose ellauri",
         }
       );
 
@@ -243,7 +247,7 @@ function Checkout() {
               <hr />
               <div className="d-flex justify-content-between">
                 <h3>Total</h3>
-                <p className="fw-bold">{finalPrice} USD</p>
+                <p className="fw-bold">{totalAmount} USD</p>
               </div>
             </div>
             <button onClick={handleAddOrder} className="btn btn-primary">
