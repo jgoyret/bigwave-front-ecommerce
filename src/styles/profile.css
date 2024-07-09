@@ -14,6 +14,7 @@
   overflow: hidden;
   position: relative;
   text-decoration: none !important;
+  /* padding: 7px; */
 }
 
 .edit-svgIcon {
@@ -26,7 +27,7 @@
 }
 
 .edit-button:hover {
-  width: 120px;
+  width: 100px;
   border-radius: 50px;
   transition-duration: 0.3s;
   background-color: rgb(255, 69, 69);
@@ -34,7 +35,7 @@
 }
 
 .edit-button:hover .edit-svgIcon {
-  width: 20px;
+  width: 15px;
   transition-duration: 0.3s;
   transform: translateY(60%);
   -webkit-transform: rotate(360deg);
@@ -55,7 +56,7 @@
 .edit-button:hover::before {
   display: block;
   padding-right: 10px;
-  font-size: 13px;
+  font-size: 0.7rem;
   opacity: 1;
   transform: translateY(0px);
   transition-duration: 0.3s;
