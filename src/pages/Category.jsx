@@ -23,7 +23,7 @@ function Category() {
     };
     getCategory();
   }, [location.pathname]);
-
+  console.log(category);
   return (
     <>
       <NavBarApp />
@@ -44,7 +44,7 @@ function Category() {
           <ProductsNavbar />
           {category && (
             <div className="products-container container mt-5">
-              {category.map((c) => {
+              {category.Products.map((c) => {
                 return <ProductModel key={c.id} product={c} />;
               })}
             </div>
