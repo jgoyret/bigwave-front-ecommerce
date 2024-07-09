@@ -4,13 +4,11 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import StepContent from "@mui/material/StepContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "../styles/AboutUs.css";
 
 import NavBarApp from "../components/NavBarApp";
 import Footer from "../components/Footer";
-import { colors } from "@mui/material";
 
 function About() {
   const steps = [
@@ -31,26 +29,12 @@ function About() {
     },
   ];
 
-  const [activeStep, setActiveStep] = React.useState(0);
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleReset = () => {
-    setActiveStep(0);
-  };
-
   return (
     <>
       <NavBarApp />
-      <div className="container container-about d-flex">
+      <div className="container container-about">
         <div className="row">
-          <div className="col-12 col-md-8" id="aboutText">
+          <div className="col-12 col-md-12" id="aboutText">
             <h1>About this project</h1>
             <p>
               The following e-commerce site is a project developed by students
@@ -60,57 +44,34 @@ function About() {
               invest more than 600 hours in learning about Node.js, Express,
               React.js, SQL, MongoDB, and Git.
             </p>
-          </div>
-          <div id="stepper" className="col-12 col-md-4">
-            <Box>
-              <Stepper activeStep={activeStep} orientation="vertical">
-                {steps.map((step, index) => (
-                  <Step key={step.label}>
-                    <StepLabel
-                      StepIconProps={{
-                        sx: {
-                          color: "green",
-                        },
-                      }}
-                    >
-                      {step.label}
-                    </StepLabel>
-                    <StepContent>
-                      <Typography>{step.description}</Typography>
-                      <Box>
-                        <div>
-                          <Button onClick={handleNext} sx={{ color: "green" }}>
-                            {index === steps.length - 1 ? "Finish" : "Continue"}
-                          </Button>
-                          <Button
-                            disabled={index === 0}
-                            onClick={handleBack}
-                            sx={{ color: "green", ml: 1 }}
-                          >
-                            Back
-                          </Button>
-                        </div>
-                      </Box>
-                    </StepContent>
-                  </Step>
-                ))}
-              </Stepper>
-              {activeStep === steps.length && (
-                <Button sx={{ color: "green" }} onClick={handleReset}>
-                  Reset
-                </Button>
-              )}
-            </Box>
+
+            <div id="stepper" className="col-12 col-md-12">
+              <Box>
+                <Stepper orientation="vertical">
+                  {steps.map((step) => (
+                    <Step key={step.label} active={true}>
+                      <StepLabel className="">{step.label}</StepLabel>
+                      <StepContent>
+                        <Typography className="text-justify">
+                          {step.description}
+                        </Typography>
+                      </StepContent>
+                    </Step>
+                  ))}
+                </Stepper>
+              </Box>
+            </div>
           </div>
         </div>
       </div>
+
       <div id="team">
         <div className="text-center mt-5">
           <div className="heading">
             <h3>Meet the Team</h3>
           </div>
           <div className="container">
-            <div className="row justify-content-center">
+            <div className="row justify-content-center mt-5">
               <div className="card-client col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2">
                 <div className="user-picture">
                   <img

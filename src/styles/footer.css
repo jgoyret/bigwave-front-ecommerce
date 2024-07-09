@@ -2,11 +2,20 @@ a {
   text-decoration: none;
   color: grey;
 }
-footer{
+footer {
   margin-top: 88px;
+}
+
+footer h5 {
+  font-size: 1rem;
+}
+
+footer a {
+  font-size: 0.9rem;
 }
 .copy-color {
   color: grey;
+  font-size: 0.8rem;
 }
 .input-container {
   position: relative;
@@ -27,7 +36,7 @@ footer{
   border: 1px solid rgb(176 190 197);
   background-color: transparent;
   padding: 0.625rem 70px 0.625rem 0.75rem;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   line-height: 1.25rem;
   font-weight: 400;
   color: rgb(69 90 100);
@@ -47,7 +56,7 @@ footer{
   bottom: 4px;
   z-index: 10;
   border-radius: 4px;
-  background-color: rgb(236 72 153);
+  background-color: #aad054;
   color: #fff;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -55,7 +64,7 @@ footer{
   padding-right: 0.5rem;
   text-align: center;
   vertical-align: middle;
-  font-size: 12px;
+  font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
   border: none;

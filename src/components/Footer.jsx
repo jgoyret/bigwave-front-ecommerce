@@ -18,7 +18,7 @@ function Footer() {
               <h5>Company</h5>
               <ul className="list-group">
                 <li className="li-footer mb-3">
-                  <a href="/about-this-project">Who we are</a>
+                  <a href="/about-this-project">About us</a>
                 </li>
                 <li className="li-footer mb-3">
                   <a href="/about-this-project">Terms & Conditions</a>
@@ -63,7 +63,7 @@ function Footer() {
             </div>
 
             <div className="col-12 col-md-3 mb-4">
-              <p>SUBSCRIBE TO OUR MAILING LIST</p>
+              <h5>SUBSCRIBE TO OUR MAILING LIST</h5>
               <div className="input-container">
                 <input
                   required

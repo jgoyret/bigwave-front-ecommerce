@@ -1,8 +1,10 @@
 .card-client {
   position: relative; /* Necesario para el pseudo-elemento */
   margin: 1rem;
+  background-color: transparent;
   background-image: url(https://www.acquabella.com/wp-content/uploads/2022/09/TEXTURA-WAVE-ACQUABELLA.jpg);
-  width: 14rem;
+  width: 12rem;
+  height: 16rem;
   padding-top: 25px;
   padding-bottom: 25px;
   padding-left: 20px;
@@ -13,6 +15,16 @@
   color: #fff;
   transition: all 0.3s ease-in-out;
   /* opacity: ; */
+  /* clip-path: polygon(
+    30px 0%,
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0 100%,
+    0% 30px
+  );
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px; */
 }
 
 .card-client::before {
@@ -35,19 +47,18 @@
   left: 0;
   width: 100%;
   height: 100%;
-  border: #000000d2 2px solid;
+  /* border: #000000d2 2px solid; */
   border-radius: 10px;
 
   z-index: -1;
 }
-
 .card-client {
   position: relative;
   z-index: 1;
 }
 
 .card-client:hover {
-  /* animation: rotateCard 2s linear; */
+  animation: rotateCard 2s linear;
   box-shadow: #0000003f 0px 10px 10px 0px;
   transform: translate3d(0, -10px, 0);
   cursor: pointer;
@@ -67,6 +78,16 @@
   justify-content: center;
   align-items: center;
   margin: auto;
+  /* border: #424242 5px solid; */
+  /* transition: all 0.3s ease-in-out; */
+  /* border: white 2px solid; */
+}
+.card-client:hover {
+  /* box-shadow: #0000003f 0px 10px 10px 0px; */
+  transform: translate3d(0, -10px, 0);
+  cursor: pointer;
+  animation-play-state: running;
+  animation-fill-mode: forwards;
 }
 
 .user-picture img {
@@ -80,23 +101,23 @@
   margin: 0;
   margin-top: 20px;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 .name-client span {
   display: block;
-  font-weight: 200;
-  font-size: 16px;
+  font-weight: 300;
+  font-size: 0.9rem;
 }
 
-.social-media:before {
+/* .social-media:before {
   content: " ";
   display: block;
   width: 100%;
-  height: 2px;
+  height: 1px;
   margin: 20px 0;
   background: #464646;
-}
+} */
 
 .social-media a {
   position: relative;
@@ -109,20 +130,25 @@
   margin-right: 0;
 }
 
+.social-media a:hover {
+  color: #aad054;
+}
+
 .social-media a svg {
   width: 1.1rem;
   fill: currentColor;
 }
 
 .tooltip-social {
-  background: #262626;
+  background: #424242;
   display: block;
+  color: #fff;
   position: absolute;
   bottom: 0;
   left: 50%;
-  padding: 0.5rem 0.4rem;
+  padding: 0.4rem 0.3rem;
   border-radius: 5px;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   font-weight: 600;
   opacity: 0;
   pointer-events: none;
@@ -143,7 +169,7 @@
 }
 
 .social-media a .tooltip-social:after {
-  border-top-color: #262626;
+  border-top-color: #424242;
 }
 
 .social-media a:hover .tooltip-social {
@@ -155,23 +181,33 @@ img {
   object-fit: cover;
 }
 
-#stepper {
-  box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
-}
-
 #team {
   margin-bottom: 200px;
   padding-bottom: 2rem;
 }
 
 #aboutText {
-  padding: 2rem;
-  background-image: url("/delicioso-desayuno-yogurt-frutas_23-2148529414.jpg");
+  /* padding: 2rem; */
+  /* background-image: url("/delicioso-desayuno-yogurt-frutas_23-2148529414.jpg"); */
   background-position: center;
-  box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
+  /* box-shadow: 0 6px 10px rgba(207, 212, 222, 1); */
+  z-index: 1;
+}
+
+#aboutText::after {
+  content: "";
+  background-color: #4242425d;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 9rem;
+  z-index: -1;
+  border-bottom: #424242 5px solid;
 }
 
 #aboutText p {
+  text-align: justify;
   width: 63%;
 }
 
@@ -184,7 +220,7 @@ img {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background: url(../images/border.png) no-repeat center;
+  /* background: url(../images/border.png) no-repeat center; */
 }
 
 .heading h3:before,
@@ -192,7 +228,7 @@ img {
   content: "";
   width: 100%;
   display: inline-block;
-  border-bottom: 1px solid;
+  /* border-bottom: 1px solid; */
   height: 0;
   vertical-align: middle;
 }
@@ -207,11 +243,27 @@ img {
   margin-right: -100%;
 }
 
-#stepper .css-1uzq1qw-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed,
-#stepper .css-1uzq1qw-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
-  color: green !important;
+#stepper .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+  color: #212529 !important;
 }
+#stepper .css-1hv8oq8-MuiStepLabel-label.Mui-active {
+  font-weight: 600;
+}
+
+#stepper .css-1hv8oq8-MuiStepLabel-label,
+#stepper .css-ahj2mt-MuiTypography-root {
+  font-family: "Axiforma", sans-serif;
+  font-size: 0.9rem;
+}
+
+/* #stepper {
+  padding-left: 30px;
+} */
 
 .container-about {
   padding-top: 100px;
+}
+
+.text-justify {
+  text-align: justify;
 }
