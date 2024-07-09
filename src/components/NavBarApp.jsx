@@ -4,13 +4,14 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/navbar.css";
 import Cart from "./Cart";
 import CartProduct from "./CartProduct";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/userSlice";
+import { toast } from "react-toastify";
 
 function NavBarApp() {
   const token = useSelector((state) => state.user.token);
@@ -19,7 +20,19 @@ function NavBarApp() {
   const [showCart, setShowCart] = useState(false);
   const handleCloseCart = () => setShowCart(false);
   const handleShowCart = () => setShowCart(true);
-  const handleLogout = () => dispatch(logout());
+
+  const navigate = useNavigate();
+
+  const handleLogout = async (e) => {
+    e.preventDefault();
+    try {
+      dispatch(logout());
+      toast.info("You logged out :( see you soon!");
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
     const getCategories = async () => {
       const response = await axios({

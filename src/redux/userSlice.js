@@ -7,8 +7,9 @@ const userSlice = createSlice({
     login(state, action) {
       return (state = action.payload);
     },
-    logout(state) {
-      return (state = {});
+    logout(state, action) {
+      state.token = null;
+      state.user = null;
     },
   },
 });
