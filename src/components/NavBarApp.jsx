@@ -11,6 +11,7 @@ import Cart from "./Cart";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/userSlice";
 import { toast } from "react-toastify";
+import { clearCart } from "../redux/cartReducer";
 
 function NavBarApp() {
   const token = useSelector((state) => state.user.token);
@@ -30,6 +31,7 @@ function NavBarApp() {
     e.preventDefault();
     try {
       dispatch(logout());
+      dispatch(clearCart());
       toast.info("You logged out :( see you soon!");
       navigate("/");
     } catch (error) {
