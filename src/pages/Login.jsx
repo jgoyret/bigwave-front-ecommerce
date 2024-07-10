@@ -67,13 +67,18 @@ function Login() {
                 controlId="formBasicCheckbox"
               >
                 <Form.Check type="checkbox" label="Remember me" />
-                <Link to={"/register"} className="text-decoration-none fw-bold">
+                <Link to={"/register"} className="text-decoration-none">
                   Not register yet?
                 </Link>
               </Form.Group>
-              <Button className="w-100" variant="primary" type="submit">
+              <Button className="w-100 mb-3" variant="primary" type="submit">
                 Login
               </Button>
+              <div className="d-flex justify-content-center">
+                <Link to="" className="text-center text-decoration-underline">
+                  Forgot your password?
+                </Link>
+              </div>
             </Form>
           </div>
         </div>
