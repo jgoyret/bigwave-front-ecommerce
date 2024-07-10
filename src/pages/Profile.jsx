@@ -151,17 +151,26 @@ function Profile() {
               </div>
             </div>
             {/* MIS ORDENES */}
-            <div className="my-5">
-              <h3>My Orders</h3>
+            <div className="my-orders">
+              <h3>MY ORDERS</h3>
             </div>
+            <div className="order-header">
+              <div className="row w-100">
+                <div className="col-md-2 col-4">Order</div>
+                <div className="col-md-2 col-4">Date</div>
+                <div className="col-md-2 d-none d-md-inline">Address</div>
+                <div className="col-md-2 d-none d-md-inline">Status</div>
+                <div className="col-md-2 d-none d-md-inline">Total</div>
+                <div className="col-md-2 col-4">Actions</div>
+              </div>
+            </div>
+
             {loggedUser.Orders.length === 0 && <h5>No orders yet</h5>}
             {loggedUser.Orders.length > 0 &&
               loggedUser.Orders.map((order) => (
                 <div key={order.id} className="order-detail ">
-                  <div className="row">
-                    <div className="col-md-2 col-4 fw-bold">
-                      Número:{order.id}
-                    </div>
+                  <div className="row w-100">
+                    <div className="col-md-2 col-4 fw-bold">{order.id}</div>
                     <div className="col-md-2 col-4">
                       {order.createdAt.slice(0, 10)}
                     </div>
@@ -176,7 +185,7 @@ function Profile() {
                     </div>
                     <div className="col-md-2 col-4">
                       <button
-                        className="button-add type1 "
+                        className="view-order "
                         onClick={() => handleGoToOrder(order)}
                       >
                         View Order
