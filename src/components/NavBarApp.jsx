@@ -8,16 +8,19 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/navbar.css";
 import Cart from "./Cart";
-import CartProduct from "./CartProduct";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/userSlice";
 import { toast } from "react-toastify";
 
 function NavBarApp() {
   const token = useSelector((state) => state.user.token);
-  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+
   const [categories, setCategories] = useState();
   const [showCart, setShowCart] = useState(false);
+
+  const dispatch = useDispatch();
+
   const handleCloseCart = () => setShowCart(false);
   const handleShowCart = () => setShowCart(true);
 
@@ -157,8 +160,16 @@ function NavBarApp() {
               )}
             </NavDropdown>
 
-            <NavLink className="nav-link" onClick={handleShowCart}>
+            <NavLink
+              className="nav-link position-relative"
+              onClick={handleShowCart}
+            >
               <i className="bi bi-cart cart-resp text-dark mx-2 fs-4 "></i>
+              {cart.length > 0 && (
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {cart.length}
+                </span>
+              )}
             </NavLink>
           </Navbar.Collapse>
         </Container>

@@ -3,8 +3,6 @@ import NavBarApp from "../components/NavBarApp";
 import Slider from "../components/Slider";
 import Questions from "../components/Questions";
 import Footer from "../components/Footer";
-import Cart from "../components/Cart";
-
 import { Player } from "@lordicon/react";
 import plant from "../icons/wired-outline-1827-growing-plant.json";
 import star from "../icons/wired-outline-237-star-rating.json";

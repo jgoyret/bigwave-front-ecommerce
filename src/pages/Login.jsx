@@ -15,6 +15,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -88,7 +89,7 @@ function Login() {
           <div>
             <h6>Log in as a buyer</h6>
             <ul>
-              <li>Email: maria.perez@gmail.com</li>
+              <li>Email: carlitos@gmail.com</li>
               <li>Password: 1234</li>
             </ul>
           </div>
