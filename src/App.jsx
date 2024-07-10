@@ -10,6 +10,7 @@ import Checkout from "./pages/Checkout";
 import ErrorPage from "./pages/ErrorPage";
 import Profile from "./pages/Profile";
 import OrderGreetings from "./pages/OrderGreetings";
+import OrderInfo from "./pages/OrderInfo";
 
 function App() {
   const router = createBrowserRouter([
@@ -52,6 +53,10 @@ function App() {
     {
       path: "/order-completed",
       element: <OrderGreetings />,
+    },
+    {
+      path: "/order/:orderId",
+      element: <OrderInfo />,
     },
     {
       path: "*",
