@@ -147,36 +147,39 @@ function Profile() {
             >
               Change password
             </button>
-            <div className="mt-5">
+
+            {/* MIS ORDENES */}
+            <div className="my-5">
               <h3>My Orders</h3>
             </div>
             {loggedUser.Orders.length === 0 && <h5>No orders yet</h5>}
             {loggedUser.Orders.length > 0 &&
               loggedUser.Orders.map((order) => (
-                <div key={order.id} className="order-detail">
+                <div key={order.id} className="order-detail ">
                   <div className="row">
-                    <div className="col fw-bold">Número:{order.id}</div>
-                    <div className="col-3">{order.createdAt.slice(0, 10)}</div>
-                    <div className="col">{order.address}</div>
-                    <div className="col-2">{order.status}</div>
-                    <div className="col">{order.totalAmount}</div>
-                    {/* <ul>
-                      {order.products.map((item) => (
-                        <li key={item.id}>
-                          {item.name} x {item.quantity}
-                        </li>
-                      ))}
-                    </ul> */}
-                  </div>
-                  <div className="ms-auto">
-                    {" "}
-                    <Button
-                      variant="contained"
-                      className="button-add"
-                      onClick={() => handleGoToOrder(order)}
-                    >
-                      View Order
-                    </Button>
+                    <div className="col-md-2 col-4 fw-bold">
+                      Número:{order.id}
+                    </div>
+                    <div className="col-md-2 col-4">
+                      {order.createdAt.slice(0, 10)}
+                    </div>
+                    <div className="col-md-2 d-none d-md-inline">
+                      {order.address}
+                    </div>
+                    <div className="col-md-2 d-none d-md-inline">
+                      {order.status}
+                    </div>
+                    <div className="col-md-2 d-none d-md-inline">
+                      {order.totalAmount}
+                    </div>
+                    <div className="col-md-2 col-4">
+                      <button
+                        className="button-add type1 "
+                        onClick={() => handleGoToOrder(order)}
+                      >
+                        View Order
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
