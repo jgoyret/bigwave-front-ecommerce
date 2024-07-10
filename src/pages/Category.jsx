@@ -25,7 +25,7 @@ function Category() {
           "Content-Type": "application/json",
         },
       });
-      setCategory(response.data.Products);
+      setCategory(response.data);
     };
     getCategory();
   }, [location.pathname]);

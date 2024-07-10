@@ -63,3 +63,14 @@
   transform: translateY(0px);
   transition-duration: 0.3s;
 }
+
+.order-detail {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: rgba(193, 193, 193, 0.67);
+  color: black;
+}

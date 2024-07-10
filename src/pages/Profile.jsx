@@ -101,6 +101,7 @@ function Profile() {
           },
         });
         setLoggedUser(response.data);
+        console.log(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -122,7 +123,7 @@ function Profile() {
             </button>
           </span>
         </h3>
-
+        {console.log(loggedUser)}
         {loggedUser && (
           <div className="container">
             <div className="row">
@@ -152,10 +153,7 @@ function Profile() {
             {loggedUser.Orders.length === 0 && <h5>No orders yet</h5>}
             {loggedUser.Orders.length > 0 &&
               loggedUser.Orders.map((order) => (
-                <div
-                  key={order.id}
-                  className="container border border-dark d-flex w-100 p-3 my-3 bg-dark rounded-3 text-light"
-                >
+                <div key={order.id} className="order-detail">
                   <div className="row">
                     <div className="col fw-bold">Número:{order.id}</div>
                     <div className="col-3">{order.createdAt.slice(0, 10)}</div>
@@ -174,8 +172,7 @@ function Profile() {
                     {" "}
                     <Button
                       variant="contained"
-                      color="info"
-                      className="w-100 "
+                      className="button-add"
                       onClick={() => handleGoToOrder(order)}
                     >
                       View Order

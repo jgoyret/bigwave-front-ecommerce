@@ -1,3 +1,4 @@
+import React from "react";
 import { TextField, Select, Button, Box, MenuItem } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import NavBarApp from "../components/NavBarApp";
@@ -12,7 +13,6 @@ import {
   clearCart,
 } from "../redux/cartReducer";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
@@ -21,7 +21,6 @@ import * as Yup from "yup";
 function Checkout() {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
-  const { id, name, price, quantity, categoryId } = cart;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -49,26 +48,22 @@ function Checkout() {
     cvv: Yup.string().required("CVV is required"),
   });
 
-  const [formData, setFormData] = useState({
+  const initialValues = {
     firstname: "",
     lastname: "",
     email: "",
-    username: "",
     address: "",
     city: "",
     state: "",
     postalcode: "",
     phone: "",
-  });
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    cardnumber: "",
+    cardholder: "",
+    expirationdate: "",
+    cvv: "",
   };
 
-  const handleAddOrder = async (e) => {
-    e.preventDefault();
+  const handleAddOrder = async (values) => {
     try {
       const response = await axios({
         url: `${import.meta.env.VITE_API_URL}/orders`,
@@ -76,9 +71,9 @@ function Checkout() {
         data: {
           userId: user.id,
           products: cart,
-          form: formData,
+          form: values,
           totalAmount: totalAmount,
-          address: formData.address,
+          address: values.address,
         },
         headers: {
           Authorization: `Bearer ${user.token}`,
@@ -90,7 +85,7 @@ function Checkout() {
         navigate("/order-completed");
         dispatch(clearCart());
       } else {
-        console.log("there was a problem with your order");
+        console.log("There was a problem with your order");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -98,7 +93,7 @@ function Checkout() {
   };
 
   const handleSubmit = (values) => {
-    handleAddOrder();
+    handleAddOrder(values);
     console.log("Form submitted:", values);
   };
 
@@ -106,11 +101,11 @@ function Checkout() {
     <>
       <NavBarApp />
       <Formik
-        initialValues={formData}
+        initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ errors, touched }) => (
+        {({ errors, touched, handleChange, values, setFieldValue }) => (
           <Form>
             <div className="container container-content">
               <div className="row">
@@ -124,9 +119,11 @@ function Checkout() {
                     label="Email"
                     type="email"
                     variant="outlined"
-                    value={formData.email}
+                    value={values.email}
                     onChange={handleChange}
                     fullWidth
+                    error={touched.email && !!errors.email}
+                    helperText={touched.email && errors.email}
                   />
                   <hr />
                   <h3>Shipping Information</h3>
@@ -134,7 +131,6 @@ function Checkout() {
                     <Field
                       as={TextField}
                       id="firstname"
-                      value={formData.firstname}
                       name="firstname"
                       label="Firstname"
                       className="bg-transparent"
@@ -146,7 +142,6 @@ function Checkout() {
                     <Field
                       as={TextField}
                       id="lastname"
-                      value={formData.lastname}
                       name="lastname"
                       label="Lastname"
                       className="bg-transparent"
@@ -160,7 +155,6 @@ function Checkout() {
                     <Field
                       as={TextField}
                       id="address"
-                      value={formData.address}
                       name="address"
                       label="Address"
                       className="bg-transparent"
@@ -174,22 +168,25 @@ function Checkout() {
                     <Field
                       as={TextField}
                       id="city"
-                      value={formData.city}
                       name="city"
-                      label="city"
+                      label="City"
                       className="bg-transparent"
                       error={touched.city && !!errors.city}
                       helperText={touched.city && errors.city}
                       onChange={handleChange}
                       fullWidth
                     />
-                    <CountrySelect />
+                    <CountrySelect
+                      value={values.country}
+                      onChange={(event) =>
+                        setFieldValue("country", event.target.value)
+                      }
+                    />
                   </div>
                   <div className="d-flex mb-3">
                     <Field
                       as={TextField}
                       id="state"
-                      value={formData.state}
                       name="state"
                       label="State"
                       className="bg-transparent"
@@ -201,7 +198,6 @@ function Checkout() {
                     <Field
                       as={TextField}
                       id="postalcode"
-                      value={formData.postalcode}
                       name="postalcode"
                       label="Postal Code"
                       className="bg-transparent"
@@ -214,7 +210,6 @@ function Checkout() {
                   <Field
                     as={TextField}
                     id="phone"
-                    value={formData.phone}
                     name="phone"
                     label="Phone"
                     className="bg-transparent"
@@ -233,22 +228,19 @@ function Checkout() {
                     label="Payment Method"
                     variant="outlined"
                     fullWidth
+                    value={values.paymentMethod}
+                    onChange={(event) =>
+                      setFieldValue("paymentMethod", event.target.value)
+                    }
                   >
-                    <MenuItem
-                      className="fs-20"
-                      selected={true}
-                      value={"credit card"}
-                    >
-                      Credit card
-                    </MenuItem>
-                    <MenuItem value={"mercado pago"}>Mercado pago</MenuItem>
-                    <MenuItem value={"paypal"}>Paypal</MenuItem>
+                    <MenuItem value="credit card">Credit card</MenuItem>
+                    <MenuItem value="mercado pago">Mercado pago</MenuItem>
+                    <MenuItem value="paypal">Paypal</MenuItem>
                   </Select>
                   <div className="mb-3">
                     <Field
                       as={TextField}
                       id="cardnumber"
-                      value={formData.cardnumber}
                       name="cardnumber"
                       label="Card Number"
                       className="bg-transparent"
@@ -262,7 +254,6 @@ function Checkout() {
                     <Field
                       as={TextField}
                       id="cardholder"
-                      value={formData.cardholder}
                       name="cardholder"
                       label="Card Holder"
                       className="bg-transparent"
@@ -276,7 +267,6 @@ function Checkout() {
                     <Field
                       as={TextField}
                       id="expirationdate"
-                      value={formData.expirationdate}
                       name="expirationdate"
                       label="Expiration Date"
                       className="bg-transparent"
@@ -290,7 +280,6 @@ function Checkout() {
                     <Field
                       as={TextField}
                       id="cvv"
-                      value={formData.cvv}
                       name="cvv"
                       label="CVV"
                       className="bg-transparent"
@@ -301,7 +290,7 @@ function Checkout() {
                     />
                   </div>
                 </div>
-                <div className="col-md-12 col-lg-6 ">
+                <div className="col-md-12 col-lg-6">
                   <h3>Order Summary</h3>
                   {cart.map((item) => (
                     <div
@@ -314,12 +303,12 @@ function Checkout() {
                           src={item.image}
                           style={{ height: 80 }}
                           alt="Card image cap"
-                        ></img>
+                        />
                       </div>
                       <div className="col-9">
                         <div className="card-content">
                           <div className="product-name fs-5">{item.name}</div>
-                          <div className="product-description ">
+                          <div className="product-description">
                             <p className="fw-bold">
                               ${" "}
                               <span>
@@ -334,22 +323,21 @@ function Checkout() {
                                     dispatch(removeQuantity({ id: item.id }))
                                   }
                                   className="bi bi-dash-circle"
-                                ></i>{" "}
+                                />{" "}
                                 {item.quantity}{" "}
                                 <i
                                   onClick={() =>
                                     dispatch(addQuantity({ id: item.id }))
                                   }
                                   className="bi bi-plus-circle"
-                                ></i>
+                                />
                               </p>
-
                               <i
                                 onClick={() =>
                                   dispatch(removeFromCart(item.id))
                                 }
                                 className="bi bi-trash"
-                              ></i>
+                              />
                             </div>
                           </div>
                         </div>
