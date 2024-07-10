@@ -16,6 +16,9 @@
   text-decoration: none !important;
   /* padding: 7px; */
 }
+.my-profile-container {
+  margin-top: 100px !important;
+}
 
 .edit-svgIcon {
   width: 17px;
@@ -44,7 +47,6 @@
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
 }
-
 .edit-button::before {
   display: none;
   content: "Edit";

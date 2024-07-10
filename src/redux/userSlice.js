@@ -10,6 +10,9 @@ const userSlice = createSlice({
     logout(state, action) {
       state.token = null;
       state.user = null;
+      state.firstname = null;
+      state.lastname = null;
+      state.email = null;
     },
   },
 });

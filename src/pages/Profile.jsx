@@ -107,7 +107,7 @@ function Profile() {
   return (
     <>
       <NavBarApp />
-      <div className="container mt-5 pt-5">
+      <div className="container my-profile-container">
         <h3>
           My profile{" "}
           <span className="d-inline-block">
@@ -122,7 +122,7 @@ function Profile() {
         {loggedUser && (
           <div className="container">
             <div className="row">
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-md-6 px-0">
                 <h4 className="mt-3">Personal information</h4>
                 <p>
                   <strong>Name:</strong> {loggedUser.firstname}
@@ -137,10 +137,10 @@ function Profile() {
             </div>
             <button
               type="button"
-              className="m-2"
+              className="m-2 btn btn-success"
               onClick={handleOpenPasswordModal}
             >
-              change password
+              Change password
             </button>
             <div className="mt-5">
               <h3>My Orders</h3>
@@ -151,10 +151,10 @@ function Profile() {
                 className="container border border-dark d-flex"
               >
                 <div className="row">
-                  <div className="col">Número:{order.id}</div>
-                  <div className="col">{order.createdAt}</div>
+                  <div className="col fw-bold">Número:{order.id}</div>
+                  <div className="col-3">{order.createdAt.slice(0, 10)}</div>
                   <div className="col">{order.address}</div>
-                  <div className="col">{order.status}</div>
+                  <div className="col-2">{order.status}</div>
                   <div className="col">{order.totalAmount}</div>
                   <ul>
                     {order.products.map((item) => (

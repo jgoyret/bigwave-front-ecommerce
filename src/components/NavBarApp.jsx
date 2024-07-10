@@ -30,9 +30,9 @@ function NavBarApp() {
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
+      toast.info("You logged out 😭 see you soon!");
       dispatch(logout());
       dispatch(clearCart());
-      toast.info("You logged out :( see you soon!");
       navigate("/");
     } catch (error) {
       console.log(error);
