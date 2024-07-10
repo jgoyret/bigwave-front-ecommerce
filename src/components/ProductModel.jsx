@@ -15,7 +15,7 @@ function ProductModel({ product }) {
       toast.info("Units must be higher than 1");
     } else {
       dispatch(addToCart({ ...product, quantity: units }));
-      toast.success("Product added to the cart");
+      toast.success("Product added to the cart", { position: "bottom-right" });
       setUnits(1);
     }
   };
