@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import NavBarApp from "../components/NavBarApp";
 
 function OrderGreetings() {
   const [loggedUser, setLoggedUser] = useState();
@@ -17,7 +18,6 @@ function OrderGreetings() {
             "Content-Type": "application/json",
           },
         });
-        console.log(response.data);
         setLoggedUser(response.data);
       } catch (error) {
         console.log(error);
@@ -28,20 +28,23 @@ function OrderGreetings() {
 
   return (
     <>
-      <div>
-        <h1>Thanks for your purchase</h1>
-        <p>
-          Order number: {loggedUser?.Orders[loggedUser.Orders.length - 1].id}{" "}
-        </p>
-      </div>
-      <div>
-        <iframe
-          src="https://i.pinimg.com/originals/88/82/bc/8882bcf327896ab79fb97e85ae63a002.gif"
-          width="600"
-          height="400"
-          style={{ border: "none" }}
-          title="Rick Astley Singing"
-        ></iframe>
+      <NavBarApp />
+      <div className="container">
+        <div className="order-info">
+          <h1>Thanks for your purchase</h1>
+          <p>
+            Order number: {loggedUser?.Orders[loggedUser.Orders.length - 1].id}{" "}
+          </p>
+        </div>
+        <div>
+          <iframe
+            src="https://i.pinimg.com/originals/88/82/bc/8882bcf327896ab79fb97e85ae63a002.gif"
+            width="600"
+            height="400"
+            style={{ border: "none" }}
+            title="Rick Astley Singing"
+          ></iframe>
+        </div>
       </div>
     </>
   );

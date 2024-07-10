@@ -8,6 +8,7 @@ import {
   removeFromCart,
   addQuantity,
   removeQuantity,
+  clearCart,
 } from "../redux/cartReducer";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
@@ -69,6 +70,7 @@ function Checkout() {
       if (response.status === 200) {
         console.log("Order created");
         navigate("/order-completed");
+        dispatch(clearCart());
       } else {
         console.log("there was a problem with your order");
       }

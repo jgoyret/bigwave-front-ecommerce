@@ -188,3 +188,6 @@ ol a {
 .MuiCard-root a {
   text-decoration: none !important;
 }
+.order-info {
+  margin-top: 100px;
+}
