@@ -32,29 +32,30 @@ function About() {
   return (
     <>
       <NavBarApp />
-      <div className="container container-about">
-        <div className="row">
-          <div className="col-12 col-md-12" id="aboutText">
-            <h1>About this project</h1>
-            <p>
-              The following e-commerce site is a project developed by students
-              of the Coding Bootcamp at Hack Academy. The Bootcamp is an
-              immersive and extremely practical program, consisting of a
-              full-time schedule over 3 months. During this period, students
-              invest more than 600 hours in learning about Node.js, Express,
-              React.js, SQL, MongoDB, and Git.
-            </p>
-
-            <div id="stepper" className="col-12 col-md-12">
+      <div className="container">
+        <div className="container-fluid about-title text-center text-white">
+          <h1>About this project</h1>
+        </div>
+        <div className=" container main-container">
+          <div className="row">
+            <div className="col col-md-6 d-flex" id="aboutText">
+              <p>
+                The following e-commerce site is a project developed by students
+                of the Coding Bootcamp at Hack Academy. The Bootcamp is an
+                immersive and extremely practical program, consisting of a
+                full-time schedule over 3 months. During this period, students
+                invest more than 600 hours in learning about Node.js, Express,
+                React.js, SQL, MongoDB, and Git.
+              </p>
+            </div>
+            <div id="stepper" className="col col-md-6">
               <Box>
                 <Stepper orientation="vertical">
                   {steps.map((step) => (
                     <Step key={step.label} active={true}>
                       <StepLabel className="">{step.label}</StepLabel>
                       <StepContent>
-                        <Typography className="text-justify">
-                          {step.description}
-                        </Typography>
+                        <Typography>{step.description}</Typography>
                       </StepContent>
                     </Step>
                   ))}
@@ -66,7 +67,7 @@ function About() {
       </div>
 
       <div id="team">
-        <div className="text-center mt-5">
+        <div className="text-center">
           <div className="heading">
             <h3>Meet the Team</h3>
           </div>
