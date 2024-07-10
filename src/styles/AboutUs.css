@@ -2,17 +2,17 @@
   position: relative; /* Necesario para el pseudo-elemento */
   margin: 1rem;
   background-color: transparent;
-  background-image: url(https://www.acquabella.com/wp-content/uploads/2022/09/TEXTURA-WAVE-ACQUABELLA.jpg);
+  /* background-image: url(https://www.acquabella.com/wp-content/uploads/2022/09/TEXTURA-WAVE-ACQUABELLA.jpg); */
   width: 12rem;
   height: 16rem;
   padding-top: 25px;
   padding-bottom: 25px;
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 10px;
-  border: #000000 1px solid;
+  /* border-radius: 10px; */
+  /* border: #000000 1px solid; */
   text-align: center;
-  color: #fff;
+  color: #212529;
   transition: all 0.3s ease-in-out;
   /* opacity: ; */
   /* clip-path: polygon(
@@ -26,7 +26,7 @@
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px; */
 }
-
+/* 
 .card-client::before {
   content: "";
   position: absolute;
@@ -38,20 +38,20 @@
   border-radius: 10px;
   filter: blur(1px) sepia(50%);
   z-index: -1;
-}
+} */
 
-.card-client::after {
+/* .card-client::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* border: #000000d2 2px solid; */
+  border: #000000d2 2px solid;
   border-radius: 10px;
 
   z-index: -1;
-}
+} */
 .card-client {
   position: relative;
   z-index: 1;
@@ -59,7 +59,7 @@
 
 .card-client:hover {
   animation: rotateCard 2s linear;
-  box-shadow: #0000003f 0px 10px 10px 0px;
+  /* box-shadow: #0000003f 0px 10px 10px 0px; */
   transform: translate3d(0, -10px, 0);
   cursor: pointer;
 }
@@ -71,15 +71,15 @@
 
 .user-picture {
   overflow: hidden;
-  width: 6rem;
-  /* filter: drop-shadow(0 0 10px #000000); */
+  width: 10rem;
+  filter: drop-shadow(0 0 5px #212529);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
-  /* border: #424242 5px solid; */
-  /* transition: all 0.3s ease-in-out; */
+  border: #424242 1px solid;
+  transition: all 0.3s ease-in-out;
   /* border: white 2px solid; */
 }
 .card-client:hover {
@@ -186,33 +186,59 @@ img {
   padding-bottom: 2rem;
 }
 
-#aboutText {
-  /* padding: 2rem; */
-  /* background-image: url("/delicioso-desayuno-yogurt-frutas_23-2148529414.jpg"); */
+.about-title {
+  margin-top: 100px;
+  padding-top: 50px;
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  align-content: center;
+  background-image: url("https://globalwfm.com/wp-content/uploads/2022/08/Should-You-Return-To-Office-Work-Pros-And-Cons.jpg");
   background-position: center;
-  /* box-shadow: 0 6px 10px rgba(207, 212, 222, 1); */
+  padding: 2rem;
   z-index: 1;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-#aboutText::after {
+.about-title::before {
   content: "";
   background-color: #4242425d;
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
-  bottom: 9rem;
+  bottom: 0;
   z-index: -1;
-  border-bottom: #424242 5px solid;
 }
 
 #aboutText p {
+  padding: 70px;
+  background-color: #fff;
+  border-radius: 10px;
+  align-content: center;
   text-align: justify;
-  width: 63%;
+  clip-path: polygon(
+    30px 0%,
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0 100%,
+    0% 30px
+  );
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.main-container {
+  margin-top: 100px;
 }
 
 .heading {
   position: relative;
+  margin-top: 100px;
 }
 
 .heading h3 {
@@ -228,7 +254,7 @@ img {
   content: "";
   width: 100%;
   display: inline-block;
-  /* border-bottom: 1px solid; */
+  border-bottom: 1px solid;
   height: 0;
   vertical-align: middle;
 }
@@ -256,14 +282,6 @@ img {
   font-size: 0.9rem;
 }
 
-/* #stepper {
-  padding-left: 30px;
-} */
-
-.container-about {
-  padding-top: 100px;
-}
-
-.text-justify {
-  text-align: justify;
+#stepper {
+  padding-left: 50px;
 }
