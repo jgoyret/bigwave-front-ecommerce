@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   CssBaseline,
   Container,
@@ -15,9 +15,9 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 export default function OrderInfo() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [order, setOrder] = useState(null);
+  const [order, setOrder] = React.useState(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!location.state) {
       console.log("No state or order found");
       navigate("/");
