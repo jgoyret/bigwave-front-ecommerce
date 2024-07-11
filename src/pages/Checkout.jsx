@@ -82,7 +82,7 @@ function Checkout() {
       });
       if (response.status === 200) {
         console.log("Order created");
-        navigate("/order-completed");
+        navigate("/order-completed", { state: { order: response.data } });
         dispatch(clearCart());
       } else {
         console.log("There was a problem with your order");
