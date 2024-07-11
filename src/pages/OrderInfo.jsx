@@ -1,6 +1,4 @@
-// src/App.js
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   CssBaseline,
   Container,
@@ -15,24 +13,23 @@ import {
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 export default function OrderInfo() {
-  const { orderId } = useParams();
   const location = useLocation();
-  // const [order, setOrder] = Reakct.useState();
-  const order = location.state?.order;
-  const previousPath = location.state?.from;
   const navigate = useNavigate();
+  const [order, setOrder] = useState(null);
 
-  // console.log("previous", previousPath);
-  console.log("location", location);
-
-  React.useEffect(() => {
+  useEffect(() => {
     if (!location.state) {
-      console.log("no state");
+      console.log("No state or order found");
       navigate("/");
+    } else {
+      console.log("State and order found");
+      setOrder(location.state.order);
     }
-  }, []);
+  }, [location, navigate]);
 
-  const { id, status, address, products, totalAmount } = order;
+  if (!order) {
+    return null;
+  }
 
   return (
     <Container>
@@ -43,19 +40,19 @@ export default function OrderInfo() {
       <Card>
         <CardContent>
           <Typography variant="h5" gutterBottom>
-            Order ID: {id}
+            Order ID: {order.id}
           </Typography>
           <Typography variant="subtitle1" gutterBottom>
-            Status: {status}
+            Status: {order.status}
           </Typography>
           <Typography variant="subtitle1" gutterBottom>
-            Address: {address}
+            Address: {order.address}
           </Typography>
           <Typography variant="h6" gutterBottom>
             Products:
           </Typography>
           <List>
-            {products.map((product, index) => (
+            {order.products.map((product, index) => (
               <ListItem key={index}>
                 <ListItemText
                   primary={`${product.name} - ${product.quantity} x $${product.price}`}
@@ -65,7 +62,7 @@ export default function OrderInfo() {
           </List>
           <Divider />
           <Typography variant="h6" gutterBottom>
-            Total Amount: ${totalAmount.toFixed(2)}
+            Total Amount: ${order.totalAmount.toFixed(2)}
           </Typography>
         </CardContent>
       </Card>
