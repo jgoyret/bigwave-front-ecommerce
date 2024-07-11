@@ -13,7 +13,7 @@ import axios from "axios";
 
 function Home() {
   const [categories, setCategories] = useState([]);
-  
+
   const starRef = useRef(null);
   const plantRef = useRef(null);
   const chartRef = useRef(null);
@@ -45,7 +45,7 @@ function Home() {
     <>
       <NavBarApp />
       <Slider />
-    
+
       <header>
         <div
           className="d-flex align-items-center position-relative "
@@ -55,7 +55,7 @@ function Home() {
             <h1 className="banner-title mb-4">
               Your <span className="banner-font">healthy life</span> starts here
             </h1>
-            <button className="cta">
+            <Link to={"/products"} className="cta">
               <span className="hover-underline-animation"> Shop now </span>
               <svg
                 id="arrow-horizontal"
@@ -71,7 +71,7 @@ function Home() {
                   transform="translate(30)"
                 ></path>
               </svg>
-            </button>
+            </Link>
           </div>
           <div className="position-absolute" id="curva"></div>
         </div>

@@ -156,7 +156,7 @@ function Profile() {
             </div>
             <div className="order-header">
               <div className="row w-100">
-                <div className="col-md-2 col-4">Order</div>
+                <div className="col-md-2 col-4">Order ID</div>
                 <div className="col-md-2 col-4">Date</div>
                 <div className="col-md-2 d-none d-md-inline">Address</div>
                 <div className="col-md-2 d-none d-md-inline">Status</div>

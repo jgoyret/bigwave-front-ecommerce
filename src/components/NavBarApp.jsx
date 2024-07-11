@@ -78,7 +78,14 @@ function NavBarApp() {
         id="navbar"
       >
         <Container>
-          <Navbar.Brand href="/">BigWave</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img
+              src="/bigwave-logo.png"
+              alt="BigWave Logo"
+              height="50"
+              className="d-inline-block align-top rounded"
+            />
+          </Navbar.Brand>
           <NavLink
             className="nav-link cart-responsive"
             onClick={handleShowCart}
