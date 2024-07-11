@@ -44,7 +44,7 @@
 
 .my-profile-data {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   margin: 10px 0;

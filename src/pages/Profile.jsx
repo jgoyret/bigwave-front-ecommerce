@@ -115,7 +115,7 @@ function Profile() {
         <>
           <NavBarApp />
           <div className="container my-profile-container ">
-            <div className="my-profile-data">
+            <div className="my-profile-data ">
               <div className="d-flex flex-column ">
                 <h3>Hi, {loggedUser.firstname} </h3>
                 <small>Client since {loggedUser.createdAt}</small>
@@ -128,7 +128,7 @@ function Profile() {
                 </span>
               </div>
               <div className="row w-75">
-                <div className="col-12 col-md-6 px-0">
+                <div className="col-12 col-md-6 px-0 ms-auto">
                   <h4 className="mt-3">Personal information</h4>
                   <p>
                     <strong>Name:</strong> {loggedUser.firstname}

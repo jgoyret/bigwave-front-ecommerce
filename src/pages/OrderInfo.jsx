@@ -12,17 +12,26 @@ import {
   ListItemText,
   Divider,
 } from "@mui/material";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 export default function OrderInfo() {
   const { orderId } = useParams();
   const location = useLocation();
+  // const [order, setOrder] = Reakct.useState();
   const order = location.state?.order;
+  const previousPath = location.state?.from;
+  const navigate = useNavigate();
 
-  // if (!order) {
-  //   return <div>Order not found</div>;
-  // }
-  console.log(location);
+  // console.log("previous", previousPath);
+  console.log("location", location);
+
+  React.useEffect(() => {
+    if (!location.state) {
+      console.log("no state");
+      navigate("/");
+    }
+  }, []);
+
   const { id, status, address, products, totalAmount } = order;
 
   return (

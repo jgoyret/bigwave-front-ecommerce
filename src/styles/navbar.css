@@ -39,7 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  /* position: absolute; */
   cursor: pointer;
   right: 0;
   width: 35px;
@@ -74,6 +74,7 @@
 
   .input-wrap {
     display: flex;
+    height: 10px;
   }
   .navbar-toggler {
     box-shadow: none !important;
@@ -92,9 +93,9 @@
     display: none;
   }
   .icon {
-    position: absolute;
-    right: 180px;
-    height: 0;
-    align-items: start;
+    /* position: absolute; */
+    /* right: 180px; */
+    /* height: 0; */
+    /* align-items: end; */
   }
 }

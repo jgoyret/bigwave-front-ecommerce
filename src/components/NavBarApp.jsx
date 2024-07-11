@@ -118,7 +118,7 @@ function NavBarApp() {
               </NavDropdown>
               <Nav.Link href="/about-this-project">About this project</Nav.Link>
             </Nav>
-            <Nav.Link className="input-wrap">
+            {/* <Nav.Link className="input-wrap" style={{ height: "40px" }}>
               <button className="icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +149,7 @@ function NavBarApp() {
                 name="text"
                 type="text"
               ></input>
-            </Nav.Link>
+            </Nav.Link> */}
 
             <NavDropdown
               title={<i className="bi bi-person text-dark  fs-3"></i>}
@@ -157,7 +157,11 @@ function NavBarApp() {
             >
               {token ? (
                 <>
-                  <DropdownItem as={Link} to={"/my-profile"}>
+                  <DropdownItem
+                    className="overflow-hidden "
+                    as={Link}
+                    to={"/my-profile"}
+                  >
                     Profile
                   </DropdownItem>
                   <DropdownItem as={Link} onClick={handleLogout} to={"/"}>
