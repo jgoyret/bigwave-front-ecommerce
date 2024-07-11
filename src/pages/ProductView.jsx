@@ -89,12 +89,12 @@ function ProductView() {
                   <p>Free Shipping</p>
                   <p>On orders $50+</p>
                 </div>
-                <div className="ms-5 w-25 text-center section-card shadow rounded mt-5">
+                <div className="ms-5 w-25 text-center section-card shadow rounded mt-5 ">
                   <i className="bi bi-shield-check"></i>
                   <p>Quality Assurance</p>
                   <p>Return within 30 days</p>
                 </div>
-                <div className="ms-5 w-25 text-center shadow section-card rounded mt-5">
+                <div className="ms-5 w-25 text-center shadow section-card rounded mt-5 ">
                   <i className="bi bi-hand-thumbs-up"></i>
                   <p>Customer Satisfaction</p>
                   <p>24/7 Support</p>

@@ -157,11 +157,7 @@ function NavBarApp() {
             >
               {token ? (
                 <>
-                  <DropdownItem
-                    className="overflow-hidden "
-                    as={Link}
-                    to={"/my-profile"}
-                  >
+                  <DropdownItem className=" " as={Link} to={"/my-profile"}>
                     Profile
                   </DropdownItem>
                   <DropdownItem as={Link} onClick={handleLogout} to={"/"}>

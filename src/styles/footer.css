@@ -1,6 +1,6 @@
 a {
   text-decoration: none;
-  color: grey;
+  color: grey !important;
 }
 footer {
   margin-top: 88px;

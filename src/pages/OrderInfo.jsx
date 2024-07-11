@@ -66,33 +66,38 @@ export default function OrderInfo() {
       <List>
         {order.products.map((product, index) => (
           <ListItem key={index} disableGutters>
-            <Card variant="outlined" sx={{ width: "100%", mb: 2 }}>
-              <CardActionArea>
-                <Grid container spacing={2}>
-                  <Grid item xs={3}>
-                    <CardMedia
-                      component="img"
-                      image={product.image}
-                      alt={product.name}
-                      sx={{ height: "100%", objectFit: "contain", p: 2 }}
-                    />
-                  </Grid>
-                  <Grid item xs={9}>
-                    <CardContent>
-                      <Typography variant="body1">{product.name}</Typography>
-                      <Typography variant="body2">
-                        Quantity: {product.quantity}
-                      </Typography>
-                      <Typography variant="body2">
-                        Price: ${product.price.toFixed(2)}
-                      </Typography>
-                      <Typography variant="body2">
-                        Total: ${(product.price * product.quantity).toFixed(2)}
-                      </Typography>
-                    </CardContent>
-                  </Grid>
+            <Card variant="elevation" sx={{ width: "100%" }}>
+              <Grid container spacing={2}>
+                <Grid item xs={6}>
+                  <CardMedia
+                    component="img"
+                    image={product.image}
+                    alt={product.name}
+                    sx={{
+                      width: "200px",
+                      height: "200px",
+                      objectFit: "cover",
+                      p: 4,
+                    }}
+                  />
                 </Grid>
-              </CardActionArea>
+                <Grid item xs={6}>
+                  <CardContent>
+                    <Typography variant="h6" sx={{ marginBottom: "10px" }}>
+                      {product.name}
+                    </Typography>
+                    <Typography variant="body2" sx={{ marginBottom: "10px" }}>
+                      Quantity: {product.quantity}
+                    </Typography>
+                    <Typography variant="body2" sx={{ marginBottom: "10px" }}>
+                      Price: ${product.price.toFixed(2)}
+                    </Typography>
+                    <Typography variant="body2" sx={{ marginBottom: "10px" }}>
+                      Total: ${(product.price * product.quantity).toFixed(2)}
+                    </Typography>
+                  </CardContent>
+                </Grid>
+              </Grid>
             </Card>
           </ListItem>
         ))}

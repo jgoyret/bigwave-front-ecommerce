@@ -9,5 +9,6 @@ i {
   max-height: 500px;
 }
 .container-productview {
-  margin-top: 100px;
+  margin-top: 15vh;
+  margin-bottom: 20vh;
 }

@@ -17,6 +17,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { toast } from "react-toastify";
 
 function Checkout() {
   const cart = useSelector((state) => state.cart);
@@ -93,7 +94,12 @@ function Checkout() {
   };
 
   const handleSubmit = (values) => {
-    handleAddOrder(values);
+    if (user.token) {
+      handleAddOrder(values);
+    } else {
+      navigate("/login");
+      toast.info("You must be logged in to complete the order");
+    }
     console.log("Form submitted:", values);
   };
 

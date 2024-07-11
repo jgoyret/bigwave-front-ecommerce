@@ -127,7 +127,7 @@ function Home() {
       <section className="container" id="category-healthy">
         <div className="text-center my-5">
           <div>
-            <h3>FIND YOUR HEALTHY</h3>
+            <h3 className="">ENHANCE YOUR VITALITY</h3>
             <p>Shop by category</p>
           </div>
           <div className="row px-0 mx-0 d-flex justify-content-center g-3">
