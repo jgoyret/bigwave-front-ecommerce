@@ -1,205 +1,205 @@
 .edit-button {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: rgb(20, 20, 20);
-  border: none;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
-  cursor: pointer;
-  transition-duration: 0.3s;
-  overflow: hidden;
-  position: relative;
-  text-decoration: none !important;
-  /* padding: 7px; */
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background-color: rgb(20, 20, 20);
+	border: none;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+	cursor: pointer;
+	transition-duration: 0.3s;
+	overflow: hidden;
+	position: relative;
+	text-decoration: none !important;
+	/* padding: 7px; */
 }
 .my-profile-container {
-  margin-top: 100px !important;
-  padding: 20px;
+	margin-top: 100px !important;
+	padding: 20px;
 }
 
 .button-change-password {
-  width: 110px;
-  height: 25px;
-  border-radius: 50px;
-  border: none;
-  background-color: rgba(20, 20, 20, 0.849);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
-  cursor: pointer;
-  transition-duration: 0.5s;
-  font-size: 0.6rem;
-  color: #e0e0e0;
+	width: 110px;
+	height: 25px;
+	border-radius: 50px;
+	border: none;
+	background-color: rgba(20, 20, 20, 0.849);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+	cursor: pointer;
+	transition-duration: 0.5s;
+	font-size: 0.6rem;
+	color: #e0e0e0;
 }
 
 .button-change-password:hover {
-  border-radius: 50px;
-  background-color: rgba(87, 87, 87, 0.596);
+	border-radius: 50px;
+	background-color: rgba(87, 87, 87, 0.596);
 }
 
 .my-profile-data {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  margin: 10px 0;
-  padding: 20px;
-  border: 1px solid #707070;
-  border-radius: 5px;
-  background-color: rgba(20, 93, 230, 0.096);
-  border-color: rgba(148, 131, 131, 0.304);
-  color: black;
-  width: 100%;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+	margin: 10px 0;
+	padding: 20px;
+	border: 1px solid #707070;
+	border-radius: 5px;
+	background-color: rgba(20, 93, 230, 0.096);
+	border-color: rgba(148, 131, 131, 0.304);
+	color: black;
+	width: 100%;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
 }
 
 .edit-svgIcon {
-  width: 17px;
-  transition-duration: 0.3s;
+	width: 17px;
+	transition-duration: 0.3s;
 }
 
 .edit-svgIcon path {
-  fill: white;
+	fill: white;
 }
 
 .edit-button:hover {
-  width: 100px;
-  border-radius: 50px;
-  transition-duration: 0.3s;
-  background-color: rgb(255, 69, 69);
-  align-items: center;
+	width: 100px;
+	border-radius: 50px;
+	transition-duration: 0.3s;
+	background-color: rgb(255, 69, 69);
+	align-items: center;
 }
 
 .edit-button:hover .edit-svgIcon {
-  width: 15px;
-  transition-duration: 0.3s;
-  transform: translateY(60%);
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  transform: rotate(360deg);
+	width: 15px;
+	transition-duration: 0.3s;
+	transform: translateY(60%);
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	transform: rotate(360deg);
 }
 .edit-button::before {
-  display: none;
-  content: "Edit";
-  color: white;
-  transition-duration: 0.3s;
-  font-size: 2px;
+	display: none;
+	content: 'Edit';
+	color: white;
+	transition-duration: 0.3s;
+	font-size: 2px;
 }
 
 .edit-button:hover::before {
-  display: block;
-  padding-right: 10px;
-  font-size: 0.7rem;
-  opacity: 1;
-  transform: translateY(0px);
-  transition-duration: 0.3s;
+	display: block;
+	padding-right: 10px;
+	font-size: 0.7rem;
+	opacity: 1;
+	transform: translateY(0px);
+	transition-duration: 0.3s;
 }
 
 .order-detail {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-  padding: 20px;
-  border: 1px solid #1f1f1f;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.67);
-  border-color: rgba(0, 0, 0, 0.304);
-  color: rgb(219, 219, 219);
-  /* padding: auto; */
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 0;
+	padding: 20px;
+	border: 1px solid #1f1f1f;
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, 0.67);
+	border-color: rgba(0, 0, 0, 0.304);
+	color: rgb(219, 219, 219);
+	/* padding: auto; */
 }
 
 .order-header {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-  padding: 20px;
-  /* border: 1px solid #1f1f1f; */
-  border-radius: 5px;
-  background-color: rgba(185, 185, 185, 0.67);
-  border-color: rgba(0, 0, 0, 0.304);
-  color: rgb(29, 29, 29);
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 0;
+	padding: 20px;
+	/* border: 1px solid #1f1f1f; */
+	border-radius: 5px;
+	background-color: rgba(185, 185, 185, 0.67);
+	border-color: rgba(0, 0, 0, 0.304);
+	color: rgb(29, 29, 29);
 }
 
 .my-orders {
-  position: relative;
-  margin-top: 100px;
-  margin-bottom: 30px;
+	position: relative;
+	margin-top: 100px;
+	margin-bottom: 30px;
 }
 
 .my-orders h3 {
-  text-align: center;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  /* background: url(../images/border.png) no-repeat center; */
+	text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	/* background: url(../images/border.png) no-repeat center; */
 }
 
 .my-orders h3:before,
 .my-orders h3:after {
-  content: "";
-  width: 100%;
-  display: inline-block;
-  border-bottom: 1px solid;
-  height: 0;
-  vertical-align: middle;
+	content: '';
+	width: 100%;
+	display: inline-block;
+	border-bottom: 1px solid;
+	height: 0;
+	vertical-align: middle;
 }
 
 .my-orders h3:before {
-  margin-left: -100%;
-  margin-right: 80px;
+	margin-left: -100%;
+	margin-right: 80px;
 }
 
 .my-orders h3:after {
-  margin-left: 80px;
-  margin-right: -100%;
+	margin-left: 80px;
+	margin-right: -100%;
 }
 
 .view-order {
-  height: 50px;
-  width: 100px;
-  max-width: 160px;
-  position: relative;
-  background-color: #cacaca;
-  cursor: pointer;
-  border: 2px solid #252525;
-  overflow: hidden;
-  border-radius: 30px;
-  color: #242424;
-  transition: all 0.5s ease-in-out;
-  z-index: 2;
-  margin-left: auto;
-  font-size: small;
-  font-weight: bold;
+	height: 50px;
+	width: 100px;
+	max-width: 160px;
+	position: relative;
+	background-color: #cacaca;
+	cursor: pointer;
+	border: 2px solid #252525;
+	overflow: hidden;
+	border-radius: 30px;
+	color: #242424;
+	transition: all 0.5s ease-in-out;
+	z-index: 2;
+	margin-left: auto;
+	font-size: small;
+	font-weight: bold;
 }
 
 .view-order:hover {
-  color: #fff;
-  border: 2px solid #b3b3b3;
+	color: #fff;
+	border: 2px solid #b3b3b3;
 }
 
 .view-order::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  transition: all 0.5s ease-in-out;
-  background-color: #333;
-  /* border-radius: 30px; */
-  visibility: hidden;
-  border: none;
-  height: 10px;
-  width: 10px;
-  z-index: -1;
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: all 0.5s ease-in-out;
+	background-color: #333;
+	/* border-radius: 30px; */
+	visibility: hidden;
+	border: none;
+	height: 10px;
+	width: 10px;
+	z-index: -1;
 }
 
 .view-order:hover::after {
-  visibility: visible;
-  transform: scale(100) translateX(2px);
+	visibility: visible;
+	transform: scale(100) translateX(2px);
 }

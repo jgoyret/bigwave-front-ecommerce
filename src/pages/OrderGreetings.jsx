@@ -31,10 +31,10 @@ function OrderGreetings() {
 
 	return (
 		<>
+			<NavBarApp />
 			{loggedUser && (
 				<div className="container">
 					<Confetti tweenDuration={5000} />
-					<NavBarApp />
 					<div className="container styledDiv">
 						<div className="order-info">
 							<h1>Thank you for your purchase, {loggedUser.firstname}</h1>
@@ -46,7 +46,8 @@ function OrderGreetings() {
 						<div>
 							<iframe
 								src="https://i.pinimg.com/originals/88/82/bc/8882bcf327896ab79fb97e85ae63a002.gif"
-								width="600"
+								className="rickAstley"
+								width="500"
 								height="400"
 								style={{ border: 'none' }}
 								title="Rick Astley Singing"
@@ -54,8 +55,9 @@ function OrderGreetings() {
 						</div>
 						<p>
 							Wait until we confirm your Order on{' '}
-							<a href="/my-profile"> your profile</a>. In the meantime you can
-							Dance with Rick!!
+							<a href="/my-profile"> your profile</a>. Or,{' '}
+							<a href="/">continue shopping</a> In the meantime you can Dance
+							with Rick!!
 						</p>
 						<div>
 							<p className="parrafito">
