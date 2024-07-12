@@ -94,7 +94,7 @@ function NavBarApp() {
           >
             <i className="bi bi-cart text-dark fs-4"></i>
             {cart.reduce((total, item) => total + item.quantity, 0) > 0 && (
-              <span className="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">
+              <span className="badge bg-danger rounded-pill translate-middle">
                 {cart.reduce((total, item) => total + item.quantity, 0)}
               </span>
             )}
@@ -181,7 +181,7 @@ function NavBarApp() {
             )}
 
             <NavLink
-              className="nav-link position-relative"
+              className="nav-link position-relative "
               onClick={handleShowCart}
             >
               <div className="position-relative d-inline-block">

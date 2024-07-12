@@ -127,6 +127,24 @@
   }
   .navbar .nav-link.position-relative {
     margin-left: auto;
+    display: none;
+  }
+  .nav-link .position-relative .badge {
+    display: none;
+  }
+  .nav-link .cart-responsive {
+    display: inline-block;
+    position: relative;
+  }
+
+  .nav-link .cart-responsive .badge {
+    position: relative !important;
+    top: 10px !important;
+    right: -1rem;
+    font-size: 0.75rem;
+    padding: 0.25em;
+    border-radius: 0.25rem;
+    width: 1.25rem;
   }
 }
 @media (min-width: 992px) {
