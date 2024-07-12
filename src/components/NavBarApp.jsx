@@ -15,6 +15,7 @@ import { clearCart } from "../redux/cartReducer";
 
 function NavBarApp() {
   const token = useSelector((state) => state.user.token);
+  const firstname = useSelector((state) => state.user.firstname);
   const cart = useSelector((state) => state.cart);
 
   const [categories, setCategories] = useState();
@@ -150,26 +151,27 @@ function NavBarApp() {
                 type="text"
               ></input>
             </Nav.Link> */}
+            {token ? (
+              <>
+                <span className="me-4 text-dark"> Hi, {firstname}</span>
 
-            <NavDropdown
-              title={<i className="bi bi-person text-dark  fs-3"></i>}
-              id="navbarScrollingDropdown"
-            >
-              {token ? (
-                <>
+                <NavDropdown
+                  title={<i className="bi bi-person text-dark  fs-3"></i>}
+                  id="navbarScrollingDropdown"
+                >
                   <DropdownItem className=" " as={Link} to={"/my-profile"}>
                     Profile
                   </DropdownItem>
                   <DropdownItem as={Link} onClick={handleLogout} to={"/"}>
                     Logout
                   </DropdownItem>
-                </>
-              ) : (
-                <DropdownItem as={Link} to={"/login"}>
-                  Login
-                </DropdownItem>
-              )}
-            </NavDropdown>
+                </NavDropdown>
+              </>
+            ) : (
+              <Link to="/login" className="login-link">
+                Login
+              </Link>
+            )}
 
             <NavLink
               className="nav-link position-relative"
