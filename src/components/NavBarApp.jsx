@@ -158,25 +158,27 @@ function NavBarApp() {
               ></input>
             </Nav.Link> */}
 
-            <NavDropdown
-              title={<i className="bi bi-person text-dark  fs-3"></i>}
-              id="navbarScrollingDropdown"
-            >
-              {token ? (
-                <>
+            {token ? (
+              <>
+                <span className="me-4 text-dark"> Hi, {firstname}</span>
+
+                <NavDropdown
+                  title={<i className="bi bi-person text-dark  fs-3"></i>}
+                  id="navbarScrollingDropdown"
+                >
                   <DropdownItem className=" " as={Link} to={"/my-profile"}>
                     Profile
                   </DropdownItem>
                   <DropdownItem as={Link} onClick={handleLogout} to={"/"}>
                     Logout
                   </DropdownItem>
-                </>
-              ) : (
-                <DropdownItem as={Link} to={"/login"}>
-                  Login
-                </DropdownItem>
-              )}
-            </NavDropdown>
+                </NavDropdown>
+              </>
+            ) : (
+              <Link to="/login" className="login-link">
+                Login
+              </Link>
+            )}
 
             <NavLink
               className="nav-link position-relative"
