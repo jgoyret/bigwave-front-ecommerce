@@ -26,3 +26,12 @@
   border-radius: 10px;
   max-width: 100%;
 }
+
+.thanks-container canvas {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100% !important;
+	object-fit: cover;
+}

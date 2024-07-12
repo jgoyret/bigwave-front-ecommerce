@@ -51,7 +51,7 @@ function OrderGreetings() {
 		<>
 			<NavBarApp />
 			{loggedUser && (
-				<div className="container">
+				<div className="container thanks-container">
 					<Confetti width={window.innerWidth} height={window.innerHeight} />
 					<div className="container styledDiv">
 						<div className="order-info">
