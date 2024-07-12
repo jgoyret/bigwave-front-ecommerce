@@ -174,7 +174,7 @@ function Checkout() {
                   />
 
                   <hr />
-                  <h3>Shipping Information</h3>
+                  <h5>Shipping Information</h5>
                   <div className="d-flex mb-3 gap-3">
                     <Field
                       as={OutlinedTextField}
