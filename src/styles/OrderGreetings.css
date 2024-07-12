@@ -1,4 +1,5 @@
 .card {
+	bottom: 100px;
 	overflow: hidden;
 	position: relative;
 	text-align: left;
@@ -45,7 +46,7 @@
 }
 
 .header {
-	padding: 1.25rem 1rem 1rem 1rem;
+	/* padding: 1.25rem 1rem 1rem 1rem */
 	background-color: white;
 }
 
@@ -86,7 +87,7 @@
 	margin-top: 0.5rem;
 	color: #595b5f;
 	font-size: 0.875rem;
-	line-height: 1.25rem;
+	/* line-height: 1.25rem; */
 }
 
 @keyframes animate {
@@ -116,20 +117,6 @@
 	padding-bottom: 20px;
 }
 
-.logo {
-	width: 50%;
-	background-color: RGB(230 234 228);
-	border-radius: 5px;
-	height: 50%;
-	object-fit: cover;
-}
-
-.styledDiv a {
-	color: rgba(86, 86, 252, 0.87) !important;
-	margin-left: 5px;
-	margin-right: 4px;
-}
-
 .gracias {
 	margin-top: 100px;
 	align-self: center;
@@ -138,7 +125,7 @@
 
 .rickAstley {
 	border-radius: 10px;
-	max-width: 100%;
+	/* width: 100%; */
 }
 
 .thanks-container canvas {

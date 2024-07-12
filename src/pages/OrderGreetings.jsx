@@ -56,7 +56,7 @@ function OrderGreetings() {
 							<h3>Thank you for your purchase, {loggedUser.firstname}</h3>
 							<p>Order number: {order.id}</p>
 						</div>
-						<div className="col-6">
+						<div className="col-6 ">
 							<div className="styledDiv">
 								<div className="order-info d-flex flex-column">
 									<div class="card">
@@ -98,33 +98,36 @@ function OrderGreetings() {
 										</div>
 									</div>
 								</div>
-								<p className="mt-4">
-									Wait until we confirm your Order on your profile or continue{' '}
-									shopping.
-								</p>
-								<p> In the meantime you can Dance with Rick!!</p>
-								<div>
-									<p className="parrafito">
-										Order confirmations can take up to 30 minutes.
-									</p>
-									<p>
-										If you experience any problem or have any questions, please
-										contact us at customerservice@bigwave.com
-									</p>
-								</div>
 							</div>
 						</div>
-						<div className="col-6 mt-5">
+						<div className="col-6 ">
 							<div>
 								<iframe
 									src="https://i.pinimg.com/originals/88/82/bc/8882bcf327896ab79fb97e85ae63a002.gif"
-									className="rickAstley shadow-lg mt-5"
+									className="rickAstley shadow-lg "
 									width="500"
 									height="367"
 									style={{ border: 'none' }}
 									title="Rick Astley Singing"
 								></iframe>
 							</div>
+						</div>
+						<p className="text-center mt-5">
+							Wait until we confirm your Order on your profile or continue{' '}
+							shopping.
+						</p>
+						<p className="text-center">
+							{' '}
+							In the meantime you can Dance with Rick!!
+						</p>
+						<div>
+							<p className="parrafito text-center">
+								Order confirmations can take up to 30 minutes.
+							</p>
+							<p className="text-center">
+								If you experience any problem or have any questions, please
+								contact us at customerservice@bigwave.com
+							</p>
 						</div>
 					</div>
 				</div>
