@@ -12,10 +12,12 @@ function ProductModel({ product }) {
 
   const handleAddToCart = () => {
     if (units <= 0) {
-      toast.info("Units must be higher than 1");
+      toast.info("Units must be higher than 0");
     } else {
       dispatch(addToCart({ ...product, quantity: units }));
-      toast.success("Product added to the cart", { position: "bottom-right" });
+      toast.success(`Added ${units} ${product.name} to the cart`, {
+        position: "bottom-right",
+      });
       setUnits(1);
     }
   };
@@ -44,7 +46,7 @@ function ProductModel({ product }) {
                 onClick={() => setUnits(units - 1)}
                 className="bi bi-dash-circle fs-5"
               ></i>
-              <span className="mx-2">{units}</span>
+              <span className="mx-2 fs-5">{units}</span>
               <i
                 onClick={() => setUnits(units + 1)}
                 className="bi bi-plus-circle fs-5"

@@ -20,10 +20,12 @@ function ProductView() {
 
   const handleAddToCart = () => {
     if (units <= 0) {
-      toast.info("Units must be higher than 1");
+      toast.info("Units must be higher than 0");
     } else {
       dispatch(addToCart({ ...product, quantity: units }));
-      toast.success("Product added to the cart");
+      toast.success(`Added ${units} ${product.name} to the cart`, {
+        position: "bottom-right",
+      });
       setUnits(1);
     }
   };

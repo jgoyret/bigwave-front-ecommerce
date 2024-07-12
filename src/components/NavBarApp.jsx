@@ -40,6 +40,7 @@ function NavBarApp() {
       console.log(error);
     }
   };
+
   useEffect(() => {
     const getCategories = async () => {
       const response = await axios({
@@ -91,6 +92,11 @@ function NavBarApp() {
             onClick={handleShowCart}
           >
             <i className="bi bi-cart text-dark fs-4"></i>
+            {cart.reduce((total, item) => total + item.quantity, 0) > 0 && (
+              <span className="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">
+                {cart.reduce((total, item) => total + item.quantity, 0)}
+              </span>
+            )}
           </NavLink>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -118,73 +124,39 @@ function NavBarApp() {
               </NavDropdown>
               <Nav.Link href="/about-this-project">About this project</Nav.Link>
             </Nav>
-            {/* <Nav.Link className="input-wrap" style={{ height: "40px" }}>
-              <button className="icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  height="20px"
-                  width="20px"
-                >
-                  <path
-                    strokeLinejoin="round"
-                    strokeLinecap="round"
-                    strokeWidth="2"
-                    stroke="#000000"
-                    d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
-                  ></path>
-                  <path
-                    strokeLinejoin="round"
-                    strokeLinecap="round"
-                    strokeWidth="2"
-                    stroke="#000000"
-                    d="M22 22L20 20"
-                  ></path>
-                </svg>
-              </button>
-              <input
-                placeholder="search.."
-                className="input"
-                name="text"
-                type="text"
-              ></input>
-            </Nav.Link> */}
-
-            <NavDropdown
-              title={<i className="bi bi-person text-dark  fs-3"></i>}
-              id="navbarScrollingDropdown"
-            >
-              {token ? (
-                <>
-                  <DropdownItem className=" " as={Link} to={"/my-profile"}>
-                    Profile
-                  </DropdownItem>
-                  <DropdownItem as={Link} onClick={handleLogout} to={"/"}>
-                    Logout
-                  </DropdownItem>
-                </>
-              ) : (
-                <DropdownItem as={Link} to={"/login"}>
-                  Login
-                </DropdownItem>
-              )}
-            </NavDropdown>
-
-            <NavLink
-              className="nav-link position-relative"
-              onClick={handleShowCart}
-            >
-              <div className="position-relative d-inline-block">
-                <i className="bi bi-cart cart-resp text-dark mx-2 fs-4"></i>
-                {cart.reduce((total, item) => total + item.quantity, 0) > 0 && (
-                  <span className="position-absolute top-0 start-50  badge rounded-pill bg-danger">
-                    {cart.reduce((total, item) => total + item.quantity, 0)}
-                  </span>
-                )}
-              </div>
-            </NavLink>
           </Navbar.Collapse>
+          <NavDropdown
+            title={<i className="bi bi-person text-dark  fs-3"></i>}
+            id="navbarScrollingDropdown"
+          >
+            {token ? (
+              <>
+                <DropdownItem className=" " as={Link} to={"/my-profile"}>
+                  Profile
+                </DropdownItem>
+                <DropdownItem as={Link} onClick={handleLogout} to={"/"}>
+                  Logout
+                </DropdownItem>
+              </>
+            ) : (
+              <DropdownItem as={Link} to={"/login"}>
+                Login
+              </DropdownItem>
+            )}
+          </NavDropdown>
+          <NavLink
+            className="nav-link position-relative"
+            onClick={handleShowCart}
+          >
+            <div className="position-relative d-inline-block">
+              <i className="bi bi-cart cart-resp text-dark mx-2 fs-4"></i>
+              {cart.reduce((total, item) => total + item.quantity, 0) > 0 && (
+                <span className="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">
+                  {cart.reduce((total, item) => total + item.quantity, 0)}
+                </span>
+              )}
+            </div>
+          </NavLink>
         </Container>
       </Navbar>
       <Cart show={showCart} handleClose={handleCloseCart} />
