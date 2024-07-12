@@ -1,5 +1,13 @@
 import React from "react";
-import { TextField, Select, Button, Box, MenuItem } from "@mui/material";
+import {
+  TextField,
+  Select,
+  Button,
+  Box,
+  MenuItem,
+  styled,
+  outlinedInputClasses,
+} from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import NavBarApp from "../components/NavBarApp";
 import Footer from "../components/Footer";
@@ -33,6 +41,39 @@ function Checkout() {
   const shipping = 30;
   const taxes = 20;
   const totalAmount = (subTotal + taxes + shipping).toFixed(2);
+
+  // CSS outlined input text field
+  const OutlinedTextField = styled(
+    TextField,
+    Select,
+    CountrySelect
+  )({
+    "& input:valid + fieldset": {
+      borderColor: "black",
+      borderWidth: 1,
+    },
+    "& input:invalid + fieldset": {
+      borderColor: "red",
+      borderWidth: 1,
+    },
+    "& label.Mui-focused": {
+      color: "black",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "black",
+    },
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "black",
+      },
+      "&:hover fieldset": {
+        borderColor: "black",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "black",
+      },
+    },
+  });
 
   // Esquema de validación con Yup
   const validationSchema = Yup.object().shape({
@@ -116,9 +157,9 @@ function Checkout() {
             <div className="container container-content">
               <div className="row">
                 <div className="col-md-12 col-lg-4">
-                  <h3>Contact Information</h3>
-
-                  <TextField
+                  <hr />
+                  <h5>Contact Information</h5>
+                  <OutlinedTextField
                     className="bg-transparent"
                     id="email"
                     name="email"
@@ -131,11 +172,12 @@ function Checkout() {
                     error={touched.email && !!errors.email}
                     helperText={touched.email && errors.email}
                   />
+
                   <hr />
                   <h3>Shipping Information</h3>
-                  <div className="d-flex mb-3">
+                  <div className="d-flex mb-3 gap-3">
                     <Field
-                      as={TextField}
+                      as={OutlinedTextField}
                       id="firstname"
                       name="firstname"
                       label="Firstname"
@@ -146,7 +188,7 @@ function Checkout() {
                       fullWidth
                     />
                     <Field
-                      as={TextField}
+                      as={OutlinedTextField}
                       id="lastname"
                       name="lastname"
                       label="Lastname"
@@ -159,7 +201,7 @@ function Checkout() {
                   </div>
                   <div className="mb-3">
                     <Field
-                      as={TextField}
+                      as={OutlinedTextField}
                       id="address"
                       name="address"
                       label="Address"
@@ -170,9 +212,9 @@ function Checkout() {
                       fullWidth
                     />
                   </div>
-                  <div className="d-flex mb-3">
+                  <div className="d-flex mb-3 gap-3">
                     <Field
-                      as={TextField}
+                      as={OutlinedTextField}
                       id="city"
                       name="city"
                       label="City"
@@ -189,9 +231,9 @@ function Checkout() {
                       }
                     />
                   </div>
-                  <div className="d-flex mb-3">
+                  <div className="d-flex mb-3 gap-3">
                     <Field
-                      as={TextField}
+                      as={OutlinedTextField}
                       id="state"
                       name="state"
                       label="State"
@@ -202,7 +244,7 @@ function Checkout() {
                       fullWidth
                     />
                     <Field
-                      as={TextField}
+                      as={OutlinedTextField}
                       id="postalcode"
                       name="postalcode"
                       label="Postal Code"
@@ -214,7 +256,7 @@ function Checkout() {
                     />
                   </div>
                   <Field
-                    as={TextField}
+                    as={OutlinedTextField}
                     id="phone"
                     name="phone"
                     label="Phone"
@@ -225,7 +267,7 @@ function Checkout() {
                     fullWidth
                   />
                   <hr />
-                  <h3>Payment Information</h3>
+                  <h5>Payment Information</h5>
                   <InputLabel id="demo-simple-select-label">
                     Payment Method
                   </InputLabel>
@@ -245,7 +287,7 @@ function Checkout() {
                   </Select>
                   <div className="mb-3">
                     <Field
-                      as={TextField}
+                      as={OutlinedTextField}
                       id="cardnumber"
                       name="cardnumber"
                       label="Card Number"
@@ -258,7 +300,7 @@ function Checkout() {
                   </div>
                   <div className="mb-3">
                     <Field
-                      as={TextField}
+                      as={OutlinedTextField}
                       id="cardholder"
                       name="cardholder"
                       label="Card Holder"
@@ -269,9 +311,9 @@ function Checkout() {
                       fullWidth
                     />
                   </div>
-                  <div className="d-flex">
+                  <div className="d-flex gap-3">
                     <Field
-                      as={TextField}
+                      as={OutlinedTextField}
                       id="expirationdate"
                       name="expirationdate"
                       label="Expiration Date"
@@ -284,7 +326,7 @@ function Checkout() {
                       fullWidth
                     />
                     <Field
-                      as={TextField}
+                      as={OutlinedTextField}
                       id="cvv"
                       name="cvv"
                       label="CVV"
@@ -296,8 +338,10 @@ function Checkout() {
                     />
                   </div>
                 </div>
+
                 <div className="col-md-12 col-lg-6">
-                  <h3>Order Summary</h3>
+                  <hr />
+                  <h5>Order Summary</h5>
                   {cart.map((item) => (
                     <div
                       key={item.id}
@@ -313,7 +357,7 @@ function Checkout() {
                       </div>
                       <div className="col-9">
                         <div className="card-content">
-                          <div className="product-name fs-5">{item.name}</div>
+                          <div className="product-name fs-6">{item.name}</div>
                           <div className="product-description">
                             <p className="fw-bold">
                               ${" "}
@@ -354,7 +398,7 @@ function Checkout() {
                   <div>
                     <div className="d-flex strong justify-content-between">
                       <p>Subtotal</p>
-                      <p className="fw-bold">{subTotal.toFixed(2)}</p>
+                      <p className="fw-bold">{subTotal.toFixed(2)} USD</p>
                     </div>
                     <div className="d-flex justify-content-between">
                       <p>Shipping</p>
@@ -366,11 +410,15 @@ function Checkout() {
                     </div>
                     <hr />
                     <div className="d-flex justify-content-between">
-                      <h3>Total</h3>
+                      <h5>Total</h5>
                       <p className="fw-bold">{totalAmount} USD</p>
                     </div>
                   </div>
-                  <Button type="submit" variant="contained" color="primary">
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    className="btn btn-checkout w-100"
+                  >
                     Confirm Order
                   </Button>
                   <div className="d-flex justify-content-center align-items-center w-50 m-5">

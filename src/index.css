@@ -5,8 +5,18 @@ html {
   background-image: url("https://img.freepik.com/foto-gratis/textura-cemento_1194-5292.jpg?t=st=1720033941~exp=1720037541~hmac=739d177239936fc0687f8ec79c79bae484d1d12ef3c416d7799f03042ed0d488&w=740");
   color: rgb(0, 0, 0);
   min-height: 100vh;
-  font-family: "Axiforma", sans-serif;
+  font-family: "Axiforma", sans-serif !important;
   overflow-x: hidden;
+}
+::-moz-selection {
+  /* Code for Firefox */
+  color: #212529;
+  background: #d0d88a;
+}
+
+::selection {
+  color: #212529;
+  background: #d0d88a;
 }
 :root {
   --customBlue: #718da1;

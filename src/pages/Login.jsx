@@ -37,12 +37,12 @@ function Login() {
   return (
     <>
       <NavBarApp />;
-      <div className=" container container-login mt-5 d-flex align-items-center justify-content-center flex-column">
-        <h2 className="text-center">Login to your account </h2>
+      <div className=" container container-login d-flex align-items-center justify-content-center flex-column">
         <div className="p-5 rounded shadow  w-100 w-md-75 w-lg-50  mt-4">
+          <h3 className="text-center ">Login to your account </h3>
           <div>
             <Form method="POST" action="/" onSubmit={handleLogin}>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mt-5" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
                   onChange={(e) => {
@@ -52,7 +52,7 @@ function Login() {
                   value={email}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="my-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                   onChange={(e) => {
@@ -71,7 +71,7 @@ function Login() {
                   Not register yet?
                 </Link>
               </Form.Group>
-              <Button className="w-100 mb-3" variant="primary" type="submit">
+              <Button className="w-100 mb-3 btn-checkout-cart" type="submit">
                 Login
               </Button>
               <div className="d-flex justify-content-center">
@@ -85,16 +85,13 @@ function Login() {
 
         <div className="p-5 rounded shadow w-100 w-sm-75 w-md-50 w-lg-25 mt-3 mb-5">
           <div>
-            <h5>User Credentials</h5>
+            <h5 className="text-center mb-3">User Credentials</h5>
             <p>
               To simplify access to the application, the following test user is
               provided:
             </p>
-          </div>
-          <div>
-            <h6>Log in as a buyer</h6>
             <ul>
-              <li>Email: carlitos@gmail.com</li>
+              <li>Email address: carlitos@gmail.com</li>
               <li>Password: 1234</li>
             </ul>
           </div>

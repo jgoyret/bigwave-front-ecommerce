@@ -38,12 +38,12 @@ function RegisterForm() {
   return (
     <>
       <NavBarApp />;
-      <div className=" container container-login mt-5 d-flex align-items-center justify-content-center flex-column">
-        <h2 className="text-center">Create your account </h2>
+      <div className=" container container-login d-flex align-items-center justify-content-center flex-column">
         <div className="p-5 rounded shadow mb-5 w-100 w-md-75 w-lg-50  mt-4">
+          <h3 className="text-center">Create your account </h3>
           <div>
             <Form className="mb-5" onSubmit={handleNewUser}>
-              <Form.Group className="mb-3" controlId="formBasicFirstname">
+              <Form.Group className="mt-5 mb-3" controlId="formBasicFirstname">
                 <Form.Label>Firstname</Form.Label>
                 <Form.Control
                   type="text"
@@ -71,7 +71,7 @@ function RegisterForm() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </Form.Group>
-              <Button className="w-100" variant="primary" type="submit">
+              <Button className="w-100 btn-checkout-cart" type="submit">
                 Create account
               </Button>
             </Form>
