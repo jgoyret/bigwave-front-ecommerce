@@ -179,12 +179,14 @@ function NavBarApp() {
               className="nav-link position-relative"
               onClick={handleShowCart}
             >
-              <i className="bi bi-cart cart-resp text-dark mx-2 fs-4 "></i>
-              {cart.length > 0 && (
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  {cart.length}
-                </span>
-              )}
+              <div className="position-relative d-inline-block">
+                <i className="bi bi-cart cart-resp text-dark mx-2 fs-4"></i>
+                {cart.reduce((total, item) => total + item.quantity, 0) > 0 && (
+                  <span className="position-absolute top-0 start-50  badge rounded-pill bg-danger">
+                    {cart.reduce((total, item) => total + item.quantity, 0)}
+                  </span>
+                )}
+              </div>
             </NavLink>
           </Navbar.Collapse>
         </Container>
