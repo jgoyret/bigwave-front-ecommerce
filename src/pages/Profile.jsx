@@ -1,11 +1,9 @@
-import NavBarApp from "../components/NavBarApp";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Modal, Box, TextField, Typography, Button } from "@mui/material";
 import "../styles/profile.css";
 import { Link, useNavigate } from "react-router-dom";
-import { dark } from "@mui/material/styles/createPalette";
 
 const style = {
   fontSize: 16,
@@ -120,7 +118,6 @@ function Profile() {
     <>
       {loggedUser && (
         <>
-          <NavBarApp />
           <div className="container my-profile-container ">
             <div className="my-profile-data ">
               <div className="d-flex flex-column ">

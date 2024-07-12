@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import NavBarApp from "../components/NavBarApp";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import BreadcrumbApp from "../components/BreadcrumbApp";
-import Footer from "../components/Footer";
 import "../styles/productview.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
@@ -44,7 +42,6 @@ function ProductView() {
   return (
     product && (
       <>
-        <NavBarApp />
         <div className="container container-productview">
           <div className="row container">
             <div className="col-md-10 col-lg-5 mt-3 p-0 container-img">
@@ -105,7 +102,6 @@ function ProductView() {
             </div>
           </div>
         </div>
-        <Footer />
       </>
     )
   );

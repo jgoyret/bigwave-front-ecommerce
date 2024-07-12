@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
-import NavBarApp from "../components/NavBarApp";
 import { useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import ProductModel from "../components/ProductModel";
 import "../styles/Products.css";
-import ProductsNavbar from "./ProductsNavbar";
-import Footer from "../components/Footer";
-import BreadcrumbApp from "../components/BreadcrumbApp";
+import ProductsNavbar from "../components/ProductsNavbar";
 import { useSelector } from "react-redux";
 
 function Category() {
@@ -31,7 +28,6 @@ function Category() {
   }, [location.pathname]);
   return (
     <>
-      <NavBarApp />
       <div className="container">
         <header>
           <div
@@ -56,7 +52,6 @@ function Category() {
           )}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

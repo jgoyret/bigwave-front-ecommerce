@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import NavBarApp from "../components/NavBarApp";
 import ProductModel from "../components/ProductModel";
 import axios from "axios";
 import "../styles/Products.css";
-import ProductsNavbar from "./ProductsNavbar";
-import Footer from "../components/Footer";
+import ProductsNavbar from "../components/ProductsNavbar";
 
 function AllProducts() {
   const [products, setProducts] = useState([]);
@@ -22,7 +20,6 @@ function AllProducts() {
 
   return (
     <>
-      <NavBarApp />
       <div className="container">
         <header>
           <div
@@ -47,7 +44,6 @@ function AllProducts() {
           )}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

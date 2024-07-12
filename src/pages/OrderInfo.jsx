@@ -37,7 +37,7 @@ export default function OrderInfo() {
   }
 
   return (
-    <Container>
+    <Container className="mt-5 pt-5">
       <CssBaseline />
       <Typography variant="h4" gutterBottom>
         Order Information

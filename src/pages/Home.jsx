@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import NavBarApp from "../components/NavBarApp";
 import Slider from "../components/Slider";
 import Questions from "../components/Questions";
-import Footer from "../components/Footer";
 import { Player } from "@lordicon/react";
 import plant from "../icons/wired-outline-1827-growing-plant.json";
 import star from "../icons/wired-outline-237-star-rating.json";
@@ -43,9 +41,7 @@ function Home() {
 
   return (
     <>
-      <NavBarApp />
       <Slider />
-
       <header>
         <div
           className="d-flex align-items-center position-relative "
@@ -152,7 +148,6 @@ function Home() {
         </div>
       </section>
       <Questions />
-      <Footer />
     </>
   );
 }

@@ -11,52 +11,60 @@ import ErrorPage from "./pages/ErrorPage";
 import Profile from "./pages/Profile";
 import OrderGreetings from "./pages/OrderGreetings";
 import OrderInfo from "./pages/OrderInfo";
+import Layout from "./pages/Layout";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/login",
-      element: <Login />,
-    },
-    {
-      path: "/register",
-      element: <RegisterForm />,
-    },
-    {
-      path: "/products",
-      element: <AllProducts />,
-    },
-    {
-      path: "/categories/:slug",
-      element: <Category />,
-    },
-    {
-      path: "/products/:slug",
-      element: <ProductView />,
-    },
-    {
-      path: "/about-this-project",
-      element: <About />,
-    },
-    {
-      path: "/checkout",
-      element: <Checkout />,
-    },
-    {
-      path: "/my-profile",
-      element: <Profile />,
-    },
-    {
-      path: "/order-completed",
-      element: <OrderGreetings />,
-    },
-    {
-      path: "/order/:orderId",
-      element: <OrderInfo />,
+      element: <Layout />,
+      children: [
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/register",
+          element: <RegisterForm />,
+        },
+        {
+          path: "/",
+          element: <Home />,
+        },
+
+        {
+          path: "/products",
+          element: <AllProducts />,
+        },
+        {
+          path: "/categories/:slug",
+          element: <Category />,
+        },
+        {
+          path: "/products/:slug",
+          element: <ProductView />,
+        },
+        {
+          path: "/about-this-project",
+          element: <About />,
+        },
+        {
+          path: "/checkout",
+          element: <Checkout />,
+        },
+        {
+          path: "/my-profile",
+          element: <Profile />,
+        },
+        {
+          path: "/order-completed",
+          element: <OrderGreetings />,
+        },
+        {
+          path: "/order/:orderId",
+          element: <OrderInfo />,
+        },
+      ],
     },
     {
       path: "*",

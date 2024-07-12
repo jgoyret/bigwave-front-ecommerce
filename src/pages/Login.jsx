@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import NavBarApp from "../components/NavBarApp";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import "../styles/Login.css";
 import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -36,7 +34,6 @@ function Login() {
 
   return (
     <>
-      <NavBarApp />;
       <div className=" container container-login d-flex align-items-center justify-content-center flex-column">
         <div className="p-5 rounded shadow  w-100 w-md-75 w-lg-50  mt-4">
           <h3 className="text-center ">Login to your account </h3>
@@ -97,7 +94,6 @@ function Login() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

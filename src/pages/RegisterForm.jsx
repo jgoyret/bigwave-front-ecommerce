@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import NavBarApp from "../components/NavBarApp";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import Footer from "../components/Footer";
 import axios from "axios";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
@@ -37,7 +35,6 @@ function RegisterForm() {
 
   return (
     <>
-      <NavBarApp />;
       <div className=" container container-login d-flex align-items-center justify-content-center flex-column">
         <div className="p-5 rounded shadow mb-5 w-100 w-md-75 w-lg-50  mt-4">
           <h3 className="text-center">Create your account </h3>
@@ -78,7 +75,6 @@ function RegisterForm() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

@@ -9,8 +9,6 @@ import {
   outlinedInputClasses,
 } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
-import NavBarApp from "../components/NavBarApp";
-import Footer from "../components/Footer";
 import "../styles/Checkout.css";
 import CountrySelect from "../components/CountrySelect";
 import { useSelector } from "react-redux";
@@ -146,7 +144,6 @@ function Checkout() {
 
   return (
     <>
-      <NavBarApp />
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -430,7 +427,6 @@ function Checkout() {
           </Form>
         )}
       </Formik>
-      <Footer />
     </>
   );
 }
