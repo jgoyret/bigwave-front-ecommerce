@@ -45,9 +45,9 @@ function Cart({ show, handleClose }) {
               </Link>
               <p className="text-center mt-3">
                 or
-                <button onClick={handleClose} className="btn">
+                <Link to={"/products"} onClick={handleClose} className="btn">
                   Continue Shopping
-                </button>
+                </Link>
               </p>
             </div>
           </div>
