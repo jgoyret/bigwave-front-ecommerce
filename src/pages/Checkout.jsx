@@ -152,8 +152,8 @@ function Checkout() {
         {({ errors, touched, handleChange, values, setFieldValue }) => (
           <Form>
             <div className="container container-content">
-              <div className="row">
-                <div className="col-md-12 col-lg-4">
+              <div className="row checkout-container">
+                <div className="col-md-12 col-lg-6">
                   <hr />
                   <h5>Contact Information</h5>
                   <OutlinedTextField
@@ -340,13 +340,10 @@ function Checkout() {
                   <hr />
                   <h5>Order Summary</h5>
                   {cart.map((item) => (
-                    <div
-                      key={item.id}
-                      className="flex-row row card object-fit-cover"
-                    >
+                    <div key={item.id} className="flex-row row card-summary">
                       <div className="col-2 d-flex align-items-center">
                         <img
-                          className="cart-image img-fluid object-fit-cover w-100"
+                          className="cart-image img-fluid"
                           src={item.image}
                           style={{ height: 80 }}
                           alt="Card image cap"
@@ -418,9 +415,9 @@ function Checkout() {
                   >
                     Confirm Order
                   </Button>
-                  <div className="d-flex justify-content-center align-items-center w-50 m-5">
+                  {/* <div className="d-flex justify-content-center align-items-center w-50 m-5">
                     <img src="../QR.png" alt="QR" className=" w-100 h-100" />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

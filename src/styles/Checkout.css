@@ -2,8 +2,24 @@
   margin-bottom: 200px !important;
   margin-top: 100px;
 }
-.card {
-  background-color: transparent !important;
+.card-summary {
+  border-radius: 10px !important;
+  object-fit: cover;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.card-summary img {
+  min-height: 80px;
+  min-width: 80px;
+  /* object-fit: ; */
+  border-radius: 10px;
 }
 .btn-checkout {
   font-size: 0.7rem !important;

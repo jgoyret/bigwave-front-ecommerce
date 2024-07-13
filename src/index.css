@@ -25,6 +25,11 @@ html {
   --customGreen: #aad054;
   --customDarkGreen: #68844a;
 }
+
+main {
+  min-height: 100svh;
+}
+
 .btnColor {
   background-color: var(--customBlue);
   color: white;
