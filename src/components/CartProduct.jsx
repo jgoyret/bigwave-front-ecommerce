@@ -13,7 +13,7 @@ function CartProduct() {
   return (
     <>
       {cart.map((item) => (
-        <div key={item.id} className="card user-select-none">
+        <div key={item.id} className="user-select-none">
           <div className="card-wrapper">
             <div className="card-icon">
               <div>
