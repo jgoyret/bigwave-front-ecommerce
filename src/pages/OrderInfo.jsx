@@ -16,6 +16,29 @@ import {
 } from "@mui/material";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
+const headerStyle = {
+  mb: 3,
+  background: "transparent",
+  border: "none",
+  // borderBottom: "2px solid #e0e0e0",
+  borderTop: "2px solid #e0e0e0",
+  display: "flex",
+  flexDirection: "column",
+  boxShadow: "none",
+};
+const cardStyle = {
+  // mb: 3,
+  background: "transparent",
+  border: "none",
+  // borderBottom: "2px solid #e0e0e0",
+  borderTop: "2px solid #e0e0e0",
+  width: "100%",
+  boxShadow: "none",
+  margin: "0px 0",
+};
+
+const totalPriceStyle = {};
+
 export default function OrderInfo() {
   const { orderId } = useParams();
   const location = useLocation();
@@ -40,23 +63,49 @@ export default function OrderInfo() {
     <Container className="mt-5 pt-5">
       <CssBaseline />
       <Typography variant="h4" gutterBottom>
-        Order Information
+        Order ID: {order.id}
       </Typography>
-      <Card variant="outlined" sx={{ mb: 3 }}>
+      <Card sx={headerStyle}>
         <CardContent>
           {/* Encabezado de la Orden */}
-          <Box mb={3}>
-            <Typography variant="h5" gutterBottom>
-              Order ID: {order.id}
+          <Box
+            mb={0}
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography variant="subtitle2" gutterBottom>
+              Date
+            </Typography>
+            <Typography variant="subtitle2" gutterBottom>
+              Status
+            </Typography>
+            <Typography variant="subtitle2" gutterBottom>
+              Address
+            </Typography>
+            <Typography sx={totalPriceStyle} variant="subtitle2" gutterBottom>
+              Total Amount
+            </Typography>
+          </Box>
+          <Box
+            mb={3}
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography variant="subtitle1" gutterBottom>
+              {new Date(order.createdAt).toLocaleDateString()}
             </Typography>
             <Typography variant="subtitle1" gutterBottom>
-              Date: {new Date(order.createdAt).toLocaleDateString()}
+              {order.status}
             </Typography>
             <Typography variant="subtitle1" gutterBottom>
-              Status: {order.status}
+              {order.address}
             </Typography>
-            <Typography variant="subtitle1" gutterBottom>
-              Address: {order.address}
+            <Typography sx={totalPriceStyle} variant="subtitle1" gutterBottom>
+              ${order.totalAmount.toFixed(2)}
             </Typography>
           </Box>
         </CardContent>
@@ -65,8 +114,12 @@ export default function OrderInfo() {
       {/* Lista de Productos */}
       <List>
         {order.products.map((product, index) => (
-          <ListItem key={index} disableGutters>
-            <Card variant="elevation" sx={{ width: "100%" }}>
+          <ListItem
+            key={index}
+            disableGutters
+            sx={{ paddingTop: "0px", paddingBottom: "0px" }}
+          >
+            <Card sx={cardStyle}>
               <Grid container spacing={2}>
                 <Grid item xs={6}>
                   <CardMedia
@@ -78,6 +131,7 @@ export default function OrderInfo() {
                       height: "200px",
                       objectFit: "cover",
                       p: 4,
+                      borderRadius: "40px",
                     }}
                   />
                 </Grid>
@@ -104,11 +158,6 @@ export default function OrderInfo() {
       </List>
       <Divider />
       {/* Precio Total */}
-      <Box mt={3}>
-        <Typography variant="h6" gutterBottom>
-          Total Amount: ${order.totalAmount.toFixed(2)}
-        </Typography>
-      </Box>
     </Container>
   );
 }
