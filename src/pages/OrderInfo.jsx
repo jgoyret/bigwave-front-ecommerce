@@ -62,7 +62,7 @@ export default function OrderInfo() {
   return (
     <Container className="mt-5 pt-5">
       <CssBaseline />
-      <Typography variant="h4" gutterBottom>
+      <Typography className="mt-2" variant="h4" gutterBottom>
         Order ID: {order.id}
       </Typography>
       <Card sx={headerStyle}>
@@ -75,16 +75,16 @@ export default function OrderInfo() {
               justifyContent: "space-between",
             }}
           >
-            <Typography variant="subtitle2" gutterBottom>
+            <Typography variant="caption" gutterBottom>
               Date
             </Typography>
-            <Typography variant="subtitle2" gutterBottom>
+            <Typography variant="caption" gutterBottom>
               Status
             </Typography>
-            <Typography variant="subtitle2" gutterBottom>
+            <Typography variant="caption" gutterBottom>
               Address
             </Typography>
-            <Typography sx={totalPriceStyle} variant="subtitle2" gutterBottom>
+            <Typography sx={totalPriceStyle} variant="caption" gutterBottom>
               Total Amount
             </Typography>
           </Box>
