@@ -83,7 +83,9 @@ function Home() {
               icon={star}
               trigger="hover"
             />
-            <h5>We are premium</h5>
+            <h5>
+              We are <strong>premium</strong>
+            </h5>
             <p className=" d-none d-md-inline">
               Premium quality products with excelent controls
             </p>
@@ -93,7 +95,9 @@ function Home() {
             onMouseEnter={() => handleAnimationIcon(plantRef)}
           >
             <Player ref={plantRef} size={96} icon={plant} trigger="hover" />
-            <h5>We are natural</h5>
+            <h5>
+              We are <strong>natural</strong>
+            </h5>
             <p className=" d-none d-md-inline">
               100% natural ingredients for a healthier lifestyle
             </p>
@@ -103,7 +107,9 @@ function Home() {
             onMouseEnter={() => handleAnimationIcon(chartRef)}
           >
             <Player ref={chartRef} size={96} icon={chart} trigger="hover" />
-            <h5>We are efficient</h5>
+            <h5>
+              We are <strong>efficient</strong>
+            </h5>
             <p className=" d-none d-md-inline">
               Efficient and reliable service for your needs
             </p>
@@ -113,7 +119,9 @@ function Home() {
             onMouseEnter={() => handleAnimationIcon(truckRef)}
           >
             <Player ref={truckRef} size={96} icon={truck} trigger="hover" />
-            <h5>We are fast</h5>
+            <h5>
+              We are <strong>fast</strong>
+            </h5>
             <p className=" d-none d-md-inline">
               Fast and secure delivery to your doorstep
             </p>
@@ -123,10 +131,27 @@ function Home() {
       <section className="container" id="category-healthy">
         <div className="text-center my-5">
           <div>
-            <h3 className="">ENHANCE YOUR VITALITY</h3>
-            <p>Shop by category</p>
+            {/* <h3 className="">
+              ENHANCE YOUR <span className="banner-font">VITALITY</span>
+            </h3> */}
+            <h3 className="category-faq-titles">Shop by category</h3>
+            <div class="main__action">
+              <div class="main__scroll-box">
+                <svg
+                  class="main__scroll-icon"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M11.9997 13.1716L7.04996     8.22186L5.63574 9.63607L11.9997 16L18.3637 9.63607L16.9495 8.22186L11.9997 13.1716Z"
+                    fill="rgba(28,28,30,1)"
+                  ></path>
+                </svg>
+              </div>
+            </div>
           </div>
-          <div className="row px-0 mx-0 d-flex justify-content-center g-3">
+          <div className="row px-0 mx-0 mt-2 d-flex justify-content-center g-3">
             {categories.map((category) => {
               return (
                 <div

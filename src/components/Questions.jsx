@@ -4,7 +4,7 @@ function Questions() {
   return (
     <>
       <div className="container faq-height">
-        <h3 className="text-center">FAQ's</h3>
+        <h3 className="text-center category-faq-titles">FAQ's</h3>
         <Accordion>
           <Accordion.Item className="bg-transparent" eventKey="0">
             <Accordion.Header>
