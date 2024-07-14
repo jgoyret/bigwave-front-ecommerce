@@ -12,7 +12,9 @@ i {
   margin-top: 15vh;
   margin-bottom: 20vh;
 }
-
+.row {
+  flex-wrap: nowrap;
+}
 @media (max-width: 992px) {
   .product-body {
     margin-left: 0 !important;

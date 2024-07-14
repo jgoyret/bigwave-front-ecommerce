@@ -55,18 +55,20 @@ function ProductView() {
             <div className="col-md-10 col-lg-7 p-0 ms-4 product-body">
               <BreadcrumbApp product={product} />
               <section>
-                <h3 className="fs-1 fw-bold">{product.name}</h3>
-                <p className="fs-2">$ {product.price}</p>
-                <p className="fs-4 fw-light">{product.description}</p>
+                <h3 className="fs-4 fw-bold mb-4">
+                  {product.name} <i className="bi bi-suit-heart ms-3 fs-5"></i>
+                </h3>
+                <p className="fs-5">{product.price} USD</p>
+                <p className="fs-6 fw-light">{product.description}</p>
                 <div className="d-flex align-items-center">
-                  <div className="fs-4">
+                  <div className="fs-5">
                     <i
-                      className="bi bi-dash-circle"
+                      className="bi bi-dash-circle fs-6"
                       onClick={() => setUnits(units - 1)}
                     ></i>
                     <span className="ms-2 user-select-none">{units}</span>
                     <i
-                      className="ms-2 bi bi-plus-circle"
+                      className="ms-2 bi bi-plus-circle fs-6"
                       onClick={() => setUnits(units + 1)}
                     ></i>
                   </div>
@@ -79,7 +81,6 @@ function ProductView() {
                       Add to cart
                     </span>
                   </button>
-                  <i className="bi bi-suit-heart ms-3 fs-3"></i>
                 </div>
               </section>
               <section className="d-flex section-div mt-2">
