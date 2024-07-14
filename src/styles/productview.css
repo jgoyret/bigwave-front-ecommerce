@@ -12,3 +12,17 @@ i {
   margin-top: 15vh;
   margin-bottom: 20vh;
 }
+
+@media (max-width: 992px) {
+  .product-body {
+    margin-left: 0 !important;
+  }
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .product-image {
+    width: 100% !important;
+    height: 300px !important;
+  }
+}

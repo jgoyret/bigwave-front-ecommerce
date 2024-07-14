@@ -47,12 +47,12 @@ function ProductView() {
             <div className="col-md-10 col-lg-5 mt-3 p-0 container-img">
               <img
                 style={{ width: 500, height: 500 }}
-                className="img-fluid rounded shadow object-fit-cover"
+                className="img-fluid rounded shadow object-fit-cover product-image"
                 src={product.image}
                 alt={product.name}
               />
             </div>
-            <div className="col-md-10 col-lg-7 p-0 ms-4">
+            <div className="col-md-10 col-lg-7 p-0 ms-4 product-body">
               <BreadcrumbApp product={product} />
               <section>
                 <h3 className="fs-1 fw-bold">{product.name}</h3>
