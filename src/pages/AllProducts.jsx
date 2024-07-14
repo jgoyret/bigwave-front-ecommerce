@@ -49,11 +49,11 @@ function AllProducts() {
           </div>
         </header>
       </div>
-      <div className="d-flex justify-content-center container-main-products">
+      <div className="d-flex justify-content-center container-main-products my-3">
         <ProductsNavbar />
         <div>
           {products.length > 0 && (
-            <div className="products-container container mt-4 justify-content-center">
+            <div className="products-container container mt-5 justify-content-center">
               {products.map((product) => (
                 <ProductModel key={product.id} product={product} />
               ))}

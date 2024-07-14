@@ -44,7 +44,7 @@ function Category() {
         <div className="d-flex justify-content-center my-3">
           <ProductsNavbar />
           {category && (
-            <div className="products-container container mt-5">
+            <div className="products-container container mt-5 justify-content-center">
               {category.Products.map((c) => {
                 return <ProductModel key={c.id} product={c} />;
               })}
