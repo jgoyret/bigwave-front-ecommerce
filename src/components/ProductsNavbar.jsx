@@ -19,7 +19,7 @@ function ProductsNavbar() {
 
   return (
     <>
-      <div className="side-list-filter mt-4">
+      <div className="side-list-filter mt-5">
         <div>Categories</div>
         <ul>
           <li onClick={() => navigate("/products")}>All products</li>

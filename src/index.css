@@ -141,15 +141,27 @@ h5 strong {
 }
 
 .category-faq-titles {
-  color: #68844a;
+  font-size: 1rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 .category-item {
   width: 300px;
   /* padding-left: 0px !important; */
 }
 .category-header {
-  height: 200px !important;
+  height: 50px !important;
   margin-top: 100px;
+  background-color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+.category-title-header {
+  font-size: 0.8rem;
+  margin: 0;
 }
 .category-item p {
   transition: 0.5s all ease;
@@ -304,4 +316,13 @@ a {
     transform: translateY(-1rem);
     opacity: 0;
   }
+}
+.accordion-item {
+  font-weight: 300;
+}
+.accordion-button:not(.collapsed) {
+  color: #333;
+}
+.accordion-button:focus {
+  box-shadow: none;
 }

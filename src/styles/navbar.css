@@ -4,14 +4,16 @@
   background-color: transparent;
   z-index: 100;
   top: 30px;
-  text-shadow: 0px 0px 1px #000000cc;
+  text-shadow: 0px 0px 0.5px #000000cc;
 }
 #navbar.scrolled {
   position: fixed !important;
   background-color: rgba(226, 232, 228, 0.873) !important;
   top: 0 !important;
 }
-
+#navbarScrollingDropdown {
+  color: #333 !important;
+}
 .input-wrapper {
   display: flex;
   align-items: center;
@@ -151,4 +153,13 @@
   .cart-responsive {
     display: none;
   }
+}
+.bg-danger {
+  background-color: #aad054 !important;
+}
+img {
+  margin-bottom: 9px;
+}
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: #d0d88a;
 }

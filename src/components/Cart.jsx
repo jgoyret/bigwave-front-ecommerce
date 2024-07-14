@@ -28,7 +28,7 @@ function Cart({ show, handleClose }) {
               <hr />
               <div className="d-flex justify-content-between">
                 <h6>Subtotal</h6>
-                <span>{totalAmount.toFixed(2)}</span>
+                <span>{totalAmount.toFixed(2)} USD</span>
               </div>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.

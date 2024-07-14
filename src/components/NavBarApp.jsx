@@ -123,7 +123,9 @@ function NavBarApp() {
                   </div>
                 )}
               </NavDropdown>
-              <Nav.Link href="/about-this-project">About this project</Nav.Link>
+              <Nav.Link className="text-dark" href="/about-this-project">
+                About this project
+              </Nav.Link>
             </Nav>
             {/* <Nav.Link className="input-wrap" style={{ height: "40px" }}>
               <button className="icon">

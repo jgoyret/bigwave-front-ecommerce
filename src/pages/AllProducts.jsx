@@ -41,10 +41,10 @@ function AllProducts() {
         <header>
           <div
             className="d-flex category-header justify-content-center align-items-center position-relative"
-            id="header-image"
+            // id="header-image"
           >
-            <div className="ms-5 text-center fw-bold">
-              <h2 className="text-capitalize">All products</h2>
+            <div className="text-center">
+              <h4 className="category-title-header">All products</h4>
             </div>
           </div>
         </header>

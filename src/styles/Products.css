@@ -105,7 +105,7 @@
   max-width: 300px;
   min-width: 300px;
   border-radius: 5px;
-  padding-top: 1vh;
+  /* padding-top: 1vh; */
   padding-bottom: 2vh;
   height: fit-content;
   /* box-shadow: 1px 1px 2px #252525; */
@@ -128,11 +128,14 @@
   margin-bottom: 10px;
   cursor: pointer;
   text-decoration: none;
-  color: var(--custom-ligth-green);
-  background-color: var(--custom-blue);
+  color: black;
+  background-color: #d0d88a;
   width: 90%;
   box-sizing: border-box;
   transition: 0.5s all ease;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
 }
 
 .side-list-filter a {
@@ -141,33 +144,33 @@
 
 .side-list-filter a:hover {
   background-color: transparent;
-  color: black;
+  color: #333;
   background-color: inherit;
   color: inherit;
 }
 
 .side-list-filter li:hover {
-  background-color: transparent;
-  color: black;
-  font-weight: bold;
-  box-shadow: 2px 2px 5px #25252575;
+  background-color: #fff;
+  color: #333;
+  /* font-weight: bold; */
+  box-shadow: 1px 1px 5px #25252575;
 }
 
 .side-list-filter div {
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 0.8rem;
+  /* font-weight: bold; */
   margin: 1.8rem;
   margin-top: 0;
-  background: rgba(255, 255, 255, 0.2);
-  border: 3px solid rgba(255, 255, 255, 0.3);
+  background: #fff;
+  /* border: 0.2px solid #333; */
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: rgb(100, 100, 100);
+  color: #333;
   padding: 10px 20px;
   backdrop-filter: blur(10px);
   text-transform: uppercase;

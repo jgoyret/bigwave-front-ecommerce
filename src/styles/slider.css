@@ -12,7 +12,7 @@
   color: white;
 }
 .slider-animation a:hover {
-  color: orange;
+  color: #aad054 !important;
 }
 .slider-animation {
   height: 100%;

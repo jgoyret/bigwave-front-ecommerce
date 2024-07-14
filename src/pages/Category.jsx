@@ -32,16 +32,16 @@ function Category() {
         <header>
           <div
             className="d-flex category-header justify-content-center align-items-center position-relative "
-            id="header-image"
+            // id="header-image"
           >
-            <div className="ms-5 text-center fw-bold">
-              <h2 className="text-capitalize">
+            <div className="text-center">
+              <h4 className="category-title-header">
                 {params.slug.replace(/-/g, " ")}
-              </h2>
+              </h4>
             </div>
           </div>
         </header>
-        <div className="d-flex justify-content-center my-5">
+        <div className="d-flex justify-content-center my-3">
           <ProductsNavbar />
           {category && (
             <div className="products-container container mt-5">
