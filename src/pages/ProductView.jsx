@@ -4,7 +4,7 @@ import axios from "axios";
 import BreadcrumbApp from "../components/BreadcrumbApp";
 import "../styles/productview.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../redux/cartReducer";
+import { checkAndAddToCart, addToCart } from "../redux/cartReducer";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
@@ -22,10 +22,9 @@ function ProductView() {
     if (units <= 0) {
       toast.info("Units must be higher than 0");
     } else {
-      dispatch(addToCart({ ...product, quantity: units }));
-      toast.success(`Added ${units} ${product.name} to the cart`, {
-        position: "bottom-right",
-      });
+      // console.log("stock del producto: ", product.stock);
+      const entrieProduct = { ...product, quantity: units };
+      dispatch(checkAndAddToCart(entrieProduct));
       setUnits(1);
     }
   };

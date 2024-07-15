@@ -5,6 +5,7 @@
   z-index: 100;
   top: 30px;
   text-shadow: 0px 0px 0.5px #000000cc;
+  font-family: "Axiforma", sans-serif !important;
 }
 #navbar.scrolled {
   position: fixed !important;

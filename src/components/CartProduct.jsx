@@ -4,11 +4,17 @@ import {
   removeFromCart,
   removeQuantity,
   addQuantity,
+  checkAndAddToCart,
 } from "../redux/cartReducer";
 
 function CartProduct() {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
+  const handleAddQuantity = (item, quantity) => {
+    const entrieProduct = { ...item, quantity };
+    dispatch(checkAndAddToCart(entrieProduct));
+  };
 
   return (
     <>
@@ -40,7 +46,7 @@ function CartProduct() {
                     ></i>{" "}
                     {item.quantity}{" "}
                     <i
-                      onClick={() => dispatch(addQuantity({ id: item.id }))}
+                      onClick={() => handleAddQuantity(item, 1)}
                       className="bi bi-plus-circle"
                     ></i>
                   </p>

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart } from "../redux/cartReducer";
+import { addToCart, checkAndAddToCart } from "../redux/cartReducer";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,10 +14,8 @@ function ProductModel({ product }) {
     if (units <= 0) {
       toast.info("Units must be higher than 0");
     } else {
-      dispatch(addToCart({ ...product, quantity: units }));
-      toast.success(`Added ${units} ${product.name} to the cart`, {
-        position: "bottom-right",
-      });
+      const entrieProduct = { ...product, quantity: units };
+      dispatch(checkAndAddToCart(entrieProduct));
       setUnits(1);
     }
   };
