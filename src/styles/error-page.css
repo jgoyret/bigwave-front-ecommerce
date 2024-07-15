@@ -1,0 +1,11 @@
+.error-container {
+  margin-top: 150px;
+  height: 100vh;
+}
+.error-title {
+  color: #aad054;
+  font-size: 2rem;
+  text-transform: uppercase;
+
+  font-weight: bold;
+}

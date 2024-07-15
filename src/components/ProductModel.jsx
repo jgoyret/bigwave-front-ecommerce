@@ -52,10 +52,7 @@ function ProductModel({ product }) {
                 className="bi bi-plus-circle fs-5"
               ></i>
             </div>
-            <button
-              onClick={handleAddToCart}
-              className=" w-25 button-add type1"
-            >
+            <button onClick={handleAddToCart} className="w-25 button-add type1">
               <i className="bi bi-cart2 fs-4"></i>
             </button>
           </div>
