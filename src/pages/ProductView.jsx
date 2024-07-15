@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 function ProductView() {
   const cart = useSelector((state) => state.cart);
   const [product, setProduct] = useState(null);
+  const [randomProducts, setRandomProducts] = useState([]);
   const params = useParams();
   const [units, setUnits] = useState(1);
 
@@ -36,8 +37,22 @@ function ProductView() {
       });
       setProduct(response.data);
     };
+
+    const getRandomProducts = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/products/random`
+        );
+        setRandomProducts(response.data);
+      } catch (error) {
+        console.error("Error fetching random products:", error);
+        setRandomProducts([]); // Handle error state
+      }
+    };
+
     getProduct();
-  }, []);
+    getRandomProducts();
+  }, [params.slug]);
 
   const handleDecreaseUnits = () => {
     if (units > 1) {
@@ -109,6 +124,24 @@ function ProductView() {
             </div>
           </div>
         </div>
+        <section className="container d-flex section-div mt-2">
+          {(randomProducts ?? []).map((randomProduct) => (
+            <div
+              key={randomProduct.slug}
+              className="ms-5 w-25 text-center shadow section-card rounded mt-5"
+            >
+              <img
+                src={randomProduct.image}
+                alt={randomProduct.name}
+                className="img-fluid rounded mb-2"
+                style={{ width: "100%", height: "auto" }}
+              />
+              <p>{randomProduct.name}</p>
+              <p>{randomProduct.price} USD</p>
+              <a href={`/product/${randomProduct.slug}`}>View</a>
+            </div>
+          ))}
+        </section>
       </>
     )
   );
