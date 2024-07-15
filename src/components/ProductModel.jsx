@@ -22,6 +22,12 @@ function ProductModel({ product }) {
     }
   };
 
+  const handleDecreaseUnits = () => {
+    if (units > 1) {
+      setUnits(units - 1);
+    }
+  };
+
   return (
     <>
       <div className="product-card p-0 ">
@@ -43,7 +49,7 @@ function ProductModel({ product }) {
           <div className="d-flex align-items-center w-100 p-2">
             <div className="fs-4">
               <i
-                onClick={() => setUnits(units - 1)}
+                onClick={handleDecreaseUnits}
                 className="bi bi-dash-circle fs-5"
               ></i>
               <span className="mx-2 fs-5">{units}</span>

@@ -39,6 +39,12 @@ function ProductView() {
     getProduct();
   }, []);
 
+  const handleDecreaseUnits = () => {
+    if (units > 1) {
+      setUnits(units - 1);
+    }
+  };
+
   return (
     product && (
       <>
@@ -64,7 +70,7 @@ function ProductView() {
                   <div className="fs-5">
                     <i
                       className="bi bi-dash-circle fs-6"
-                      onClick={() => setUnits(units - 1)}
+                      onClick={handleDecreaseUnits}
                     ></i>
                     <span className="ms-2 user-select-none">{units}</span>
                     <i
