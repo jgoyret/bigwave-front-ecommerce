@@ -43,7 +43,7 @@ function ProductView() {
     product && (
       <>
         <div className="container container-productview">
-          <div className="row container">
+          <div className="row container container-view">
             <div className="col-md-10 col-lg-5 mt-3 p-0 container-img">
               <img
                 style={{ width: 500, height: 500 }}
