@@ -124,7 +124,7 @@ function About() {
 					</Tippy>
 					<Tippy
 						placement="right"
-						content="Express handle database queries to MySQL, serve API routes, manage authentication with JWT, and provide data to the frontend built with React."
+						content="Express handles database queries to MySQL, serve API routes, manage authentication with JWT, and provide data to the frontend built with React."
 					>
 						<img src={expressLogo} className="iconStyle" alt="express logo" />
 					</Tippy>
