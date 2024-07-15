@@ -6,6 +6,17 @@ import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
 import Typography from '@mui/material/Typography';
 import '../styles/AboutUs.css';
+import reactLogo from '../assets/reactjs-icon.svg';
+import nodeLogo from '../assets/nodejs-icon.svg';
+import expressLogo from '../assets/expressjs-icon.svg';
+import sqlLogo from '../assets/mysql-icon.svg';
+import gitLogo from '../assets/github-icon-2.svg';
+import trelloLogo from '../assets/trello.svg';
+import materialLogo from '../assets/devicon--materialui.svg';
+import jwtLogo from '../assets/icons8-jwt.svg';
+import excalidrawLogo from '../assets/simple-icons--excalidraw.svg';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 function About() {
 	const steps = [
@@ -62,6 +73,85 @@ function About() {
 							</Box>
 						</div>
 					</div>
+				</div>
+			</div>
+
+			<div className="heading">
+				<h3>Our Tools: </h3>
+			</div>
+			<div className="container">
+				<div className="w-100 mt-5 mb-4 justify-content-evenly d-flex">
+					<Tippy
+						placement="right"
+						content="React is used to develop the project's user interface, facilitating the creation of dynamic and interactive components. In addition, it allows the development of single-page applications and optimizes the rendering of the page via the virtual DOM."
+					>
+						<img
+							src={reactLogo}
+							className="iconStyle showDescription"
+							alt="react logo"
+						/>
+					</Tippy>
+
+					<Tippy
+						placement="right"
+						content="Node.js provides the runtime environment for running JavaScript on the server, supporting the execution of backend logic and serving as the foundation upon which frameworks like Express are built."
+					>
+						<img src={nodeLogo} className="iconStyle" alt="node logo" />
+					</Tippy>
+					<Tippy
+						placement="right"
+						content="GitHub is a web-based platform used for version control and collaborative software development. It hosts Git repositories and provides tools to facilitate project management, collaboration, and code sharing among team members."
+					>
+						<img src={gitLogo} className="iconStyle" alt="github logo" />
+					</Tippy>
+				</div>
+				<div className="w-100 justify-content-evenly mb-4 d-flex">
+					<Tippy
+						placement="right"
+						content="Trello is a web-based project management tool that utilizes boards, lists, and cards to help teams organize and prioritize tasks and projects in a visual manner. It is particularly useful for agile development methodologies and collaborative project management."
+					>
+						<img src={trelloLogo} className="iconStyle" alt="trello logo" />
+					</Tippy>
+					<Tippy
+						placement="right"
+						content="Excalidraw is a collaborative virtual whiteboard tool that allows teams to sketch diagrams, wireframes, and visual concepts directly in the web browser. We used it to prototype the project's user interface and plan the layout of the site."
+					>
+						<img
+							src={excalidrawLogo}
+							className="iconStyle"
+							alt="excalidraw logo"
+						/>
+					</Tippy>
+					<Tippy
+						placement="right"
+						content="Express handles database queries to MySQL, serve API routes, manage authentication with JWT, and provide data to the frontend built with React."
+					>
+						<img src={expressLogo} className="iconStyle" alt="express logo" />
+					</Tippy>
+				</div>
+				<div className="w-100 justify-content-evenly d-flex">
+					<Tippy
+						placement="right"
+						content="JWTs are used for authentication, where upon successful login, a JWT containing user information and roles is issued. This token is then sent with subsequent API requests to authorize access to protected resources or endpoints."
+					>
+						<img src={jwtLogo} className="iconStyle" alt="jwt logo" />
+					</Tippy>
+					<Tippy
+						placement="right"
+						content="Material-UI is used to build the frontend user interface, leveraging its rich set of components to create a cohesive and visually appealing design. It helps in maintaining a consistent design language across the application and speeds up development by providing robust, tested components."
+					>
+						<img
+							src={materialLogo}
+							className="iconStyle"
+							alt="material ui logo"
+						/>
+					</Tippy>
+					<Tippy
+						placement="right"
+						content="MySQL is used to store and manage data related to users, products, orders, and other entities required by the application. It facilitates efficient data storage, retrieval, and management through SQL queries, ensuring reliable and scalable data handling for your web application."
+					>
+						<img src={sqlLogo} className="iconStyle" alt="my sql logo" />
+					</Tippy>
 				</div>
 			</div>
 

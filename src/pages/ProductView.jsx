@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 function ProductView() {
   const cart = useSelector((state) => state.cart);
   const [product, setProduct] = useState(null);
-  const [randomProducts, setRandomProducts] = useState([]);
+  const [suggestedProducts, setSuggestedProducts] = useState([]);
   const params = useParams();
   const [units, setUnits] = useState(1);
 
@@ -31,27 +31,20 @@ function ProductView() {
 
   useEffect(() => {
     const getProduct = async () => {
-      const response = await axios({
-        url: `${import.meta.env.VITE_API_URL}/products/${params.slug}`,
-        method: "get",
-      });
-      setProduct(response.data);
-    };
-
-    const getRandomProducts = async () => {
       try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/products/random`
-        );
-        setRandomProducts(response.data);
+        const response = await axios({
+          url: `${import.meta.env.VITE_API_URL}/products/${params.slug}`,
+          method: "get",
+        });
+        setProduct(response.data);
+        setSuggestedProducts(response.data.Category.Products);
+        console.log(response.data);
       } catch (error) {
-        console.error("Error fetching random products:", error);
-        setRandomProducts([]); // Handle error state
+        console.error("Error fetching product:", error);
       }
     };
 
     getProduct();
-    getRandomProducts();
   }, [params.slug]);
 
   const handleDecreaseUnits = () => {
@@ -131,22 +124,22 @@ function ProductView() {
             </div>
           </div>
           <div className="row">
-            {(randomProducts ?? []).map((randomProduct) => (
+            {(suggestedProducts ?? []).slice(0, 3).map((suggestedProduct) => (
               <div
-                key={randomProduct.slug}
-                className="col-md-4 text-center shadow section-card rounded mt-4"
+                key={suggestedProduct.slug}
+                className="col-md-4 text-center shadow suggested-card rounded mt-4"
               >
                 <Link
-                  to={`/products/${randomProduct.slug}`}
+                  to={`/products/${suggestedProduct.slug}`}
                   style={{
                     display: "block",
-                    height: "300px",
+                    height: "200px",
                     overflow: "hidden",
                   }}
                 >
                   <img
-                    src={randomProduct.image}
-                    alt={randomProduct.name}
+                    src={suggestedProduct.image}
+                    alt={suggestedProduct.name}
                     className="img-fluid rounded mb-2"
                     style={{
                       width: "100%",
@@ -155,8 +148,8 @@ function ProductView() {
                     }}
                   />
                 </Link>
-                <p>{randomProduct.name}</p>
-                <p>{randomProduct.price} USD</p>
+                <p>{suggestedProduct.name}</p>
+                <p>{suggestedProduct.price} USD</p>
               </div>
             ))}
           </div>
