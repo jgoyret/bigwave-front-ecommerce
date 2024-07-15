@@ -59,11 +59,11 @@ function OrderGreetings() {
             <div className="col ">
               <div className="styledDiv">
                 <div className="order-info">
-                  <div class="card">
+                  <div className="card">
                     {/* <button class="dismiss" type="button"></button> */}
-                    <div class="header">
-                      <div class="div_image_v">
-                        <div class="image">
+                    <div className="header">
+                      <div className="div_image_v">
+                        <div className="image">
                           <svg
                             viewBox="0 0 24 24"
                             fill="none"
@@ -88,9 +88,9 @@ function OrderGreetings() {
                           </svg>
                         </div>
                       </div>
-                      <div class="content">
-                        <span class="title">Order confirmed</span>
-                        <p class="message">
+                      <div className="content">
+                        <span className="title">Order confirmed</span>
+                        <p className="message">
                           Your package will be delivered within 15-60 minutes.
                         </p>
                       </div>

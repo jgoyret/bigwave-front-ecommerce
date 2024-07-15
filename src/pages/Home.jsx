@@ -135,10 +135,10 @@ function Home() {
               ENHANCE YOUR <span className="banner-font">VITALITY</span>
             </h3> */}
             <h3 className="category-faq-titles">Shop by category</h3>
-            <div class="main__action">
-              <div class="main__scroll-box">
+            <div className="main__action">
+              <div className="main__scroll-box">
                 <svg
-                  class="main__scroll-icon"
+                  className="main__scroll-icon"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
