@@ -1,9 +1,11 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Modal, Box, TextField, Typography, Button } from "@mui/material";
 import "../styles/profile.css";
 import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../redux/userSlice";
+import { clearCart } from "../redux/cartReducer";
 
 const style = {
   fontSize: 16,
@@ -24,6 +26,7 @@ const style = {
 };
 
 function Profile() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const token = useSelector((state) => state.user.token);
   const [loggedUser, setLoggedUser] = useState();
@@ -37,6 +40,11 @@ function Profile() {
   const [openPasswordModal, setOpenPasswordModal] = useState(false);
   const handleOpenPasswordModal = () => setOpenPasswordModal(true);
   const handleClosePasswordModal = () => setOpenPasswordModal(false);
+
+  //open delete user modal
+  const [openDeleteUserModal, setOpenDeleteUserModal] = useState(false);
+  const handleOpenDeleteUserModal = () => setOpenDeleteUserModal(true);
+  const handleCloseDeleteUserModal = () => setOpenDeleteUserModal(false);
 
   //form data
   const [firstname, setFirstname] = useState("");
@@ -114,6 +122,31 @@ function Profile() {
     getUser();
   }, []);
 
+  const deleteUser = async () => {
+    try {
+      const response = await axios({
+        url: `${import.meta.env.VITE_API_URL}/users/my-profile`,
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+      console.log(response.data);
+      toast.info("Account deleted successfully", {
+        position: "bottom-right",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleDeleteUser = () => {
+    dispatch(clearCart());
+    dispatch(logout());
+    deleteUser();
+    navigate("/");
+  };
+
   return (
     <>
       {loggedUser && (
@@ -121,21 +154,18 @@ function Profile() {
           <div className="container my-profile-container ">
             <div className="my-profile-data ">
               <div className="d-flex flex-column ">
-                <h3>Hi, {loggedUser.firstname} </h3>
+                <h3>
+                  Hi, {loggedUser.firstname}{" "}
+                  <span className="d-inline-block ">
+                    <Link className="text-dark" onClick={handleOpenModal}>
+                      <i className="bi bi-pencil-square"></i>
+                    </Link>
+                  </span>
+                </h3>
                 <small>
                   Client since{" "}
                   {new Date(loggedUser.createdAt).toLocaleDateString()}
                 </small>
-                <span className="d-inline-block ">
-                  <button
-                    className="edit-button mt-2"
-                    onClick={handleOpenModal}
-                  >
-                    <svg className="edit-svgIcon" viewBox="0 0 512 512">
-                      <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
-                    </svg>
-                  </button>
-                </span>
               </div>
               <div className="row w-75">
                 <div className="col-12 col-md-6 px-0 ms-auto">
@@ -149,14 +179,16 @@ function Profile() {
                   <p>
                     <strong>Email:</strong> {loggedUser.email}
                   </p>
-                  <button
-                    type="button"
-                    // variant="outlined"
-                    className="button-change-password"
-                    onClick={handleOpenPasswordModal}
-                  >
-                    Change password
-                  </button>
+                  <div className="d-flex justify-content-between">
+                    <button
+                      type="button"
+                      // variant="outlined"
+                      className="button-change-password"
+                      onClick={handleOpenPasswordModal}
+                    >
+                      Change password
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -204,6 +236,14 @@ function Profile() {
                   </div>
                 </div>
               ))}
+            <div className="d-flex flex-row-reverse">
+              <Link className="delete-text fw-bold">
+                <i onClick={handleOpenDeleteUserModal} className="bi bi-trash">
+                  {" "}
+                  Delete account
+                </i>
+              </Link>
+            </div>
           </div>
 
           {/* MODAL UPDATE PERFIL */}
@@ -293,6 +333,28 @@ function Profile() {
                 className=" w-25 button-add type1 mt-3 ml-3"
               >
                 Guardar
+              </button>
+            </Box>
+          </Modal>
+
+          {/* MODAL DELETE USER */}
+          <Modal
+            open={openDeleteUserModal}
+            onClose={handleCloseDeleteUserModal}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box component="form" sx={style}>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                Are you sure you want to delete your account?
+              </Typography>
+              <button
+                type="submit"
+                onClose={handleCloseDeleteUserModal}
+                onClick={handleDeleteUser}
+                className="w-100 mb-3 btn-checkout-cart"
+              >
+                Confirm
               </button>
             </Box>
           </Modal>
