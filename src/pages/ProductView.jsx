@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 function ProductView() {
   const cart = useSelector((state) => state.cart);
@@ -124,23 +125,42 @@ function ProductView() {
             </div>
           </div>
         </div>
-        <section className="container d-flex section-div mt-2">
-          {(randomProducts ?? []).map((randomProduct) => (
-            <div
-              key={randomProduct.slug}
-              className="ms-5 w-25 text-center shadow section-card rounded mt-5"
-            >
-              <img
-                src={randomProduct.image}
-                alt={randomProduct.name}
-                className="img-fluid rounded mb-2"
-                style={{ width: "100%", height: "auto" }}
-              />
-              <p>{randomProduct.name}</p>
-              <p>{randomProduct.price} USD</p>
-              <a href={`/product/${randomProduct.slug}`}>View</a>
+        <section className="container mt-2">
+          <div className="row mb-4">
+            <div className="col text-center">
+              <h1>Try these other healthy products</h1>
             </div>
-          ))}
+          </div>
+          <div className="row">
+            {(randomProducts ?? []).map((randomProduct) => (
+              <div
+                key={randomProduct.slug}
+                className="col-md-4 text-center shadow section-card rounded mt-4"
+              >
+                <Link
+                  to={`/products/${randomProduct.slug}`}
+                  style={{
+                    display: "block",
+                    height: "300px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src={randomProduct.image}
+                    alt={randomProduct.name}
+                    className="img-fluid rounded mb-2"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </Link>
+                <p>{randomProduct.name}</p>
+                <p>{randomProduct.price} USD</p>
+              </div>
+            ))}
+          </div>
         </section>
       </>
     )
