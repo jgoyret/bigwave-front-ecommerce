@@ -21,7 +21,7 @@ function ErrorPage() {
             </Link>
           </div>
           <div className="col col-6">
-            <img className="img-fluid" src="/hamburguer.png" />
+            <img className="img-fluid" src="/hamburguer.webp" />
           </div>
         </div>
       </div>
