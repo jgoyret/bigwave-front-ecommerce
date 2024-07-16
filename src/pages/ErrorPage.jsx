@@ -12,9 +12,8 @@ function ErrorPage() {
         <div className="row">
           <div className="col col-6">
             <h1 className="error-title">Error 404</h1>
-            <h2 className="mb-5">
-              Sorry, we can't seem to find what you are looking for :(
-            </h2>
+            <h2>Sorry, it seems that this page does not exist</h2>
+            <h2 className="mb-5"> (ㆆ_ㆆ)</h2>
 
             <Link to="/" className="btn btn-checkout-cart py-2 w-25">
               Back home
