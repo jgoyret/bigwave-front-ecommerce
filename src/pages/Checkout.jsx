@@ -91,7 +91,7 @@ function Checkout() {
     cvv: Yup.string().required("CVV is required"),
   });
 
-  const futureDate = faker.date.future(5);
+  const futureDate = faker.date.future({ years: 5 });
   const month = futureDate.getMonth() + 1;
   const year = futureDate.getFullYear() % 100;
   const formattedMonth = month.toString().padStart(2, "0");
@@ -147,6 +147,7 @@ function Checkout() {
   };
 
   const handleSubmit = (values) => {
+    console.log("Form submitted:", values);
     if (user.token) {
       handleAddOrder(values);
     } else {
@@ -287,7 +288,8 @@ function Checkout() {
                     label="Payment Method"
                     variant="outlined"
                     fullWidth
-                    value={values.paymentMethod}
+                    value={values.paymentMethod || "credit card"}
+                    // defaultChecked="credit card"
                     onChange={(event) =>
                       setFieldValue("paymentMethod", event.target.value)
                     }
