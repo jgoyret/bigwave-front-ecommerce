@@ -26,29 +26,40 @@ function Cart({ show, handleClose }) {
             <CartProduct />
             <div className="mt-auto">
               <hr />
-              <div className="d-flex justify-content-between">
-                <h6>Subtotal</h6>
-                <span>{totalAmount.toFixed(2)} USD</span>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Tempora, aut.
-              </p>
-              <Link
-                to={cart.length > 0 && "/checkout"}
-                onClick={() => {
-                  cart.length === 0 && toast.error("Cart is empty");
-                }}
-                className="btn btn-checkout-cart py-2 w-100"
-              >
-                Checkout
-              </Link>
-              <p className="text-center mt-3">
-                or
-                <Link to={"/products"} onClick={handleClose} className="btn">
-                  Continue Shopping
-                </Link>
-              </p>
+              {cart.length > 0 ? (
+                <>
+                  {" "}
+                  <div className="d-flex justify-content-between">
+                    <h6>Subtotal</h6>
+                    <span>{totalAmount.toFixed(2)} USD</span>
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Tempora, aut.
+                  </p>
+                  <Link
+                    to={"/checkout"}
+                    onClick={() => {
+                      handleClose();
+                    }}
+                    className="btn btn-checkout-cart py-2 w-100"
+                  >
+                    Checkout
+                  </Link>
+                  <p className="text-center mt-3">
+                    or
+                    <Link
+                      to={"/products"}
+                      onClick={handleClose}
+                      className="btn"
+                    >
+                      Continue Shopping
+                    </Link>
+                  </p>{" "}
+                </>
+              ) : (
+                <p className="text-center fw-bold">Add products to the cart</p>
+              )}
             </div>
           </div>
         </Offcanvas.Body>

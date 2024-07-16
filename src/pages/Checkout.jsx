@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   TextField,
   Select,
@@ -30,6 +30,7 @@ import { faker } from "@faker-js/faker";
 function Checkout() {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
+  const [userInfo, setUserInfo] = useState([]);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
