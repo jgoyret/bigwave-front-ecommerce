@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import "../styles/Login.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function RegisterForm() {
   const [firstname, setFirstname] = useState("");
@@ -72,6 +72,12 @@ function RegisterForm() {
                 Create account
               </Button>
             </Form>
+            <div className="d-flex justify-content-center">
+              <Link to={"/login"} className="text-decoration-none text-dark">
+                {" "}
+                <i class="bi bi-box-arrow-in-right"> Login</i>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
