@@ -131,6 +131,23 @@ function Checkout() {
       });
       if (response.status === 200) {
         console.log("Order created");
+
+        for (const item of cart) {
+          await axios({
+            url: `${import.meta.env.VITE_API_URL}/products/${
+              item.id
+            }/update-stock`,
+            method: "PUT",
+            data: {
+              quantity: item.quantity,
+            },
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+              "Content-Type": "application/json",
+            },
+          });
+        }
+
         navigate("/order-completed", { state: { order: response.data } });
         dispatch(clearCart());
       } else {
