@@ -4,6 +4,25 @@ import Form from "react-bootstrap/Form";
 import axios from "axios";
 import "../styles/Login.css";
 import { Link, useNavigate } from "react-router-dom";
+import { Modal, Box, Typography, styled } from "@mui/material";
+
+const style = {
+  fontSize: 16,
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "1px solid #ccc",
+  boxShadow: 24,
+  p: 4,
+  borderRadius: 4,
+  outline: "none",
+  display: "flex",
+  flexDirection: "column",
+  gap: 2,
+};
 
 function RegisterForm() {
   const [firstname, setFirstname] = useState("");
@@ -11,6 +30,10 @@ function RegisterForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
+  const [openModal, setOpenModal] = useState(false);
+  const handleOpenModal = () => setOpenModal(true);
+  const handleCloseModal = () => setOpenModal(false);
 
   const handleNewUser = async (e) => {
     e.preventDefault();
@@ -27,7 +50,6 @@ function RegisterForm() {
         },
       });
       console.log(response.data);
-      navigate("/login");
     } catch (error) {
       console.log(error);
     }
@@ -68,7 +90,11 @@ function RegisterForm() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </Form.Group>
-              <Button className="w-100 btn-checkout-cart" type="submit">
+              <Button
+                className="w-100 btn-checkout-cart"
+                type="submit"
+                onClick={handleOpenModal}
+              >
                 Create account
               </Button>
             </Form>
@@ -81,6 +107,28 @@ function RegisterForm() {
           </div>
         </div>
       </div>
+      <Modal
+        open={openModal}
+        onClose={handleCloseModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box component="form" sx={style}>
+          <i className="bi bi-check-circle text-center"></i>
+          <Typography id="modal" className="text-center">
+            Your account has been created!
+          </Typography>
+          <Link to={"/login"}>
+            <button
+              type="submit"
+              onClose={handleCloseModal}
+              className="w-100 mb-3 btn-checkout-cart"
+            >
+              Login
+            </button>
+          </Link>
+        </Box>
+      </Modal>
     </>
   );
 }
