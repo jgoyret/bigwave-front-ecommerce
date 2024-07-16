@@ -8,7 +8,7 @@ function AllProducts() {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
   const [totalProducts, setTotalProducts] = useState(0);
-  const itemsPerPage = 18; // Adjusted to 18 products per page
+  const itemsPerPage = 18;
 
   useEffect(() => {
     const getProducts = async () => {
@@ -19,7 +19,7 @@ function AllProducts() {
           params: { page, limit: itemsPerPage },
         });
 
-        const allProducts = response.data; // Assuming response data is an array of all products
+        const allProducts = response.data;
         setTotalProducts(allProducts.length);
         const paginatedProducts = allProducts.slice(
           (page - 1) * itemsPerPage,
