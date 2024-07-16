@@ -6,6 +6,7 @@ import "../styles/profile.css";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../redux/userSlice";
 import { clearCart } from "../redux/cartReducer";
+import { toast } from "react-toastify";
 
 const style = {
   fontSize: 16,
