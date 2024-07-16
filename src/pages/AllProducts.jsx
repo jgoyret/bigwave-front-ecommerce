@@ -73,7 +73,7 @@ function AllProducts() {
         </header>
       </div>
       <div className="d-flex justify-content-center container-main-products my-3">
-        <ProductsSideNavbar />
+        {!isSearching && <ProductsSideNavbar />}
 
         <div>
           {filteredProducts.length > 0 && (
