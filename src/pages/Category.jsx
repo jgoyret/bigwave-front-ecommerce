@@ -3,7 +3,7 @@ import { useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import ProductModel from "../components/ProductModel";
 import "../styles/Products.css";
-import ProductsNavbar from "../components/ProductsNavbar";
+import ProductsSideNavbar from "../components/ProductsSideNavbar";
 import { useSelector } from "react-redux";
 
 function Category() {
@@ -42,7 +42,7 @@ function Category() {
           </div>
         </header>
         <div className="d-flex justify-content-center my-3">
-          <ProductsNavbar />
+          <ProductsSideNavbar />
           {category && (
             <div className="products-container container mt-5 justify-content-center">
               {category.Products.map((c) => {

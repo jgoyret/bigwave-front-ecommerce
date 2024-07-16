@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function ProductsNavbar() {
+function ProductsSideNavbar() {
   const [categories, setCategories] = React.useState([]);
   const navigate = useNavigate();
 
@@ -40,4 +40,4 @@ function ProductsNavbar() {
   );
 }
 
-export default ProductsNavbar;
+export default ProductsSideNavbar;

@@ -207,7 +207,7 @@ function Profile() {
                 <div className="col-md-2 col-4">Actions</div>
               </div>
             </div>
-
+            {console.log(loggedUser.Orders)}
             {loggedUser.Orders.length === 0 && (
               <h5 className="text-center mt-5">No orders yet</h5>
             )}
