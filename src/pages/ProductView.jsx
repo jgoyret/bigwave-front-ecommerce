@@ -4,15 +4,14 @@ import axios from "axios";
 import BreadcrumbApp from "../components/BreadcrumbApp";
 import "../styles/productview.css";
 import { useDispatch, useSelector } from "react-redux";
-import { checkAndAddToCart, addToCart } from "../redux/cartReducer";
+import { checkAndAddToCart } from "../redux/cartReducer";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
+import SuggestedItems from "../components/SuggestedItems"; // Import the new component
 
 function ProductView() {
   const cart = useSelector((state) => state.cart);
   const [product, setProduct] = useState(null);
-  const [suggestedProducts, setSuggestedProducts] = useState([]);
   const params = useParams();
   const [units, setUnits] = useState(1);
 
@@ -22,7 +21,6 @@ function ProductView() {
     if (units <= 0) {
       toast.info("Units must be higher than 0");
     } else {
-      // console.log("stock del producto: ", product.stock);
       const entrieProduct = { ...product, quantity: units };
       dispatch(checkAndAddToCart(entrieProduct));
       setUnits(1);
@@ -37,7 +35,6 @@ function ProductView() {
           method: "get",
         });
         setProduct(response.data);
-        setSuggestedProducts(response.data.Category.Products);
       } catch (error) {
         console.error("Error fetching product:", error);
       }
@@ -51,7 +48,6 @@ function ProductView() {
       setUnits(units - 1);
     }
   };
-
   return (
     product && (
       <>
@@ -116,43 +112,12 @@ function ProductView() {
             </div>
           </div>
         </div>
-        <section className="container mt-2">
-          <div className="row mb-4">
-            <div className="col text-center">
-              <h1>Try these other healthy products</h1>
-            </div>
-          </div>
-          <div className="row">
-            {(suggestedProducts ?? []).slice(0, 3).map((suggestedProduct) => (
-              <div
-                key={suggestedProduct.slug}
-                className="col-md-4 text-center shadow suggested-card rounded mt-4"
-              >
-                <Link
-                  to={`/products/${suggestedProduct.slug}`}
-                  style={{
-                    display: "block",
-                    height: "200px",
-                    overflow: "hidden",
-                  }}
-                >
-                  <img
-                    src={suggestedProduct.image}
-                    alt={suggestedProduct.name}
-                    className="img-fluid rounded mb-2"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </Link>
-                <p>{suggestedProduct.name}</p>
-                <p>{suggestedProduct.price} USD</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        <SuggestedItems
+          categoryId={product.Category.id}
+          currentProductSlug={product.slug}
+          products={product.Category.Products}
+        />
+        {console.log(product.Category.Products)}
       </>
     )
   );
