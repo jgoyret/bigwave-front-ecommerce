@@ -1,40 +1,60 @@
+.falseButton {
+	text-align: center;
+	background-color: #333 !important;
+	color: white !important;
+	border: 1px solid #68844a !important;
+	border-radius: 15px !important;
+	font-size: 0.7rem !important;
+	font-weight: 600 !important;
+	padding: 5px 10px !important;
+	text-transform: uppercase !important;
+	cursor: pointer !important;
+	transition: 0.4s ease-in-out !important;
+}
+
+.styledQR {
+	width: 200px;
+	border-radius: 10px;
+	box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
 .container-content {
-  margin-bottom: 200px !important;
-  margin-top: 100px;
+	margin-bottom: 200px !important;
+	margin-top: 100px;
 }
 .card-summary {
-  border-radius: 10px !important;
-  object-fit: cover;
-  display: flex;
-  justify-content: space-between;
+	border-radius: 10px !important;
+	object-fit: cover;
+	display: flex;
+	justify-content: space-between;
 }
 
 .checkout-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
 }
 
 .card-summary img {
-  min-height: 80px;
-  min-width: 80px;
-  /* object-fit: ; */
-  border-radius: 10px;
+	min-height: 80px;
+	min-width: 80px;
+	/* object-fit: ; */
+	border-radius: 10px;
 }
 .btn-checkout {
-  font-size: 0.7rem !important;
-  font-weight: 600 !important;
-  padding: 5px 10px !important;
-  border-radius: 15px !important;
-  color: white !important;
-  border: 1px solid #68844a !important;
-  background-color: #333 !important;
-  box-shadow: none !important;
-  text-transform: uppercase !important;
-  cursor: pointer !important;
-  transition: 0.4s ease-in-out !important;
+	font-size: 0.7rem !important;
+	font-weight: 600 !important;
+	padding: 5px 10px !important;
+	border-radius: 15px !important;
+	color: white !important;
+	border: 1px solid #68844a !important;
+	background-color: #333 !important;
+	box-shadow: none !important;
+	text-transform: uppercase !important;
+	cursor: pointer !important;
+	transition: 0.4s ease-in-out !important;
 }
 
 .css-sghohy-MuiButtonBase-root-MuiButton-root {
-  font-family: "Axiforma" !important;
+	font-family: 'Axiforma' !important;
 }
