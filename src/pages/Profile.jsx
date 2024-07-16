@@ -154,23 +154,23 @@ function Profile() {
         <>
           <div className="container my-profile-container ">
             <div className="my-profile-data ">
-              <div className="d-flex flex-column ">
-                <h3>
-                  Hi, {loggedUser.firstname}{" "}
-                  <span className="d-inline-block ">
-                    <Link className="text-dark" onClick={handleOpenModal}>
-                      <i className="bi bi-pencil-square"></i>
-                    </Link>
-                  </span>
-                </h3>
-                <small>
-                  Client since{" "}
-                  {new Date(loggedUser.createdAt).toLocaleDateString()}
-                </small>
-              </div>
-              <div className="row w-75">
-                <div className="col-12 col-md-6 px-0 ms-auto">
-                  <h4 className="mt-3">Personal information</h4>
+              <div className="row d-flex profile-box">
+                <div className="col-12 col-md-6">
+                  <h3>
+                    Hi, {loggedUser.firstname}{" "}
+                    <span className="d-inline-block ">
+                      <Link className="text-dark" onClick={handleOpenModal}>
+                        <i className="bi bi-pencil-square"></i>
+                      </Link>
+                    </span>
+                  </h3>
+                  <small>
+                    Client since{" "}
+                    {new Date(loggedUser.createdAt).toLocaleDateString()}
+                  </small>
+                </div>
+                <div className="col-12 col-md-6">
+                  <h4>Personal information</h4>
                   <p>
                     <strong>Name:</strong> {loggedUser.firstname}
                   </p>
@@ -208,7 +208,9 @@ function Profile() {
               </div>
             </div>
 
-            {loggedUser.Orders.length === 0 && <h5>No orders yet</h5>}
+            {loggedUser.Orders.length === 0 && (
+              <h5 className="text-center mt-5">No orders yet</h5>
+            )}
             {loggedUser.Orders.length > 0 &&
               loggedUser.Orders.map((order) => (
                 <div key={order.id} className="order-detail ">
@@ -237,14 +239,6 @@ function Profile() {
                   </div>
                 </div>
               ))}
-            <div className="d-flex flex-row-reverse">
-              <Link className="delete-text fw-bold">
-                <i onClick={handleOpenDeleteUserModal} className="bi bi-trash">
-                  {" "}
-                  Delete account
-                </i>
-              </Link>
-            </div>
           </div>
 
           {/* MODAL UPDATE PERFIL */}
@@ -288,10 +282,21 @@ function Profile() {
                 type="submit"
                 onClose={handleCloseModal}
                 onClick={updateUser}
-                className=" w-25 button-add type1 mt-3 ml-3"
+                className="w-100 mb-3 btn-checkout-cart"
               >
                 Guardar
               </button>
+              <div className="d-flex justify-content-center">
+                <Link className="delete-text fw-bold">
+                  <i
+                    onClick={handleOpenDeleteUserModal}
+                    className="bi bi-trash"
+                  >
+                    {" "}
+                    Delete account
+                  </i>
+                </Link>
+              </div>
             </Box>
           </Modal>
 

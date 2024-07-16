@@ -211,4 +211,17 @@
   .my-profile-data {
     display: block;
   }
+  .profile-box {
+    gap: 50px;
+    flex-wrap: wrap !important;
+  }
+}
+.profile-box {
+  gap: 50px;
+  flex-wrap: nowrap;
+}
+/* modal update user */
+
+.css-1miw4zt {
+  padding: 32px 32px 5px 32px !important;
 }

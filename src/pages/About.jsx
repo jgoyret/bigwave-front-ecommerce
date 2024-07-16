@@ -84,7 +84,7 @@ function About() {
               <div className="d-flex justify-content-center">
                 <img
                   className="color-palette-image"
-                  src="/public/color-palette.png"
+                  src="/color-palette.png"
                   alt="color palette"
                 />
               </div>
