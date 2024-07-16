@@ -22,7 +22,16 @@ function Cart({ show, handleClose }) {
           <Offcanvas.Title>Shopping cart</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <div className="d-flex flex-column h-100 ">
+          <div className="d-flex flex-column h-100">
+            {cart.length === 0 && (
+              <p className="text-center fw-bold">
+                Add{" "}
+                <Link to="/products" onClick={handleClose}>
+                  products
+                </Link>{" "}
+                to the cart
+              </p>
+            )}
             <CartProduct />
             <div className="mt-auto">
               <hr />
@@ -33,10 +42,6 @@ function Cart({ show, handleClose }) {
                     <h6>Subtotal</h6>
                     <span>{totalAmount.toFixed(2)} USD</span>
                   </div>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Tempora, aut.
-                  </p>
                   <Link
                     to={"/checkout"}
                     onClick={() => {
@@ -57,9 +62,7 @@ function Cart({ show, handleClose }) {
                     </Link>
                   </p>{" "}
                 </>
-              ) : (
-                <p className="text-center fw-bold">Add products to the cart</p>
-              )}
+              ) : null}
             </div>
           </div>
         </Offcanvas.Body>

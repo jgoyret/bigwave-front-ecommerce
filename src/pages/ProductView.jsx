@@ -38,7 +38,6 @@ function ProductView() {
         });
         setProduct(response.data);
         setSuggestedProducts(response.data.Category.Products);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching product:", error);
       }
