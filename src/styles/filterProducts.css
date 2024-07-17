@@ -1,7 +1,6 @@
 .search {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   text-align: center;
 }
 
@@ -54,4 +53,15 @@
 }
 .form-select {
   padding: 0.25rem 2.25rem 0.25rem 0.75rem;
+}
+
+@media (max-width: 992px) {
+  .filter-products {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+.filter-products {
+  flex-wrap: nowrap;
 }
