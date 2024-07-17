@@ -431,7 +431,7 @@ function Checkout() {
                       {subTotal.toFixed(2) < 50 ? (
                         <div className="d-flex justify-content-between">
                           <p>Shipping</p>
-                          <p>50 USD</p>
+                          <p>50.00 USD</p>
                         </div>
                       ) : (
                         <div className="d-flex justify-content-between">
@@ -442,18 +442,18 @@ function Checkout() {
 
                       <div className="d-flex justify-content-between">
                         <p>Taxes</p>
-                        <p>30 USD</p>
+                        <p>30.00 USD</p>
                       </div>
                       <hr />
                       <div className="d-flex justify-content-between align-items-center">
                         <h5>Total</h5>
                         {subTotal.toFixed(2) < 50 ? (
                           <p className="text-decoration-line-through text-danger d-none">
-                            {totalAmount}
+                            {totalAmount} USD
                           </p>
                         ) : (
                           <p className="text-decoration-line-through text-danger">
-                            {totalAmount}
+                            {totalAmount} USD
                           </p>
                         )}
                       </div>
@@ -461,7 +461,8 @@ function Checkout() {
                         <p className="fw-bold ms-auto mt-1 fs-6">
                           {subTotal.toFixed(2) < 50
                             ? totalAmount
-                            : (subTotal + taxes).toFixed(2)}
+                            : (subTotal + taxes).toFixed(2)}{" "}
+                          USD
                         </p>
                       </div>
                     </div>
