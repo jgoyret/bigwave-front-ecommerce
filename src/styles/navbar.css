@@ -158,9 +158,9 @@
 .bg-danger {
   background-color: #aad054 !important;
 }
-img {
+/* img {
   margin-bottom: 9px;
-}
+} */
 .dropdown-menu {
   --bs-dropdown-link-active-bg: #d0d88a;
 }

@@ -21,7 +21,7 @@ import {
 } from "../redux/cartReducer";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, Navigate } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
@@ -33,6 +33,7 @@ function Checkout() {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
   const [userInfo, setUserInfo] = useState([]);
+  const [toConfirmOrder, setToConfirmOrder] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -168,6 +169,7 @@ function Checkout() {
   const handleSubmit = (values) => {
     console.log("Form submitted:", values);
     if (user.token) {
+      setToConfirmOrder(true);
       handleAddOrder(values);
     } else {
       navigate("/login");
@@ -176,9 +178,19 @@ function Checkout() {
     console.log("Form submitted:", values);
   };
 
+  const handleRemoveFromCart = (id) => {
+    console.log(cart.length);
+    if (cart.length - 1 > 0) {
+      dispatch(removeFromCart(id));
+    } else {
+      dispatch(removeFromCart(id));
+      navigate("/");
+    }
+  };
+
   useEffect(() => {
     !cart.length > 0 && navigate("/");
-  }, [cart]);
+  }, []);
 
   return (
     cart.length > 0 && (
@@ -449,9 +461,7 @@ function Checkout() {
                                   />
                                 </p>
                                 <i
-                                  onClick={() =>
-                                    dispatch(removeFromCart(item.id))
-                                  }
+                                  onClick={() => handleRemoveFromCart(item.id)}
                                   className="bi bi-trash"
                                 />
                               </div>
@@ -512,7 +522,8 @@ function Checkout() {
                         Confirm Order
                       </Button>
                     </div>
-                    <div className={cart.length === 0 ? "" : "d-none"}>
+
+                    {/* <div className={cart.length === 0 ? "" : "d-none"}>
                       <p>
                         Cannot proceed with an <strong>empty cart</strong>.{" "}
                         <Link to="/products">
@@ -520,7 +531,7 @@ function Checkout() {
                           Clic here to continue shopping{" "}
                         </Link>{" "}
                       </p>
-                    </div>
+                    </div> */}
                     {/* <div className="d-flex justify-content-center align-items-center w-50 m-5">
                     <img src="../QR.png" alt="QR" className=" w-100 h-100" />
                   </div> */}

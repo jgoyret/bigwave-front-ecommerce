@@ -32,6 +32,7 @@ function OrderGreetings() {
   }, []);
 
   useEffect(() => {
+    // console.log()
     if (!location.state || !location.state.order) {
       console.log("No state or order found");
       navigate("/");
