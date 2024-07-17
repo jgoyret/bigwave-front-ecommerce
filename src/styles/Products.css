@@ -11,9 +11,8 @@
   padding-top: 70px;
 } */
 .products-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 330px));
-  place-items: center;
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -196,19 +195,7 @@
   .side-list-filter {
     display: none;
   }
-  .products-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 330px));
-    place-items: center;
-    gap: 30px;
-  }
 }
 
 @media (max-width: 1400px) {
-  .products-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 330px));
-    place-items: center;
-    gap: 30px;
-  }
 }

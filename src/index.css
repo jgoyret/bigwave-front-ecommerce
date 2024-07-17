@@ -123,6 +123,7 @@ main {
   background-size: cover;
   height: 800px;
   background-position: center;
+  /* top: -60px; */
 }
 #curva {
   bottom: 0;
@@ -150,8 +151,8 @@ h5 strong {
   /* padding-left: 0px !important; */
 }
 .category-header {
-  height: 50px !important;
-  margin-top: 100px;
+  height: 50px;
+  margin-top: 120px;
   background-color: #fff;
   text-transform: uppercase;
   letter-spacing: 4px;

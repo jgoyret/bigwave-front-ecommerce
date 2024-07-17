@@ -7,6 +7,7 @@ import StepContent from "@mui/material/StepContent";
 import Typography from "@mui/material/Typography";
 import "../styles/AboutUs.css";
 import IconCarousel from "../components/IconCarousel";
+import { Link } from "react-router-dom";
 
 function About() {
   const steps = [
@@ -118,14 +119,14 @@ function About() {
                     <span> King of the pirates</span>
                   </p>
                   <div className="social-media">
-                    <a href="https://github.com/jgoyret">
+                    <Link to="https://github.com/jgoyret">
                       <i className="bi bi-github text-black"></i>
                       <span className="tooltip-social">Github</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/juan-goyret-892b422ab/?originalSubdomain=uy">
+                    </Link>
+                    <Link to="https://www.linkedin.com/in/juan-goyret-892b422ab/?originalSubdomain=uy">
                       <i className="bi bi-linkedin text-black"></i>{" "}
                       <span className="tooltip-social">LinkedIn</span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
 
@@ -143,14 +144,14 @@ function About() {
                     <span>Full stack developer</span> <span> King of flow</span>
                   </p>
                   <div className="social-media">
-                    <a href="https://github.com/nachokapre">
+                    <Link to="https://github.com/nachokapre">
                       <i className="bi bi-github text-black"></i>
                       <span className="tooltip-social">Github</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ignacio-kaprielian-elmasian-a03bb41b8/?originalSubdomain=uy">
+                    </Link>
+                    <Link to="https://www.linkedin.com/in/ignacio-kaprielian-elmasian-a03bb41b8/?originalSubdomain=uy">
                       <i className="bi bi-linkedin text-black"></i>{" "}
                       <span className="tooltip-social">LinkedIn</span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="card-client col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2">
@@ -168,14 +169,14 @@ function About() {
                     <span> Queen of Nutrition</span>
                   </p>
                   <div className="social-media">
-                    <a href="https://github.com/sofiviera">
+                    <Link to="https://github.com/sofiviera">
                       <i className="bi bi-github text-black"></i>
                       <span className="tooltip-social">Github</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/sof%C3%ADavierasosa/">
+                    </Link>
+                    <Link to="https://www.linkedin.com/in/sof%C3%ADavierasosa/">
                       <i className="bi bi-linkedin text-black"></i>{" "}
                       <span className="tooltip-social">LinkedIn</span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="card-client col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2">
@@ -192,14 +193,14 @@ function About() {
                     <span>Full stack developer</span> <span> King of code</span>
                   </p>
                   <div className="social-media">
-                    <a href="https://github.com/rodriguezadrian">
+                    <Link to="https://github.com/rodriguezadrian">
                       <i className="bi bi-github text-black"></i>
                       <span className="tooltip-social">Github</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/adrianrg99/">
+                    </Link>
+                    <Link to="https://www.linkedin.com/in/adrianrg99/">
                       <i className="bi bi-linkedin text-black"></i>{" "}
                       <span className="tooltip-social">LinkedIn</span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="card-client col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2">
@@ -217,14 +218,14 @@ function About() {
                     <span> King of booze</span>
                   </p>
                   <div className="social-media">
-                    <a href="https://github.com/Guillexxxs">
+                    <Link to="https://github.com/Guillexxxs">
                       <i className="bi bi-github text-black"></i>
                       <span className="tooltip-social">Github</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/guille-peri-415214154/">
+                    </Link>
+                    <Link to="https://www.linkedin.com/in/guille-peri-415214154/">
                       <i className="bi bi-linkedin text-black"></i>{" "}
                       <span className="tooltip-social">LinkedIn</span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

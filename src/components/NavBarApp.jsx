@@ -58,7 +58,7 @@ function NavBarApp() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 1) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -77,10 +77,11 @@ function NavBarApp() {
       <Navbar
         expand="lg"
         className={`navbar ${scrolled ? "scrolled" : ""}`}
+        sticky="top"
         id="navbar"
       >
         <Container>
-          <Navbar.Brand href="/">
+          <Navbar.Brand as={Link} to="/">
             <img
               src="/bigwave-logo.png"
               alt="BigWave Logo"
@@ -107,13 +108,16 @@ function NavBarApp() {
               navbarScroll
             >
               <NavDropdown title="Shop" id="navbarScrollingDropdown">
-                <DropdownItem href="/products">All products</DropdownItem>
+                <DropdownItem as={Link} to="/products">
+                  All products
+                </DropdownItem>
                 {categories && (
                   <div>
                     {categories.map((category) => {
                       return (
                         <DropdownItem
-                          href={`/categories/${category.slug}`}
+                          as={Link}
+                          to={`/categories/${category.slug}`}
                           key={category.id}
                         >
                           {category.name}
@@ -123,7 +127,11 @@ function NavBarApp() {
                   </div>
                 )}
               </NavDropdown>
-              <Nav.Link className="text-dark" href="/about-this-project">
+              <Nav.Link
+                as={Link}
+                className="text-dark"
+                to="/about-this-project"
+              >
                 About this project
               </Nav.Link>
             </Nav>

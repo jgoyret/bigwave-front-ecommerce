@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/footer.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -18,13 +19,13 @@ function Footer() {
               <h5>Company</h5>
               <ul className="list-group">
                 <li className="li-footer mb-3">
-                  <a href="/about-this-project">About us</a>
+                  <Link to="/about-this-project">About us</Link>
                 </li>
                 <li className="li-footer mb-3">
-                  <a href="/about-this-project">Terms & Conditions</a>
+                  <Link to="/about-this-project">Terms & Conditions</Link>
                 </li>
                 <li className="li-footer">
-                  <a href="/about-this-project">Privacy</a>
+                  <Link to="/about-this-project">Privacy</Link>
                 </li>
               </ul>
             </div>
@@ -33,13 +34,13 @@ function Footer() {
               <h5>Account</h5>
               <ul className="list-group">
                 <li className="li-footer mb-3">
-                  <a href="/about-this-project">Manage Account</a>
+                  <Link to="/about-this-project">Manage Account</Link>
                 </li>
                 <li className="li-footer mb-3">
-                  <a href="/about-this-project">Returns & Exchanges</a>
+                  <Link to="/about-this-project">Returns & Exchanges</Link>
                 </li>
                 <li className="li-footer">
-                  <a href="/about-this-project">Redeem a Gift Card</a>
+                  <Link to="/about-this-project">Redeem a Gift Card</Link>
                 </li>
               </ul>
             </div>
@@ -48,16 +49,16 @@ function Footer() {
               <h5>Connect</h5>
               <ul className="list-group mt-2">
                 <li className="li-footer mb-3">
-                  <a href="/about-this-project">Contact Us</a>
+                  <Link to="/about-this-project">Contact Us</Link>
                 </li>
                 <li className="li-footer mb-3">
-                  <a href="/about-this-project">Twitter</a>
+                  <Link to="/about-this-project">Twitter</Link>
                 </li>
                 <li className="li-footer mb-3">
-                  <a href="/about-this-project">Instagram</a>
+                  <Link to="/about-this-project">Instagram</Link>
                 </li>
                 <li className="li-footer">
-                  <a href="/about-this-project">Pinterest</a>
+                  <Link to="/about-this-project">Pinterest</Link>
                 </li>
               </ul>
             </div>

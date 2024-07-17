@@ -4,6 +4,7 @@ import axios from "axios";
 import "../styles/Products.css";
 import ProductsSideNavbar from "../components/ProductsSideNavbar";
 import FilterProducts from "../components/FilterProducts";
+import { Container } from "react-bootstrap";
 
 function AllProducts() {
   const [products, setProducts] = useState([]);
@@ -59,7 +60,7 @@ function AllProducts() {
 
   return (
     <>
-      <div className="container">
+      <Container>
         <header>
           <div
             className="d-flex category-header justify-content-center align-items-center position-relative"
@@ -71,66 +72,68 @@ function AllProducts() {
           </div>
           <FilterProducts onSearch={handleSearch} />
         </header>
-      </div>
-      <div className="d-flex justify-content-center container-main-products my-3">
-        {!isSearching && <ProductsSideNavbar />}
+      </Container>
+      <Container>
+        <div className="d-flex justify-content-center container-main-products my-3">
+          {!isSearching && <ProductsSideNavbar />}
 
-        <div>
-          {filteredProducts.length > 0 && (
-            <div className="products-container container mt-5 justify-content-center">
-              {filteredProducts.map((product) => (
-                <ProductModel key={product.id} product={product} />
-              ))}
-            </div>
-          )}
+          <div>
+            {filteredProducts.length > 0 && (
+              <div className="products-container mt-5 justify-content-center">
+                {filteredProducts.map((product) => (
+                  <ProductModel key={product.id} product={product} />
+                ))}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-      {!isSearching && totalPages > 0 && (
-        <nav>
-          <ul className="pagination justify-content-center mt-4">
-            <li className={`page-item ${page === 1 ? "disabled" : ""}`}>
-              <button
-                className="page-link"
-                onClick={() => {
-                  setPage(page - 1);
-                  window.scrollTo(0, 0);
-                }}
-              >
-                Previous
-              </button>
-            </li>
-            {[...Array(totalPages)].map((_, index) => (
+        {!isSearching && totalPages > 0 && (
+          <nav>
+            <ul className="pagination justify-content-center mt-4">
+              <li className={`page-item ${page === 1 ? "disabled" : ""}`}>
+                <button
+                  className="page-link"
+                  onClick={() => {
+                    setPage(page - 1);
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  Previous
+                </button>
+              </li>
+              {[...Array(totalPages)].map((_, index) => (
+                <li
+                  key={index}
+                  className={`page-item ${page === index + 1 ? "active" : ""}`}
+                >
+                  <button
+                    className="page-link"
+                    onClick={() => {
+                      setPage(index + 1);
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    {index + 1}
+                  </button>
+                </li>
+              ))}
               <li
-                key={index}
-                className={`page-item ${page === index + 1 ? "active" : ""}`}
+                className={`page-item ${page === totalPages ? "disabled" : ""}`}
               >
                 <button
                   className="page-link"
                   onClick={() => {
-                    setPage(index + 1);
+                    setPage(page + 1);
                     window.scrollTo(0, 0);
                   }}
                 >
-                  {index + 1}
+                  Next
                 </button>
               </li>
-            ))}
-            <li
-              className={`page-item ${page === totalPages ? "disabled" : ""}`}
-            >
-              <button
-                className="page-link"
-                onClick={() => {
-                  setPage(page + 1);
-                  window.scrollTo(0, 0);
-                }}
-              >
-                Next
-              </button>
-            </li>
-          </ul>
-        </nav>
-      )}
+            </ul>
+          </nav>
+        )}
+      </Container>
     </>
   );
 }

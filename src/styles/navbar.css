@@ -8,9 +8,9 @@
   font-family: "Axiforma", sans-serif !important;
 }
 #navbar.scrolled {
-  position: fixed !important;
+  position: fixed;
   background-color: rgba(226, 232, 228, 0.873) !important;
-  top: 0 !important;
+  top: 0;
 }
 #navbarScrollingDropdown {
   color: #333 !important;
