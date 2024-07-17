@@ -8,6 +8,7 @@ import { checkAndAddToCart } from "../redux/cartReducer";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SuggestedItems from "../components/SuggestedItems"; // Import the new component
+import { Form } from "react-bootstrap";
 
 function ProductView() {
   const cart = useSelector((state) => state.cart);
@@ -67,8 +68,15 @@ function ProductView() {
                 <h3 className="fs-4 fw-bold mb-4">
                   {product.name} <i className="bi bi-suit-heart ms-3 fs-5"></i>
                 </h3>
+                <p className="fs-6">Quantity: {product.netWeight}</p>
                 <p className="fs-5">{product.price} USD</p>
-                <p className="fs-6 fw-light">{product.description}</p>
+                {/* <Form.Select size="sm" className="bg-transparent custom">
+                  <option>Quantity</option>
+                  <option value="1">{"250g"}</option>
+                  <option value="2">{"500g"}</option>
+                  <option value="3">{"1kg"}</option>
+                </Form.Select> */}
+                <p className="fs-6 fw-light mt-3">{product.description}</p>
                 <div className="d-flex align-items-center">
                   <div className="fs-5">
                     <i
@@ -117,7 +125,6 @@ function ProductView() {
           currentProductSlug={product.slug}
           products={product.Category.Products}
         />
-        {console.log(product.Category.Products)}
       </>
     )
   );

@@ -39,7 +39,7 @@ function CartProduct() {
                 </p>
                 <div className="d-flex justify-content-between">
                   <p>
-                    Quantity:{" "}
+                    Units:{" "}
                     <i
                       onClick={() => dispatch(removeQuantity({ id: item.id }))}
                       className="bi bi-dash-circle"

@@ -55,3 +55,14 @@ i {
     gap: 10px;
   }
 }
+
+.form-select {
+  width: fit-content;
+}
+
+.form-select:focus {
+  border-color: none !important;
+  box-shadow: none !important;
+  color: #333 !important;
+  outline: none;
+}

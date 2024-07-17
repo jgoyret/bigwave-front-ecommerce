@@ -39,8 +39,10 @@ function ProductModel({ product }) {
         </Link>
         {/* <i className="bi bi-suit-heart-fill fs-3 card-heart"></i> */}
         <div className="product-card-body">
-          <h5 className="card-title px-0">{product.name}</h5>
-          <p className="card-text">
+          <h5 className="card-title px-0">
+            {product.name} <span>{product.netWeight}</span>
+          </h5>
+          <p className="card-text mt-3">
             Price: $ <span>{product.price}</span>
           </p>
 

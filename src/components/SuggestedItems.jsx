@@ -28,10 +28,10 @@ const SuggestedItems = ({ categoryId, currentProductSlug, products }) => {
 
   return (
     suggestedProducts.length > 0 && (
-      <section className="container mt-2">
-        <div className="row mb-4">
+      <section className="container mt-5">
+        <div className="row">
           <div className="col text-center">
-            <h1>Try these other healthy products</h1>
+            <h4>Try these other healthy products</h4>
           </div>
         </div>
         <div className="suggested-container">
