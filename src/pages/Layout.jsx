@@ -12,9 +12,11 @@ import axios from "axios";
 function Layout() {
   const dispatch = useDispatch();
   const lUser = useSelector((state) => state.user);
+  const [userVerified, setUserVerified] = React.useState(false);
 
   React.useEffect(() => {
     if (lUser.token) userExist();
+    setUserVerified(true);
   }, []);
 
   const userExist = async () => {
@@ -36,14 +38,16 @@ function Layout() {
   };
 
   return (
-    <>
-      <ScrollToTop />
-      <NavbarApp />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
-    </>
+    userVerified && (
+      <>
+        <ScrollToTop />
+        <NavbarApp />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </>
+    )
   );
 }
 
