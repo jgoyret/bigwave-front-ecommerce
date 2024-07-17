@@ -58,10 +58,8 @@ export default function OrderInfo() {
 
   useEffect(() => {
     if (!location.state || !location.state.order) {
-      console.log("No state or order found");
       navigate("/"); // Redirige si no hay estado
     } else {
-      console.log("State and order found");
       setOrder(location.state.order); // Actualiza el estado con la orden
     }
   }, [location, navigate]);

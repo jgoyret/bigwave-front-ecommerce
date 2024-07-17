@@ -119,8 +119,6 @@ function Checkout() {
         },
       });
       if (response.status === 200) {
-        console.log("Order created");
-
         for (const item of cart) {
           await axios({
             url: `${import.meta.env.VITE_API_URL}/products/${

@@ -36,8 +36,6 @@ function AllProducts() {
       }
     };
     getProducts();
-
-    console.log(isSearching);
   }, [page]);
 
   const totalPages = Math.ceil(totalProducts / itemsPerPage);

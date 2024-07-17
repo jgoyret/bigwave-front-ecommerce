@@ -64,7 +64,6 @@ function Profile() {
           lastname: lastname || loggedUser.lastname,
         },
       });
-      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -87,8 +86,6 @@ function Profile() {
             },
           });
         }
-
-        console.log(response.data);
       }
     } catch (error) {
       console.log(error);
@@ -115,7 +112,6 @@ function Profile() {
           },
         });
         setLoggedUser(response.data);
-        console.log(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -133,7 +129,6 @@ function Profile() {
           "Content-Type": "application/json",
         },
       });
-      console.log(response.data);
       toast.info("Account deleted successfully", {
         position: "bottom-right",
       });
@@ -142,10 +137,17 @@ function Profile() {
     }
   };
   const handleDeleteUser = () => {
-    dispatch(clearCart());
-    dispatch(logout());
-    deleteUser();
-    navigate("/");
+    if (loggedUser.email !== "carlitos@gmail.com") {
+      dispatch(clearCart());
+      dispatch(logout());
+      deleteUser();
+      navigate("/");
+    } else {
+      console.log("You can't delete this account");
+      toast.error("You can't delete this account", {
+        position: "bottom-right",
+      });
+    }
   };
 
   return (
@@ -207,7 +209,6 @@ function Profile() {
                 <div className="col-md-2 col-4">Actions</div>
               </div>
             </div>
-            {console.log(loggedUser.Orders)}
             {loggedUser.Orders.length === 0 && (
               <h5 className="text-center mt-5">No orders yet</h5>
             )}

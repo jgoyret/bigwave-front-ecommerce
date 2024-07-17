@@ -32,8 +32,6 @@ function ProductModel({ product }) {
       : toast.info("No more stock available");
   };
 
-  console.log(product);
-
   return (
     <>
       <div className="product-card p-0 ">

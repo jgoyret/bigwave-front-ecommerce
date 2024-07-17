@@ -34,10 +34,8 @@ function OrderGreetings() {
   useEffect(() => {
     // console.log()
     if (!location.state || !location.state.order) {
-      console.log("No state or order found");
       navigate("/");
     } else {
-      console.log("State and order found");
       setOrder(location.state.order);
     }
   }, [location, navigate]);
