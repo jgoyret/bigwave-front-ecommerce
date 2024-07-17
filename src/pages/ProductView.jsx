@@ -49,6 +49,12 @@ function ProductView() {
       setUnits(units - 1);
     }
   };
+
+  const handleIncreaseUnits = () => {
+    product.stock > units
+      ? setUnits(units + 1)
+      : toast.info("No more stock available");
+  };
   return (
     product && (
       <>
@@ -86,7 +92,7 @@ function ProductView() {
                     <span className="ms-2 user-select-none">{units}</span>
                     <i
                       className="ms-2 bi bi-plus-circle fs-6"
-                      onClick={() => setUnits(units + 1)}
+                      onClick={handleIncreaseUnits}
                     ></i>
                   </div>
                   <button

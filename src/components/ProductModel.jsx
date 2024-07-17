@@ -26,6 +26,14 @@ function ProductModel({ product }) {
     }
   };
 
+  const handleIncreaseUnits = () => {
+    product.stock > units
+      ? setUnits(units + 1)
+      : toast.info("No more stock available");
+  };
+
+  console.log(product);
+
   return (
     <>
       <div className="product-card p-0 ">
@@ -54,7 +62,7 @@ function ProductModel({ product }) {
               ></i>
               <span className="mx-2 fs-5">{units}</span>
               <i
-                onClick={() => setUnits(units + 1)}
+                onClick={handleIncreaseUnits}
                 className="bi bi-plus-circle fs-5"
               ></i>
             </div>

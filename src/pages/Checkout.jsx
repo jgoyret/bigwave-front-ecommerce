@@ -176,356 +176,362 @@ function Checkout() {
     console.log("Form submitted:", values);
   };
 
+  useEffect(() => {
+    !cart.length > 0 && navigate("/");
+  }, [cart]);
+
   return (
-    <>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-      >
-        {({ errors, touched, handleChange, values, setFieldValue }) => (
-          <Form>
-            <div className="container container-content">
-              <div className="row checkout-container">
-                <div className="col-md-12 col-lg-6">
-                  <hr />
-                  <h5>Contact Information</h5>
-                  <OutlinedTextField
-                    className="bg-transparent"
-                    id="email"
-                    name="email"
-                    label="Email"
-                    type="email"
-                    variant="outlined"
-                    value={values.email}
-                    onChange={handleChange}
-                    fullWidth
-                    error={touched.email && !!errors.email}
-                    helperText={touched.email && errors.email}
-                  />
+    cart.length > 0 && (
+      <>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        >
+          {({ errors, touched, handleChange, values, setFieldValue }) => (
+            <Form>
+              <div className="container container-content">
+                <div className="row checkout-container">
+                  <div className="col-md-12 col-lg-6">
+                    <hr />
+                    <h5>Contact Information</h5>
+                    <OutlinedTextField
+                      className="bg-transparent"
+                      id="email"
+                      name="email"
+                      label="Email"
+                      type="email"
+                      variant="outlined"
+                      value={values.email}
+                      onChange={handleChange}
+                      fullWidth
+                      error={touched.email && !!errors.email}
+                      helperText={touched.email && errors.email}
+                    />
 
-                  <hr />
-                  <h5>Shipping Information</h5>
-                  <div className="d-flex mb-3 gap-3">
+                    <hr />
+                    <h5>Shipping Information</h5>
+                    <div className="d-flex mb-3 gap-3">
+                      <Field
+                        as={OutlinedTextField}
+                        id="firstname"
+                        name="firstname"
+                        label="Firstname"
+                        className="bg-transparent"
+                        error={touched.firstname && !!errors.firstname}
+                        helperText={touched.firstname && errors.firstname}
+                        onChange={handleChange}
+                        fullWidth
+                      />
+                      <Field
+                        as={OutlinedTextField}
+                        id="lastname"
+                        name="lastname"
+                        label="Lastname"
+                        className="bg-transparent"
+                        error={touched.lastname && !!errors.lastname}
+                        helperText={touched.lastname && errors.lastname}
+                        onChange={handleChange}
+                        fullWidth
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <Field
+                        as={OutlinedTextField}
+                        id="address"
+                        name="address"
+                        label="Address"
+                        className="bg-transparent"
+                        error={touched.address && !!errors.address}
+                        helperText={touched.address && errors.address}
+                        onChange={handleChange}
+                        fullWidth
+                      />
+                    </div>
+                    <div className="d-flex mb-3 gap-3">
+                      <Field
+                        as={OutlinedTextField}
+                        id="city"
+                        name="city"
+                        label="City"
+                        className="bg-transparent"
+                        error={touched.city && !!errors.city}
+                        helperText={touched.city && errors.city}
+                        onChange={handleChange}
+                        fullWidth
+                      />
+                      <CountrySelect
+                        value={values.country}
+                        onChange={(event) =>
+                          setFieldValue("country", event.target.value)
+                        }
+                      />
+                    </div>
+                    <div className="d-flex mb-3 gap-3">
+                      <Field
+                        as={OutlinedTextField}
+                        id="state"
+                        name="state"
+                        label="State"
+                        className="bg-transparent"
+                        error={touched.state && !!errors.state}
+                        helperText={touched.state && errors.state}
+                        onChange={handleChange}
+                        fullWidth
+                      />
+                      <Field
+                        as={OutlinedTextField}
+                        id="postalcode"
+                        name="postalcode"
+                        label="Postal Code"
+                        className="bg-transparent"
+                        error={touched.postalcode && !!errors.postalcode}
+                        helperText={touched.postalcode && errors.postalcode}
+                        onChange={handleChange}
+                        fullWidth
+                      />
+                    </div>
                     <Field
                       as={OutlinedTextField}
-                      id="firstname"
-                      name="firstname"
-                      label="Firstname"
+                      id="phone"
+                      name="phone"
+                      label="Phone"
                       className="bg-transparent"
-                      error={touched.firstname && !!errors.firstname}
-                      helperText={touched.firstname && errors.firstname}
+                      error={touched.phone && !!errors.phone}
+                      helperText={touched.phone && errors.phone}
                       onChange={handleChange}
                       fullWidth
                     />
-                    <Field
-                      as={OutlinedTextField}
-                      id="lastname"
-                      name="lastname"
-                      label="Lastname"
-                      className="bg-transparent"
-                      error={touched.lastname && !!errors.lastname}
-                      helperText={touched.lastname && errors.lastname}
-                      onChange={handleChange}
+                    <hr />
+                    <h5>Payment Information</h5>
+                    <InputLabel id="demo-simple-select-label">
+                      Payment Method
+                    </InputLabel>
+                    <Select
+                      className="bg-transparent mb-3"
+                      label="Payment Method"
+                      variant="outlined"
                       fullWidth
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <Field
-                      as={OutlinedTextField}
-                      id="address"
-                      name="address"
-                      label="Address"
-                      className="bg-transparent"
-                      error={touched.address && !!errors.address}
-                      helperText={touched.address && errors.address}
-                      onChange={handleChange}
-                      fullWidth
-                    />
-                  </div>
-                  <div className="d-flex mb-3 gap-3">
-                    <Field
-                      as={OutlinedTextField}
-                      id="city"
-                      name="city"
-                      label="City"
-                      className="bg-transparent"
-                      error={touched.city && !!errors.city}
-                      helperText={touched.city && errors.city}
-                      onChange={handleChange}
-                      fullWidth
-                    />
-                    <CountrySelect
-                      value={values.country}
+                      value={values.paymentMethod || "credit card"}
+                      // defaultChecked="credit card"
                       onChange={(event) =>
-                        setFieldValue("country", event.target.value)
+                        setFieldValue("paymentMethod", event.target.value)
                       }
-                    />
-                  </div>
-                  <div className="d-flex mb-3 gap-3">
-                    <Field
-                      as={OutlinedTextField}
-                      id="state"
-                      name="state"
-                      label="State"
-                      className="bg-transparent"
-                      error={touched.state && !!errors.state}
-                      helperText={touched.state && errors.state}
-                      onChange={handleChange}
-                      fullWidth
-                    />
-                    <Field
-                      as={OutlinedTextField}
-                      id="postalcode"
-                      name="postalcode"
-                      label="Postal Code"
-                      className="bg-transparent"
-                      error={touched.postalcode && !!errors.postalcode}
-                      helperText={touched.postalcode && errors.postalcode}
-                      onChange={handleChange}
-                      fullWidth
-                    />
-                  </div>
-                  <Field
-                    as={OutlinedTextField}
-                    id="phone"
-                    name="phone"
-                    label="Phone"
-                    className="bg-transparent"
-                    error={touched.phone && !!errors.phone}
-                    helperText={touched.phone && errors.phone}
-                    onChange={handleChange}
-                    fullWidth
-                  />
-                  <hr />
-                  <h5>Payment Information</h5>
-                  <InputLabel id="demo-simple-select-label">
-                    Payment Method
-                  </InputLabel>
-                  <Select
-                    className="bg-transparent mb-3"
-                    label="Payment Method"
-                    variant="outlined"
-                    fullWidth
-                    value={values.paymentMethod || "credit card"}
-                    // defaultChecked="credit card"
-                    onChange={(event) =>
-                      setFieldValue("paymentMethod", event.target.value)
-                    }
-                  >
-                    <MenuItem value="credit card">Credit card</MenuItem>
-                    <MenuItem value="mercado pago">Mercado pago</MenuItem>
-                    <MenuItem value="paypal">Paypal</MenuItem>
-                  </Select>
-                  <div
-                    className={
-                      values.paymentMethod === "credit card" ||
-                      values.paymentMethod === undefined
-                        ? ""
-                        : "d-none"
-                    }
-                  >
-                    <div className="mb-3">
-                      <Field
-                        as={OutlinedTextField}
-                        id="cardnumber"
-                        name="cardnumber"
-                        label="Card Number"
-                        className="bg-transparent"
-                        error={touched.cardnumber && !!errors.cardnumber}
-                        helperText={touched.cardnumber && errors.cardnumber}
-                        onChange={handleChange}
-                        fullWidth
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <Field
-                        as={OutlinedTextField}
-                        id="cardholder"
-                        name="cardholder"
-                        label="Card Holder"
-                        className="bg-transparent"
-                        error={touched.cardholder && !!errors.cardholder}
-                        helperText={touched.cardholder && errors.cardholder}
-                        onChange={handleChange}
-                        fullWidth
-                      />
-                    </div>
-                    <div className="d-flex gap-3">
-                      <Field
-                        as={OutlinedTextField}
-                        id="expirationdate"
-                        name="expirationdate"
-                        label="Expiration Date"
-                        className="bg-transparent"
-                        error={
-                          touched.expirationdate && !!errors.expirationdate
-                        }
-                        helperText={
-                          touched.expirationdate && errors.expirationdate
-                        }
-                        onChange={handleChange}
-                        fullWidth
-                      />
-                      <Field
-                        as={OutlinedTextField}
-                        id="cvv"
-                        name="cvv"
-                        label="CVV"
-                        className="bg-transparent"
-                        error={touched.cvv && !!errors.cvv}
-                        helperText={touched.cvv && errors.cvv}
-                        onChange={handleChange}
-                        fullWidth
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className={
-                      values.paymentMethod === "mercado pago" ? "" : "d-none"
-                    }
-                  >
-                    <h6>Scan to pay: </h6>
-                    <Tippy content="Not implemented" placement="right">
-                      <img
-                        className="styledQR"
-                        src="../../public/QR.png"
-                        alt=""
-                      />
-                    </Tippy>
-                  </div>
-                  <div
-                    className={
-                      values.paymentMethod === "paypal" ? "" : "d-none"
-                    }
-                  >
-                    <Tippy content="Not implemented" placement="right">
-                      <p className="falseButton">Continue to Paypal</p>
-                    </Tippy>
-                  </div>
-                </div>
-
-                <div className="col-md-12 col-lg-6">
-                  <hr />
-                  <h5>Order Summary</h5>
-                  {cart.map((item) => (
-                    <div key={item.id} className="flex-row row card-summary">
-                      <div className="col-2 d-flex align-items-center">
-                        <img
-                          className="cart-image img-fluid"
-                          src={item.image}
-                          style={{ height: 80 }}
-                          alt="Card image cap"
+                    >
+                      <MenuItem value="credit card">Credit card</MenuItem>
+                      <MenuItem value="mercado pago">Mercado pago</MenuItem>
+                      <MenuItem value="paypal">Paypal</MenuItem>
+                    </Select>
+                    <div
+                      className={
+                        values.paymentMethod === "credit card" ||
+                        values.paymentMethod === undefined
+                          ? ""
+                          : "d-none"
+                      }
+                    >
+                      <div className="mb-3">
+                        <Field
+                          as={OutlinedTextField}
+                          id="cardnumber"
+                          name="cardnumber"
+                          label="Card Number"
+                          className="bg-transparent"
+                          error={touched.cardnumber && !!errors.cardnumber}
+                          helperText={touched.cardnumber && errors.cardnumber}
+                          onChange={handleChange}
+                          fullWidth
                         />
                       </div>
-                      <div className="col-9">
-                        <div className="card-content">
-                          <div className="product-name fs-6">{item.name}</div>
-                          <div className="product-description">
-                            <p className="fw-bold">
-                              ${" "}
-                              <span>
-                                {(item.price * item.quantity).toFixed(2)}
-                              </span>
-                            </p>
-                            <div className="d-flex justify-content-between">
-                              <p>
-                                Quantity:{" "}
+                      <div className="mb-3">
+                        <Field
+                          as={OutlinedTextField}
+                          id="cardholder"
+                          name="cardholder"
+                          label="Card Holder"
+                          className="bg-transparent"
+                          error={touched.cardholder && !!errors.cardholder}
+                          helperText={touched.cardholder && errors.cardholder}
+                          onChange={handleChange}
+                          fullWidth
+                        />
+                      </div>
+                      <div className="d-flex gap-3">
+                        <Field
+                          as={OutlinedTextField}
+                          id="expirationdate"
+                          name="expirationdate"
+                          label="Expiration Date"
+                          className="bg-transparent"
+                          error={
+                            touched.expirationdate && !!errors.expirationdate
+                          }
+                          helperText={
+                            touched.expirationdate && errors.expirationdate
+                          }
+                          onChange={handleChange}
+                          fullWidth
+                        />
+                        <Field
+                          as={OutlinedTextField}
+                          id="cvv"
+                          name="cvv"
+                          label="CVV"
+                          className="bg-transparent"
+                          error={touched.cvv && !!errors.cvv}
+                          helperText={touched.cvv && errors.cvv}
+                          onChange={handleChange}
+                          fullWidth
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className={
+                        values.paymentMethod === "mercado pago" ? "" : "d-none"
+                      }
+                    >
+                      <h6>Scan to pay: </h6>
+                      <Tippy content="Not implemented" placement="right">
+                        <img
+                          className="styledQR"
+                          src="../../public/QR.png"
+                          alt=""
+                        />
+                      </Tippy>
+                    </div>
+                    <div
+                      className={
+                        values.paymentMethod === "paypal" ? "" : "d-none"
+                      }
+                    >
+                      <Tippy content="Not implemented" placement="right">
+                        <p className="falseButton">Continue to Paypal</p>
+                      </Tippy>
+                    </div>
+                  </div>
+
+                  <div className="col-md-12 col-lg-6">
+                    <hr />
+                    <h5>Order Summary</h5>
+                    {cart.map((item) => (
+                      <div key={item.id} className="flex-row row card-summary">
+                        <div className="col-2 d-flex align-items-center">
+                          <img
+                            className="cart-image img-fluid"
+                            src={item.image}
+                            style={{ height: 80 }}
+                            alt="Card image cap"
+                          />
+                        </div>
+                        <div className="col-9">
+                          <div className="card-content">
+                            <div className="product-name fs-6">{item.name}</div>
+                            <div className="product-description">
+                              <p className="fw-bold">
+                                ${" "}
+                                <span>
+                                  {(item.price * item.quantity).toFixed(2)}
+                                </span>
+                              </p>
+                              <div className="d-flex justify-content-between">
+                                <p>
+                                  Quantity:{" "}
+                                  <i
+                                    onClick={() =>
+                                      dispatch(removeQuantity({ id: item.id }))
+                                    }
+                                    className="bi bi-dash-circle"
+                                  />{" "}
+                                  {item.quantity}{" "}
+                                  <i
+                                    onClick={() => handleAddQuantity(item, 1)}
+                                    className="bi bi-plus-circle"
+                                  />
+                                </p>
                                 <i
                                   onClick={() =>
-                                    dispatch(removeQuantity({ id: item.id }))
+                                    dispatch(removeFromCart(item.id))
                                   }
-                                  className="bi bi-dash-circle"
-                                />{" "}
-                                {item.quantity}{" "}
-                                <i
-                                  onClick={() => handleAddQuantity(item, 1)}
-                                  className="bi bi-plus-circle"
+                                  className="bi bi-trash"
                                 />
-                              </p>
-                              <i
-                                onClick={() =>
-                                  dispatch(removeFromCart(item.id))
-                                }
-                                className="bi bi-trash"
-                              />
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
-                  <hr />
-                  <div>
-                    <div className="d-flex strong justify-content-between">
-                      <p>Subtotal</p>
-                      <p>{subTotal.toFixed(2)} USD</p>
-                    </div>
-                    {subTotal.toFixed(2) < 50 ? (
-                      <div className="d-flex justify-content-between">
-                        <p>Shipping</p>
-                        <p>50 USD</p>
-                      </div>
-                    ) : (
-                      <div className="d-flex justify-content-between">
-                        <p>Shipping</p>
-                        <p className="text-danger">FREE</p>
-                      </div>
-                    )}
-
-                    <div className="d-flex justify-content-between">
-                      <p>Taxes</p>
-                      <p>30 USD</p>
-                    </div>
+                    ))}
                     <hr />
-                    <div className="d-flex justify-content-between align-items-center">
-                      <h5>Total</h5>
+                    <div>
+                      <div className="d-flex strong justify-content-between">
+                        <p>Subtotal</p>
+                        <p>{subTotal.toFixed(2)} USD</p>
+                      </div>
                       {subTotal.toFixed(2) < 50 ? (
-                        <p className="text-decoration-line-through text-danger d-none">
-                          {totalAmount}
-                        </p>
+                        <div className="d-flex justify-content-between">
+                          <p>Shipping</p>
+                          <p>50 USD</p>
+                        </div>
                       ) : (
-                        <p className="text-decoration-line-through text-danger">
-                          {totalAmount}
-                        </p>
+                        <div className="d-flex justify-content-between">
+                          <p>Shipping</p>
+                          <p className="text-danger">FREE</p>
+                        </div>
                       )}
+
+                      <div className="d-flex justify-content-between">
+                        <p>Taxes</p>
+                        <p>30 USD</p>
+                      </div>
+                      <hr />
+                      <div className="d-flex justify-content-between align-items-center">
+                        <h5>Total</h5>
+                        {subTotal.toFixed(2) < 50 ? (
+                          <p className="text-decoration-line-through text-danger d-none">
+                            {totalAmount}
+                          </p>
+                        ) : (
+                          <p className="text-decoration-line-through text-danger">
+                            {totalAmount}
+                          </p>
+                        )}
+                      </div>
+                      <div className="d-flex">
+                        <p className="fw-bold ms-auto mt-1 fs-6">
+                          {subTotal.toFixed(2) < 50
+                            ? totalAmount
+                            : (subTotal + taxes).toFixed(2)}
+                        </p>
+                      </div>
                     </div>
-                    <div className="d-flex">
-                      <p className="fw-bold ms-auto mt-1 fs-6">
-                        {subTotal.toFixed(2) < 50
-                          ? totalAmount
-                          : (subTotal + taxes).toFixed(2)}
+                    <div className={cart.length > 0 ? "" : "d-none"}>
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        className="btn btn-checkout w-100"
+                      >
+                        Confirm Order
+                      </Button>
+                    </div>
+                    <div className={cart.length === 0 ? "" : "d-none"}>
+                      <p>
+                        Cannot proceed with an <strong>empty cart</strong>.{" "}
+                        <Link to="/products">
+                          {" "}
+                          Clic here to continue shopping{" "}
+                        </Link>{" "}
                       </p>
                     </div>
-                  </div>
-                  <div className={cart.length > 0 ? "" : "d-none"}>
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      className="btn btn-checkout w-100"
-                    >
-                      Confirm Order
-                    </Button>
-                  </div>
-                  <div className={cart.length === 0 ? "" : "d-none"}>
-                    <p>
-                      Cannot proceed with an <strong>empty cart</strong>.{" "}
-                      <Link to="/products">
-                        {" "}
-                        Clic here to continue shopping{" "}
-                      </Link>{" "}
-                    </p>
-                  </div>
-                  {/* <div className="d-flex justify-content-center align-items-center w-50 m-5">
+                    {/* <div className="d-flex justify-content-center align-items-center w-50 m-5">
                     <img src="../QR.png" alt="QR" className=" w-100 h-100" />
                   </div> */}
+                  </div>
                 </div>
               </div>
-            </div>
-          </Form>
-        )}
-      </Formik>
-    </>
+            </Form>
+          )}
+        </Formik>
+      </>
+    )
   );
 }
 
