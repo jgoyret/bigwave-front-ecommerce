@@ -31,10 +31,7 @@ function Category() {
     <>
       <Container>
         <header>
-          <div
-            className="d-flex category-header justify-content-center align-items-center position-relative "
-            // id="header-image"
-          >
+          <div className="d-flex category-header justify-content-center align-items-center position-relative ">
             <div className="text-center">
               <h4 className="category-title-header">
                 {params.slug.replace(/-/g, " ")}

@@ -124,18 +124,12 @@ main {
   height: 800px;
   background-position: center;
   /* top: -60px; */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
 }
-#curva {
-  bottom: 0;
-  z-index: 2;
-  width: 100%;
-  left: 0;
-  border-width: 0 100vw 5.3vw 0;
-  border-style: solid;
-  border-color: #ebebeb transparent #ebebeb transparent;
-}
+
 .div-curva {
   height: 200px;
+  gap: 30px;
 }
 h5 strong {
   color: #68844a;

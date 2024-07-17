@@ -62,15 +62,12 @@ function AllProducts() {
     <>
       <Container>
         <header>
-          <div
-            className="d-flex category-header justify-content-center align-items-center position-relative"
-            // id="header-image"
-          >
+          <div className="d-flex category-header justify-content-center align-items-center position-relative">
             <div className="text-center">
-              <h4 className="category-title-header">All products</h4>
+              <FilterProducts onSearch={handleSearch} />
+              {/* <h4 className="category-title-header">All products</h4> */}
             </div>
           </div>
-          <FilterProducts onSearch={handleSearch} />
         </header>
       </Container>
       <Container>

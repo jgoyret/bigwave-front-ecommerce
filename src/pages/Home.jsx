@@ -71,7 +71,6 @@ function Home() {
               </svg>
             </Link>
           </div>
-          <div className="position-absolute" id="curva"></div>
         </div>
         <div className="d-flex text-center container justify-content-around div-curva text-dark mt-5">
           <div
