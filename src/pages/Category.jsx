@@ -5,6 +5,7 @@ import ProductModel from "../components/ProductModel";
 import "../styles/Products.css";
 import ProductsSideNavbar from "../components/ProductsSideNavbar";
 import { useSelector } from "react-redux";
+import { Container } from "react-bootstrap";
 
 function Category() {
   const user = useSelector((state) => state.user);
@@ -28,7 +29,7 @@ function Category() {
   }, [location.pathname]);
   return (
     <>
-      <div className="container">
+      <Container>
         <header>
           <div
             className="d-flex category-header justify-content-center align-items-center position-relative "
@@ -44,14 +45,14 @@ function Category() {
         <div className="d-flex justify-content-center my-3">
           <ProductsSideNavbar />
           {category && (
-            <div className="products-container container mt-5 justify-content-center">
+            <div className="products-container mt-5 justify-content-center">
               {category.Products.map((c) => {
                 return <ProductModel key={c.id} product={c} />;
               })}
             </div>
           )}
         </div>
-      </div>
+      </Container>
     </>
   );
 }

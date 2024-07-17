@@ -29,7 +29,7 @@ function FilterProducts({ onSearch }) {
   }, []);
 
   return (
-    <div className="filter-products d-flex justify-content-evenly p-3">
+    <div className="d-flex justify-content-evenly mt-4">
       <input
         type="text"
         placeholder="Search products..."
