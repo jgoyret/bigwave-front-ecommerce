@@ -1,27 +1,13 @@
 import React, { useEffect, useState } from "react";
-import {
-  TextField,
-  Select,
-  Button,
-  Box,
-  MenuItem,
-  styled,
-  outlinedInputClasses,
-} from "@mui/material";
+import { TextField, Select, Button, MenuItem, styled } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import "../styles/Checkout.css";
 import CountrySelect from "../components/CountrySelect";
 import { useSelector } from "react-redux";
-import {
-  removeFromCart,
-  addQuantity,
-  checkAndAddToCart,
-  removeQuantity,
-  clearCart,
-} from "../redux/cartReducer";
+import { clearCart } from "../redux/cartReducer";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { useNavigate, Link, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
@@ -33,7 +19,7 @@ function Checkout() {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
   const [userInfo, setUserInfo] = useState([]);
-  const [toConfirmOrder, setToConfirmOrder] = useState(false);
+  // const [toConfirmOrder, setToConfirmOrder] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -161,31 +147,16 @@ function Checkout() {
     }
   };
 
-  const handleAddQuantity = (item, quantity) => {
-    const entrieProduct = { ...item, quantity };
-    dispatch(checkAndAddToCart(entrieProduct));
-  };
-
   const handleSubmit = (values) => {
     console.log("Form submitted:", values);
     if (user.token) {
-      setToConfirmOrder(true);
+      // setToConfirmOrder(true);
       handleAddOrder(values);
     } else {
       navigate("/login");
       toast.info("You must be logged in to complete the order");
     }
     console.log("Form submitted:", values);
-  };
-
-  const handleRemoveFromCart = (id) => {
-    console.log(cart.length);
-    if (cart.length - 1 > 0) {
-      dispatch(removeFromCart(id));
-    } else {
-      dispatch(removeFromCart(id));
-      navigate("/");
-    }
   };
 
   useEffect(() => {
@@ -446,24 +417,7 @@ function Checkout() {
                                 </span>
                               </p>
                               <div className="d-flex justify-content-between">
-                                <p>
-                                  Quantity:{" "}
-                                  <i
-                                    onClick={() =>
-                                      dispatch(removeQuantity({ id: item.id }))
-                                    }
-                                    className="bi bi-dash-circle"
-                                  />{" "}
-                                  {item.quantity}{" "}
-                                  <i
-                                    onClick={() => handleAddQuantity(item, 1)}
-                                    className="bi bi-plus-circle"
-                                  />
-                                </p>
-                                <i
-                                  onClick={() => handleRemoveFromCart(item.id)}
-                                  className="bi bi-trash"
-                                />
+                                <p>Quantity: {item.quantity}</p>
                               </div>
                             </div>
                           </div>
