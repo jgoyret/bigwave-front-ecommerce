@@ -71,8 +71,8 @@ function AllProducts() {
         </header>
       </Container>
       <Container>
-        <div className="d-flex justify-content-center container-main-products my-3">
-          {!isSearching && <ProductsSideNavbar />}
+        <div className="d-flex justify-content-start container-main-products my-3">
+          <ProductsSideNavbar />
 
           <div>
             {filteredProducts.length > 0 && (
@@ -85,7 +85,7 @@ function AllProducts() {
           </div>
         </div>
         {!isSearching && totalPages > 0 && (
-          <nav>
+          <div>
             <ul className="pagination justify-content-center mt-4">
               <li className={`page-item ${page === 1 ? "disabled" : ""}`}>
                 <button
@@ -128,7 +128,7 @@ function AllProducts() {
                 </button>
               </li>
             </ul>
-          </nav>
+          </div>
         )}
       </Container>
     </>

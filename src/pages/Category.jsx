@@ -39,7 +39,7 @@ function Category() {
             </div>
           </div>
         </header>
-        <div className="d-flex justify-content-center my-3">
+        <div className="d-flex justify-content-start my-3">
           <ProductsSideNavbar />
           {category && (
             <div className="products-container mt-5 justify-content-center">
