@@ -10,12 +10,11 @@ html {
 }
 ::-moz-selection {
   /* Code for Firefox */
-  color: #212529;
+  color: #333;
   background: #d0d88a;
 }
-
 ::selection {
-  color: #212529;
+  color: #333;
   background: #d0d88a;
 }
 :root {
@@ -124,18 +123,12 @@ main {
   height: 800px;
   background-position: center;
   /* top: -60px; */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
 }
-#curva {
-  bottom: 0;
-  z-index: 2;
-  width: 100%;
-  left: 0;
-  border-width: 0 100vw 5.3vw 0;
-  border-style: solid;
-  border-color: #ebebeb transparent #ebebeb transparent;
-}
+
 .div-curva {
   height: 200px;
+  gap: 30px;
 }
 h5 strong {
   color: #68844a;
@@ -149,6 +142,14 @@ h5 strong {
 .category-item {
   width: 300px;
   /* padding-left: 0px !important; */
+}
+
+@media (max-width: 992px) {
+  .category-div {
+    display: flex;
+    flex-direction: column;
+    height: 80px !important;
+  }
 }
 .category-header {
   height: 50px;
