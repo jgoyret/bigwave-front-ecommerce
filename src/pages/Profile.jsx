@@ -250,11 +250,18 @@ function Profile() {
             aria-describedby="modal-modal-description"
           >
             <Box component="form" sx={style}>
+              <button
+                className="ms-auto modal-close-button"
+                onClick={handleCloseModal}
+              >
+                <i class="bi bi-x-lg"></i>
+              </button>
               <Typography
                 sx={{ fontFamily: "inherit" }}
                 id="modal-modal-title"
                 variant="h6"
                 component="h2"
+                className="text-center"
               >
                 Update your profile
               </Typography>
@@ -283,7 +290,7 @@ function Profile() {
                 type="submit"
                 onClose={handleCloseModal}
                 onClick={updateUser}
-                className="w-100 mb-3 btn-checkout-cart"
+                className="w-100 mb-3 btn-checkout-cart mt-3"
               >
                 Guardar
               </button>
@@ -309,7 +316,18 @@ function Profile() {
             aria-describedby="modal-modal-description"
           >
             <Box component="form" sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
+              <button
+                className="ms-auto modal-close-button"
+                onClick={handleClosePasswordModal}
+              >
+                <i class="bi bi-x-lg"></i>
+              </button>
+              <Typography
+                id="modal-modal-title"
+                variant="h6"
+                component="h2"
+                className="text-center"
+              >
                 Update your password
               </Typography>
               <TextField
@@ -337,7 +355,7 @@ function Profile() {
                 type="submit"
                 onClose={handleClosePasswordModal}
                 onClick={updateUserPassword}
-                className=" w-25 button-add type1 mt-3 ml-3"
+                className="w-100 mb-3 btn-checkout-cart mt-3"
               >
                 Guardar
               </button>
@@ -352,14 +370,25 @@ function Profile() {
             aria-describedby="modal-modal-description"
           >
             <Box component="form" sx={style}>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              <button
+                className="ms-auto modal-close-button"
+                onClick={handleCloseDeleteUserModal}
+              >
+                <i class="bi bi-x-lg"></i>
+              </button>
+              <i class="bi bi-exclamation-triangle text-center text-danger"></i>
+              <Typography
+                id="modal-modal-description"
+                sx={{ mt: 2 }}
+                className="text-center"
+              >
                 Are you sure you want to delete your account?
               </Typography>
               <button
                 type="submit"
                 onClose={handleCloseDeleteUserModal}
                 onClick={handleDeleteUser}
-                className="w-100 mb-3 btn-checkout-cart"
+                className="w-100 mb-3 btn-checkout-cart mt-3"
               >
                 Confirm
               </button>

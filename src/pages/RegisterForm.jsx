@@ -114,6 +114,12 @@ function RegisterForm() {
         aria-describedby="modal-modal-description"
       >
         <Box component="form" sx={style}>
+          <button
+            className="ms-auto modal-close-button"
+            onClick={handleCloseModal}
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
           <i className="bi bi-check-circle text-center"></i>
           <Typography id="modal" className="text-center">
             Your account has been created!
@@ -122,7 +128,7 @@ function RegisterForm() {
             <button
               type="submit"
               onClose={handleCloseModal}
-              className="w-100 mb-3 btn-checkout-cart"
+              className="w-100 mb-3 btn-checkout-cart mt-3"
             >
               Login
             </button>

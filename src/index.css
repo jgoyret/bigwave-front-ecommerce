@@ -328,3 +328,7 @@ a {
 .accordion-button:focus {
   box-shadow: none;
 }
+.modal-close-button {
+  background-color: transparent;
+  border: none;
+}
