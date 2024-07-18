@@ -129,7 +129,7 @@ function NavBarApp() {
               </NavDropdown>
               <Nav.Link
                 as={Link}
-                className="text-dark"
+                className="fw-bold text-dark nav-about-subtitle"
                 to="/about-this-project"
               >
                 About this project
