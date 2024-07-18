@@ -234,7 +234,7 @@ function Profile() {
                     <div className="col-md-2 col-4 d-flex justify-content-center">
                       <i
                         onClick={() => handleGoToOrder(order)}
-                        class="bi bi-eye-fill fs-2"
+                        class="d-flex bi bi-eye-fill fs-2"
                       ></i>
                     </div>
                   </div>
