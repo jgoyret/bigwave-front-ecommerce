@@ -109,10 +109,11 @@
   display: flex;
   align-items: center !important;
   justify-content: center;
-  padding: 20px;
+  padding: 7px;
+  margin-bottom: 3px;
   border: 1px solid #1f1f1f;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.67);
+  background-color: rgba(0, 0, 0, 0.693);
   border-color: rgba(0, 0, 0, 0.304);
   color: rgb(219, 219, 219);
   /* padding: auto; */
@@ -163,7 +164,6 @@
   margin-left: 80px;
   margin-right: -100%;
 }
-
 
 @media (max-width: 992px) {
   .my-profile-data {
