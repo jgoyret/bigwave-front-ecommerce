@@ -26,12 +26,12 @@ export const checkAndAddToCart = createAsyncThunk(
         ) {
           dispatch(addQuantity({ id, quantity: entrieProduct.quantity }));
 
-          toast.success(
-            `Added ${entrieProduct.quantity} ${entrieProduct.name} to the cart`,
-            {
-              position: "bottom-right",
-            }
-          );
+          // toast.success(
+          //   `Added ${entrieProduct.quantity} ${entrieProduct.name} to the cart`,
+          //   {
+          //     position: "bottom-right",
+          //   }
+          // );
         } else {
           toast.error("Stock insuficiente", {
             position: "bottom-right",
