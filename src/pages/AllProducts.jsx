@@ -68,14 +68,12 @@ function AllProducts() {
         </header>
       </Container>
       <Container>
-        {/* <div className="m-4"> */}
-        {/* </div> */}
+        <FilterProducts onSearch={handleSearch} />
+
         <div className="d-flex justify-content-start container-main-products my-3">
           <ProductsSideNavbar />
 
           <div>
-            <FilterProducts onSearch={handleSearch} />
-
             {filteredProducts.length > 0 && (
               <div className="products-container">
                 {filteredProducts.map((product) => (
