@@ -174,11 +174,7 @@
     flex-wrap: wrap !important;
   }
 }
-@media (max-width: 768px) {
-  .order-detail {
-    padding: 0 !important;
-  }
-}
+
 @media (min-width: 768px) and (max-width: 991.98px) {
   .order-detail {
     padding: 20px 0px !important;
