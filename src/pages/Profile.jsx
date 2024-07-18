@@ -199,14 +199,16 @@ function Profile() {
             <div className="my-orders">
               <h3>MY ORDERS</h3>
             </div>
-            <div className="order-header">
+            <div className="order-header d-flex justify-content-center align-items-center">
               <div className="row w-100">
                 <div className="col-md-2 col-4">Order ID</div>
                 <div className="col-md-2 col-4">Date</div>
-                <div className="col-md-2 d-none d-md-inline">Address</div>
+                <div className="col-md-3 d-none d-md-inline">Address</div>
                 <div className="col-md-2 d-none d-md-inline">Status</div>
-                <div className="col-md-2 d-none d-md-inline">Total</div>
-                <div className="col-md-2 col-4">Actions</div>
+                <div className="col-md-1 d-none d-md-inline">Total</div>
+                <div className="col-md-2 col-4 d-flex justify-content-center">
+                  Actions
+                </div>
               </div>
             </div>
             {loggedUser.Orders.length === 0 && (
@@ -214,28 +216,26 @@ function Profile() {
             )}
             {loggedUser.Orders.length > 0 &&
               loggedUser.Orders.map((order) => (
-                <div key={order.id} className="order-detail ">
-                  <div className="row w-100">
+                <div key={order.id} className="order-detail">
+                  <div className="row w-100 d-flex align-items-center justify-content-center">
                     <div className="col-md-2 col-4 fw-bold">{order.id}</div>
                     <div className="col-md-2 col-4">
                       {order.createdAt.slice(0, 10)}
                     </div>
-                    <div className="col-md-2 d-none d-md-inline">
+                    <div className="col-md-3 d-none d-md-inline">
                       {order.address}
                     </div>
                     <div className="col-md-2 d-none d-md-inline">
                       {order.status}
                     </div>
-                    <div className="col-md-2 d-none d-md-inline">
+                    <div className="col-md-1 d-none d-md-inline">
                       ${order.totalAmount}
                     </div>
-                    <div className="col-md-2 col-4">
-                      <button
-                        className="view-order "
+                    <div className="col-md-2 col-4 d-flex justify-content-center">
+                      <i
                         onClick={() => handleGoToOrder(order)}
-                      >
-                        View Order
-                      </button>
+                        class="bi bi-eye-fill fs-2"
+                      ></i>
                     </div>
                   </div>
                 </div>

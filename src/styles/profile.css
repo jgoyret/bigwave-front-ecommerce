@@ -107,8 +107,8 @@
 
 .order-detail {
   display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
+  align-items: center !important;
+  justify-content: center;
   padding: 20px;
   border: 1px solid #1f1f1f;
   border-radius: 5px;
@@ -164,48 +164,6 @@
   margin-right: -100%;
 }
 
-.view-order {
-  height: 50px;
-  width: 100px;
-  max-width: 160px;
-  position: relative;
-  background-color: #cacaca;
-  cursor: pointer;
-  border: 2px solid #252525;
-  overflow: hidden;
-  border-radius: 30px;
-  color: #242424;
-  transition: all 0.5s ease-in-out;
-  z-index: 2;
-  margin-left: auto;
-  font-size: small;
-  font-weight: bold;
-}
-
-.view-order:hover {
-  color: #fff;
-  border: 2px solid #b3b3b3;
-}
-
-.view-order::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  transition: all 0.5s ease-in-out;
-  background-color: #333;
-  /* border-radius: 30px; */
-  visibility: hidden;
-  border: none;
-  height: 10px;
-  width: 10px;
-  z-index: -1;
-}
-
-.view-order:hover::after {
-  visibility: visible;
-  transform: scale(100) translateX(2px);
-}
 
 @media (max-width: 992px) {
   .my-profile-data {
