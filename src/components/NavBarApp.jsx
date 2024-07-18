@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/userSlice";
 import { toast } from "react-toastify";
 import { clearCart } from "../redux/cartReducer";
+import Swal from "sweetalert2";
 
 function NavBarApp() {
   const token = useSelector((state) => state.user.token);
@@ -23,6 +24,8 @@ function NavBarApp() {
 
   const dispatch = useDispatch();
 
+  // const Swal = require("sweetalert2");
+
   const handleCloseCart = () => setShowCart(false);
   const handleShowCart = () => setShowCart(true);
 
@@ -31,12 +34,33 @@ function NavBarApp() {
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
-      toast.info("You logged out 😭 see you soon!", {
-        position: "bottom-right",
-      });
-      dispatch(logout());
-      dispatch(clearCart());
-      navigate("/");
+      if (cart.length > 0) {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You will loose your cart!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#333",
+          cancelButtonColor: "#aad054",
+          confirmButtonText: "Yes",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            dispatch(logout());
+            dispatch(clearCart());
+            navigate("/");
+            toast.info("You logged out 😭 see you soon!", {
+              position: "bottom-right",
+            });
+          }
+        });
+      } else {
+        dispatch(logout());
+        dispatch(clearCart());
+        navigate("/");
+        toast.info("You logged out 😭 see you soon!", {
+          position: "bottom-right",
+        });
+      }
     } catch (error) {
       console.log(error);
     }
@@ -135,38 +159,6 @@ function NavBarApp() {
                 About this project
               </Nav.Link>
             </Nav>
-            {/* <Nav.Link className="input-wrap" style={{ height: "40px" }}>
-              <button className="icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  height="20px"
-                  width="20px"
-                >
-                  <path
-                    strokeLinejoin="round"
-                    strokeLinecap="round"
-                    strokeWidth="2"
-                    stroke="#000000"
-                    d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
-                  ></path>
-                  <path
-                    strokeLinejoin="round"
-                    strokeLinecap="round"
-                    strokeWidth="2"
-                    stroke="#000000"
-                    d="M22 22L20 20"
-                  ></path>
-                </svg>
-              </button>
-              <input
-                placeholder="search.."
-                className="input"
-                name="text"
-                type="text"
-              ></input>
-            </Nav.Link> */}
 
             {token ? (
               <>
