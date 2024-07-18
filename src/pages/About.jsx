@@ -102,8 +102,8 @@ function About() {
             <div className="heading">
               <h3>Meet the Team</h3>
             </div>
-            <div className="d-flex">
-              <div className="row justify-content-evenly w-75 mt-5 m-auto ">
+            <div className="d-flex justify-content-evenly">
+              <div className="row mt-5">
                 <div className="card-client col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2">
                   <div className="user-picture hover-img">
                     <img
