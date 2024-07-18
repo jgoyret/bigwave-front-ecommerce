@@ -31,7 +31,7 @@ function FilterProducts({ onSearch }) {
   }, []);
 
   return (
-    <div className="container d-flex p-3">
+    <div className="d-flex justify-content-end filter-container mt-5">
       <div className="row filter-products">
         <div className="col-6 col-md-6 search">
           <input

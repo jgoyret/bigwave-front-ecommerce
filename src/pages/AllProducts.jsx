@@ -62,19 +62,19 @@ function AllProducts() {
         <header>
           <div className="d-flex category-header category-div justify-content-center align-items-center position-relative">
             <div className="text-center">
-              <FilterProducts onSearch={handleSearch} />
-              {/* <h4 className="category-title-header">All products</h4> */}
+              <h4 className="category-title-header">All products</h4>
             </div>
           </div>
         </header>
       </Container>
       <Container>
+        <FilterProducts onSearch={handleSearch} />
         <div className="d-flex justify-content-start container-main-products my-3">
           <ProductsSideNavbar />
 
           <div>
             {filteredProducts.length > 0 && (
-              <div className="products-container mt-5 justify-content-center">
+              <div className="products-container justify-content-center">
                 {filteredProducts.map((product) => (
                   <ProductModel key={product.id} product={product} />
                 ))}

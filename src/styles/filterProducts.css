@@ -7,14 +7,14 @@
 .search__input {
   font-family: inherit;
   font-size: inherit;
-  background-color: #f4f2f2;
+  background-color: #fff;
   border: none;
   color: #333;
   padding: 5px 0.5rem;
   border-radius: 30px;
   width: 12em;
   transition: all ease-in-out 0.5s;
-  margin-right: -2rem;
+  margin-right: -2.2rem;
 }
 
 .search__input:hover,
@@ -24,7 +24,7 @@
 
 .search__input:focus {
   outline: none;
-  background-color: #f0eeee;
+  background-color: #fff;
 }
 
 .search__input::-webkit-input-placeholder {
@@ -32,14 +32,13 @@
 }
 
 .search__input:focus + .search__button {
-  background-color: #f0eeee;
+  background-color: #fff;
 }
 
 .search__button {
   border: none;
-  background-color: #f4f2f2;
+  background-color: #fff;
   margin-top: 0.1em;
-  padding: 4.5px;
 }
 
 .search__button:hover {
@@ -53,13 +52,23 @@
 }
 .form-select {
   padding: 0.25rem 2.25rem 0.25rem 0.75rem;
+  width: 100% !important;
 }
 
-@media (max-width: 992px) {
-  .filter-products {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+@media (max-width: 1024px) {
+  .form-select {
+    width: fit-content !important;
+  }
+  .filter-container {
+    justify-content: center !important;
+  }
+
+  @media (max-width: 768px) {
+    .filter-products {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
   }
 }
 .filter-products {
