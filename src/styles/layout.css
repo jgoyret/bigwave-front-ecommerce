@@ -1,0 +1,31 @@
+#whatsapp {
+  background-color: #aad054;
+  transition: all 0.5s ease-in-out;
+  border-radius: 20px 0 0 20px;
+  bottom: 70px;
+  font-size: 35px;
+  padding: 0 3px;
+  position: fixed;
+  right: 0;
+}
+
+#whatsapp.hide {
+  right: -65px;
+}
+a:hover {
+  color: #2c2a2a;
+  text-decoration: none;
+}
+.button-about {
+  background-color: #aad054;
+  color: black;
+}
+
+.button-about:hover {
+  color: #aad054;
+  background-color: black;
+}
+.whatsapp-button {
+  background-color: transparent;
+  border: none;
+}

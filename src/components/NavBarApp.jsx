@@ -37,7 +37,7 @@ function NavBarApp() {
       if (cart.length > 0) {
         Swal.fire({
           title: "Are you sure?",
-          text: "You will loose your cart!",
+          text: "You will lose your cart!",
           icon: "warning",
           showCancelButton: true,
           confirmButtonColor: "#333",

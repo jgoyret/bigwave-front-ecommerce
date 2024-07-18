@@ -1,13 +1,11 @@
 import React from "react";
 import "../styles/footer.css";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <>
-      <ToastContainer />
       <footer className="bg-dark text-white pt-4">
         <div className="d-flex align-items-center position-relative">
           <div className="position-absolute" id="curva-footer"></div>
