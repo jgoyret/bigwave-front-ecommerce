@@ -1,5 +1,5 @@
 // components/Layout.jsx
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import NavbarApp from "../components/NavBarApp";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
@@ -45,6 +45,15 @@ function Layout() {
         <main>
           <Outlet />
         </main>
+        <Link to={"/about-this-project"}>
+          <button
+            className="btn btn-success position-fixed bottom-0 end-0 m-3"
+            style={{ zIndex: 1000 }}
+          >
+            <i className="bi bi-info-circle me-2"></i>
+            About This Project
+          </button>
+        </Link>
         <Footer />
       </>
     )
