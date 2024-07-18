@@ -8,6 +8,7 @@ import chart from "../icons/wired-outline-153-bar-chart.json";
 import truck from "../icons/wired-outline-497-truck-delivery.json";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "../styles/home.css";
 
 function Home() {
   const [categories, setCategories] = useState([]);
@@ -104,7 +105,7 @@ function Home() {
             </p>
           </div>
           <div
-            className="d-flex flex-column align-items-center"
+            className="d-flex flex-column align-items-center "
             onMouseEnter={() => handleAnimationIcon(chartRef)}
           >
             <Player ref={chartRef} size={96} icon={chart} trigger="hover" />
@@ -116,7 +117,7 @@ function Home() {
             </p>
           </div>
           <div
-            className="d-flex flex-column align-items-center"
+            className="d-flex flex-column align-items-center "
             onMouseEnter={() => handleAnimationIcon(truckRef)}
           >
             <Player ref={truckRef} size={96} icon={truck} trigger="hover" />
