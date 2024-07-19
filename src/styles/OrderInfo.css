@@ -1,40 +1,40 @@
 .productsList {
-	margin-top: 40px;
-	background-color: white;
-	border-radius: 10px;
-	box-shadow: 1px 1px 10px grey;
-	margin-bottom: 100px;
+  margin-top: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px grey;
+  margin-bottom: 100px;
 }
 
 .orderHeader {
-	background-color: #f8f9fa;
-	border-radius: 10px;
-	box-shadow: 1px 1px 10px grey;
-	height: 80px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px grey;
+  /* height: 80px; */
 }
 
 .orderTitle {
-	font-size: 30px;
-	font-weight: bold;
-	margin-bottom: 10px !important;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px !important;
 }
 
 .buttonStyledDiv {
-	margin-right: 5px;
-	display: flex;
-	text-align: center;
-	align-items: center !important;
-	margin-top: 35px;
-	height: 50px;
-	text-align: center;
-	background-color: #333 !important;
-	color: white !important;
-	border: 1px solid #68844a !important;
-	border-radius: 100px !important;
-	font-size: 0.7rem !important;
-	font-weight: 600 !important;
-	padding: 5px 10px !important;
-	text-transform: uppercase !important;
-	cursor: pointer !important;
-	transition: 0.4s ease-in-out !important;
+  margin-right: 5px;
+  display: flex;
+  text-align: center;
+  align-items: center !important;
+  margin-top: 35px;
+  height: 50px;
+  text-align: center;
+  background-color: #333 !important;
+  color: white !important;
+  border: 1px solid #68844a !important;
+  border-radius: 100px !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  padding: 5px 10px !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  transition: 0.4s ease-in-out !important;
 }
