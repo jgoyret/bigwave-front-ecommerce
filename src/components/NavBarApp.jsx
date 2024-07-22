@@ -21,7 +21,6 @@ function NavBarApp() {
 
   const [categories, setCategories] = useState();
   const [showCart, setShowCart] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -65,6 +64,7 @@ function NavBarApp() {
         dispatch(logout());
         dispatch(clearCart());
         navigate("/");
+        handleCloseNavbar
         toast.info("You logged out 😭 see you soon!", {
           position: "bottom-right",
         });
