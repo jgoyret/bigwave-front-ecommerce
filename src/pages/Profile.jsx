@@ -234,7 +234,7 @@ function Profile() {
                     <div className="col-md-2 col-4 d-flex justify-content-center">
                       <i
                         onClick={() => handleGoToOrder(order)}
-                        class="d-flex bi bi-eye-fill fs-2"
+                        className="d-flex bi bi-eye-fill fs-2"
                       ></i>
                     </div>
                   </div>
@@ -320,7 +320,7 @@ function Profile() {
                 className="ms-auto modal-close-button"
                 onClick={handleClosePasswordModal}
               >
-                <i class="bi bi-x-lg"></i>
+                <i className="bi bi-x-lg"></i>
               </button>
               <Typography
                 id="modal-modal-title"
@@ -374,9 +374,9 @@ function Profile() {
                 className="ms-auto modal-close-button"
                 onClick={handleCloseDeleteUserModal}
               >
-                <i class="bi bi-x-lg"></i>
+                <i className="bi bi-x-lg"></i>
               </button>
-              <i class="bi bi-exclamation-triangle text-center text-danger"></i>
+              <i className="bi bi-exclamation-triangle text-center text-danger"></i>
               <Typography
                 id="modal-modal-description"
                 sx={{ mt: 2 }}

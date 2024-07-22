@@ -29,6 +29,13 @@ function NavBarApp() {
   const handleCloseCart = () => setShowCart(false);
   const handleShowCart = () => setShowCart(true);
 
+  const handleCloseNavbar = () => {
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    if (navbarToggler && !navbarToggler.classList.contains("collapsed")) {
+      navbarToggler.click();
+    }
+  };
+
   const navigate = useNavigate();
 
   const handleLogout = async (e) => {
@@ -57,6 +64,7 @@ function NavBarApp() {
         dispatch(logout());
         dispatch(clearCart());
         navigate("/");
+        handleCloseNavbar
         toast.info("You logged out 😭 see you soon!", {
           position: "bottom-right",
         });
@@ -105,7 +113,7 @@ function NavBarApp() {
         id="navbar"
       >
         <Container>
-          <Navbar.Brand as={Link} to="/">
+          <Navbar.Brand onClick={handleCloseNavbar} as={Link} to="/">
             <img
               src="/bigwave-logo.png"
               alt="BigWave Logo"
@@ -132,7 +140,11 @@ function NavBarApp() {
               navbarScroll
             >
               <NavDropdown title="Shop" id="navbarScrollingDropdown">
-                <DropdownItem as={Link} to="/products">
+                <DropdownItem
+                  onClick={handleCloseNavbar}
+                  as={Link}
+                  to="/products"
+                >
                   All products
                 </DropdownItem>
                 {categories && (
@@ -143,6 +155,7 @@ function NavBarApp() {
                           as={Link}
                           to={`/categories/${category.slug}`}
                           key={category.id}
+                          onClick={handleCloseNavbar}
                         >
                           {category.name}
                         </DropdownItem>
@@ -155,6 +168,7 @@ function NavBarApp() {
                 as={Link}
                 className="fw-bold text-dark nav-about-subtitle"
                 to="/about-this-project"
+                onClick={() => handleCloseNavbar()}
               >
                 About this project
               </Nav.Link>
@@ -162,13 +176,17 @@ function NavBarApp() {
 
             {token ? (
               <>
-                <span className="me-4 text-dark"> Hi, {firstname}</span>
+                <span id="name-responsive" className="me-4 text-dark">
+                  {" "}
+                  Hi, {firstname}
+                </span>
 
                 <NavDropdown
                   title={<i className="bi bi-person text-dark  fs-3"></i>}
                   id="navbarScrollingDropdown"
+                  className="py-2 person-responsive"
                 >
-                  <DropdownItem className=" " as={Link} to={"/my-profile"}>
+                  <DropdownItem onClick={handleCloseNavbar} as={Link} to={"/my-profile"}>
                     Profile
                   </DropdownItem>
                   <DropdownItem as={Link} onClick={handleLogout} to={"/"}>

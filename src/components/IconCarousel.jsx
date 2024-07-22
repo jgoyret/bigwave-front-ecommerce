@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Tippy from "@tippyjs/react"; // Asegúrate de tener esta librería instalada
 import "tippy.js/dist/tippy.css"; // Asegúrate de tener esta librería instalada
@@ -127,17 +127,33 @@ const logos = [
 ];
 
 const IconCarousel = () => {
+  const [logosPerGroup, setLogosPerGroup] = useState(4);
+
+  const updateLogosPerGroup = () => {
+    if (window.innerWidth < 480) {
+      setLogosPerGroup(3);
+    } else {
+      setLogosPerGroup(6);
+    }
+  };
+
+  useEffect(() => {
+    updateLogosPerGroup();
+    window.addEventListener("resize", updateLogosPerGroup);
+    return () => window.removeEventListener("resize", updateLogosPerGroup);
+  }, []);
+
   return (
     <Carousel>
       {logos
         .reduce((acc, logo, idx) => {
-          if (idx % 6 === 0) acc.push([]);
+          if (idx % logosPerGroup === 0) acc.push([]);
           acc[acc.length - 1].push(logo);
           return acc;
         }, [])
         .map((group, index) => (
           <Carousel.Item key={index}>
-            <div className="d-flex justify-content-evenly">
+            <div className="d-flex justify-content-evenly ">
               {group.map((logo, i) => (
                 <Tippy key={i} placement="right" content={logo.content}>
                   <img src={logo.src} className="iconStyle" alt={logo.alt} />

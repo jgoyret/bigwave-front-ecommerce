@@ -101,7 +101,7 @@ function RegisterForm() {
             <div className="d-flex justify-content-center">
               <Link to={"/login"} className="text-decoration-none text-dark">
                 {" "}
-                <i class="bi bi-box-arrow-in-right"> Login</i>
+                <i className="bi bi-box-arrow-in-right"> Login</i>
               </Link>
             </div>
           </div>
@@ -118,7 +118,7 @@ function RegisterForm() {
             className="ms-auto modal-close-button"
             onClick={handleCloseModal}
           >
-            <i class="bi bi-x-lg"></i>
+            <i className="bi bi-x-lg"></i>
           </button>
           <i className="bi bi-check-circle text-center"></i>
           <Typography id="modal" className="text-center">

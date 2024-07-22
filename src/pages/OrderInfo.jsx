@@ -72,7 +72,7 @@ export default function OrderInfo() {
     <Container className="mt-5 pt-5">
       <CssBaseline />
       <div className="d-flex justify-content-between">
-        <Typography className="mt-5 orderTitle" variant="h4" gutterBottom>
+        <Typography className="mt-5 orderTitle" variant="h5" gutterBottom>
           Order ID: {order.id}
         </Typography>
         <Link to="/my-profile">
@@ -85,47 +85,64 @@ export default function OrderInfo() {
         <Card sx={headerStyle}>
           <CardContent>
             {/* Encabezado de la Orden */}
-            <Box
-              mb={0}
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-            >
-              <Typography variant="caption" gutterBottom>
-                Date
-              </Typography>
-              <Typography variant="caption" gutterBottom>
-                Status
-              </Typography>
-              <Typography variant="caption" gutterBottom>
-                Address
-              </Typography>
-              <Typography sx={totalPriceStyle} variant="caption" gutterBottom>
-                <strong>Total Amount</strong>
-              </Typography>
-            </Box>
-
-            <Box
+            <Grid container spacing={2}>
+              <Grid
+                item
+                xs={6}
+                sm={3}
+                // sx={{
+                //   display: "flex",
+                //   justifyContent: "space-between",
+                // }}
+              >
+                <Typography variant="caption" gutterBottom>
+                  Date
+                </Typography>
+                <Typography variant="subtitle1" gutterBottom>
+                  {new Date(order.createdAt).toLocaleDateString()}
+                </Typography>
+              </Grid>
+              <Grid item xs={6} sm={3}>
+                <Typography variant="caption" gutterBottom>
+                  Status
+                </Typography>
+                <Typography variant="subtitle1" gutterBottom>
+                  {order.status}
+                </Typography>
+              </Grid>
+              <Grid item xs={6} sm={3}>
+                <Typography variant="caption" gutterBottom>
+                  Address
+                </Typography>
+                <Typography variant="subtitle1" gutterBottom>
+                  {order.address}
+                </Typography>
+              </Grid>
+              <Grid item xs={6} sm={3}>
+                <Typography sx={totalPriceStyle} variant="caption" gutterBottom>
+                  <strong>Total Amount</strong>
+                </Typography>
+                <Typography
+                  sx={totalPriceStyle}
+                  variant="subtitle1"
+                  gutterBottom
+                >
+                  <strong>${order.totalAmount.toFixed(2)}</strong>
+                </Typography>
+              </Grid>
+            </Grid>
+            {/* <Box
               mb={3}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
               }}
             >
-              <Typography variant="subtitle1" gutterBottom>
-                {new Date(order.createdAt).toLocaleDateString()}
-              </Typography>
-              <Typography variant="subtitle1" gutterBottom>
-                {order.status}
-              </Typography>
-              <Typography variant="subtitle1" gutterBottom>
-                {order.address}
-              </Typography>
-              <Typography sx={totalPriceStyle} variant="subtitle1" gutterBottom>
-                <strong>${order.totalAmount.toFixed(2)}</strong>
-              </Typography>
-            </Box>
+              
+              
+              
+              
+            </Box> */}
           </CardContent>
         </Card>
       </div>
