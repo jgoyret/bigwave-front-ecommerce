@@ -72,13 +72,22 @@ function AllProducts() {
 
         <div className="d-flex justify-content-start container-main-products my-3">
           <ProductsSideNavbar />
-
-          <div>
-            {filteredProducts.length > 0 && (
+          <div className="flex-grow-1 d-flex justify-content-center align-items-center">
+            {filteredProducts.length > 0 ? (
               <div className="products-container">
                 {filteredProducts.map((product) => (
                   <ProductModel key={product.id} product={product} />
                 ))}
+              </div>
+            ) : (
+              <div className="p-4 text-center">
+                <h4 className="mb-3">
+                  We don't have the product you're looking for
+                </h4>
+                <p className="text-muted">
+                  Try adjusting your search or browse our other categories. We
+                  might have something similar!
+                </p>
               </div>
             )}
           </div>
