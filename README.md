@@ -1,4 +1,4 @@
-# E-commerce Project BigWAve - Hack Academy
+# E-commerce Project BigWave - Hack Academy
 
 ## Description
 
