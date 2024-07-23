@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import ProductModel from "../components/ProductModel";
 import "../styles/Products.css";
@@ -39,10 +39,16 @@ function Category() {
             </div>
           </div>
         </header>
-        <div className="d-flex justify-content-start mt-5">
+        <div id="button-category" className=" d-none d-flex flex-column justify-content-center align-items-center w-100">
+                <i className="bi bi-arrow-left d-flex me-1"></i> 
+                <Link to={"/products"}> Back</Link>
+              </div>
+        <div id="category-div" className="d-flex justify-content-start mt-5">
+       
           <ProductsSideNavbar />
           {category && (
             <div className="products-container mt-5 justify-content-center">
+             
               {category.Products.map((c) => {
                 return <ProductModel key={c.id} product={c} />;
               })}

@@ -55,22 +55,3 @@
   width: 100% !important;
 }
 
-@media (max-width: 1024px) {
-  .form-select {
-    width: fit-content !important;
-  }
-  .filter-container {
-    justify-content: center !important;
-  }
-
-  @media (max-width: 768px) {
-    .filter-products {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-  }
-}
-.filter-products {
-  flex-wrap: nowrap;
-}

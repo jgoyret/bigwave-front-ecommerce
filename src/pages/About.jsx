@@ -19,7 +19,7 @@ function About() {
     {
       label: "Technologies",
       description:
-        "For the Front-End of the site, an application was developed in <strong>React</strong> (using Create-React-App), while for the Back-End a REST API was developed with <strong>Node.js</strong>, <strong>Express</strong>, <strong>SQL</strong>, and Git/GitHub.",
+        "For the Front-End of the site, an application was developed in <strong>React</strong> (using Vite), while for the Back-End a REST API was developed with <strong>Node.js</strong>, <strong>Express</strong>, <strong>SQL</strong>, and Git/GitHub.",
     },
     {
       label: "Distribution of tasks",
