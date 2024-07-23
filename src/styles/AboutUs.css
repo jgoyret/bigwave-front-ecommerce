@@ -266,7 +266,7 @@ img {
 
 #aboutText {
   padding: 70px;
-  background-color: #fff;
+  background-color: #aad054;
   border-radius: 10px;
   align-content: center;
   text-align: justify;
@@ -290,6 +290,25 @@ img {
   .iconStyle:hover {
     filter: none;
   }
+  #about-div {
+    flex-direction: column;
+  }
+  .main-container {
+    margin-top: 30px;
+  }
+  #aboutText p {
+    font-size: 14px !important;
+    margin: 0;
+  }
+  #aboutText {
+    padding: 40px 50px !important;
+  }
+  #stepper {
+    margin-top: 25px;
+  }
+  #team {
+    margin-bottom: 0px;
+  }
 }
 .row {
   justify-content: center;
@@ -302,6 +321,9 @@ img {
 .design-container {
   gap: 30px;
   flex-wrap: nowrap;
+}
+#aboutText {
+  padding: 70px;
 }
 
 .design-container p {
@@ -321,12 +343,12 @@ img {
 }
 
 .main-container {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 .heading {
   position: relative;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .heading h3 {
@@ -368,17 +390,4 @@ img {
 #stepper .css-ahj2mt-MuiTypography-root {
   font-family: "Axiforma", sans-serif;
   font-size: 0.9rem;
-}
-
-#stepper {
-  margin-top: 50px;
-}
-#aboutText {
-  background-color: #aad054;
-}
-#team {
-  margin-bottom: 0;
-}
-#team-row {
-  margin-top: 0px !important;
 }

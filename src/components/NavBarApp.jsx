@@ -21,7 +21,6 @@ function NavBarApp() {
 
   const [categories, setCategories] = useState();
   const [showCart, setShowCart] = useState(false);
-  const [expanded, setExpanded] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -31,7 +30,10 @@ function NavBarApp() {
   const handleShowCart = () => setShowCart(true);
 
   const handleCloseNavbar = () => {
-    setExpanded(false);
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    if (navbarToggler && !navbarToggler.classList.contains("collapsed")) {
+      navbarToggler.click();
+    }
   };
 
   const navigate = useNavigate();
@@ -52,7 +54,6 @@ function NavBarApp() {
           if (result.isConfirmed) {
             dispatch(logout());
             dispatch(clearCart());
-            handleCloseNavbar();
             navigate("/");
             toast.info("You logged out 😭 see you soon!", {
               position: "bottom-right",
@@ -61,9 +62,9 @@ function NavBarApp() {
         });
       } else {
         dispatch(logout());
-        handleCloseNavbar();
         dispatch(clearCart());
         navigate("/");
+        handleCloseNavbar;
         toast.info("You logged out 😭 see you soon!", {
           position: "bottom-right",
         });
@@ -110,8 +111,6 @@ function NavBarApp() {
         className={`navbar ${scrolled ? "scrolled" : ""}`}
         sticky="top"
         id="navbar"
-        expanded={expanded}
-        onToggle={(expanded) => setExpanded(expanded)}
       >
         <Container>
           <Navbar.Brand onClick={handleCloseNavbar} as={Link} to="/">
@@ -200,15 +199,9 @@ function NavBarApp() {
                 </NavDropdown>
               </>
             ) : (
-              <NavLink
-                as={Link}
-                onClick={() => handleCloseNavbar()}
-                to="/login"
-                id="login"
-                className="login-link"
-              >
+              <Link to="/login" className="login-link">
                 Login
-              </NavLink>
+              </Link>
             )}
 
             <NavLink
@@ -225,9 +218,11 @@ function NavBarApp() {
               </div>
             </NavLink>
           </Navbar.Collapse>
+          <NavLink>
+            <Cart show={showCart} handleClose={handleCloseCart} />
+          </NavLink>
         </Container>
       </Navbar>
-      <Cart show={showCart} handleClose={handleCloseCart} />
     </>
   );
 }

@@ -30,14 +30,14 @@ function About() {
 
   return (
     <>
-      <div className="container">
+      <div className="container p-0">
         <div className="container-fluid about-title text-center text-white">
           <h1>About this project</h1>
         </div>
-        <div className=" container main-container">
-          <div className="row">
+        <div className="container main-container">
+          <div id="about-div" className="row p-3">
             <div className="col col-md-6 d-flex" id="aboutText">
-              <p>
+              <p className="fs-5">
                 The following e-commerce site is a project developed by students
                 of the Coding Bootcamp at <strong>Hack Academy</strong>. The
                 Bootcamp is an immersive and extremely practical program,
@@ -47,7 +47,10 @@ function About() {
                 React.js, SQL, MongoDB, and Git.
               </p>
             </div>
-            <div id="stepper" className="col col-md-6">
+            <div
+              id="stepper"
+              className="col col-md-6 d-flex align-items-center"
+            >
               <Box>
                 <Stepper orientation="vertical">
                   {steps.map((step) => (
