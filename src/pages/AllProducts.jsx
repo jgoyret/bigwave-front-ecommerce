@@ -66,7 +66,6 @@ function AllProducts() {
             </div>
           </div>
         </header>
-        
       </Container>
       <Container>
         <FilterProducts onSearch={handleSearch} />

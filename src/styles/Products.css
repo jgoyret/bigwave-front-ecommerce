@@ -5,11 +5,6 @@
   --custom-green: #aad054;
   --custom-dark-green: #68844a;
 }
-
-/*  */
-/* .container-main-products {
-  padding-top: 70px;
-} */
 .products-container {
   display: flex;
   flex-wrap: wrap;

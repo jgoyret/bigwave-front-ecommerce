@@ -31,24 +31,32 @@ function Category() {
     <>
       <Container>
         <header>
-          <div className="d-flex category-header justify-content-center align-items-center position-relative ">
+          <div className="d-flex category-header category-div justify-content-center align-items-center position-relative mb-5">
             <div className="text-center">
               <h4 className="category-title-header">
+                {" "}
                 {params.slug.replace(/-/g, " ")}
               </h4>
             </div>
           </div>
         </header>
-        <div id="button-category" className=" d-none d-flex flex-column justify-content-center align-items-center w-100">
-                <i className="bi bi-arrow-left d-flex me-1"></i> 
-                <Link to={"/products"}> Back</Link>
-              </div>
-        <div id="category-div" className="d-flex justify-content-start mt-5">
-       
-          <ProductsSideNavbar />
+      </Container>
+
+      <div
+        id="button-category"
+        className=" d-none d-flex flex-column justify-content-center align-items-center w-100"
+      >
+        <i className="bi bi-arrow-left d-flex me-1"></i>
+        <Link to={"/products"}> Back</Link>
+      </div>
+
+      <Container>
+        <div className="d-flex">
+          <div className="mt-5">
+            <ProductsSideNavbar />
+          </div>
           {category && (
-            <div className="products-container mt-5 justify-content-center">
-             
+            <div className="products-container ms-5 mt-5 justify-content-center">
               {category.Products.map((c) => {
                 return <ProductModel key={c.id} product={c} />;
               })}
