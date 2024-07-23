@@ -199,9 +199,15 @@ function NavBarApp() {
                 </NavDropdown>
               </>
             ) : (
-              <Link to="/login" className="login-link">
+              <NavLink
+                onClick={() => handleCloseNavbar()}
+                id="login"
+                as={Link}
+                to="/login"
+                className="login-link"
+              >
                 Login
-              </Link>
+              </NavLink>
             )}
 
             <NavLink
