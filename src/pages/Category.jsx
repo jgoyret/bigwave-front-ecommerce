@@ -50,8 +50,8 @@ function Category() {
         <Link to={"/products"}> Back</Link>
       </div>
 
-      <Container>
-        <div className="d-flex">
+      <Container id="div-categories">
+        <div id="div-products" className="d-flex">
           <div className="mt-5">
             <ProductsSideNavbar />
           </div>
