@@ -50,7 +50,7 @@ function Layout() {
         <main>
           <Outlet />
         </main>
-        {/* <div id="whatsapp" className={!whatsappShow ? "hide" : ""}>
+        <div id="whatsapp" className={!whatsappShow ? "hide" : ""}>
           <div className="d-flex align-items-center">
             <i
               onClick={() => setWhatsappShow((prev) => !prev)}
@@ -69,7 +69,7 @@ function Layout() {
               <i className="bi bi-whatsapp text-success ps-2"></i>
             </button>
           </div>
-        </div> */}
+        </div>
         <Link to={"/about-this-project"}>
           <button
             className="btn button-about position-fixed bottom-0 end-0 m-3"
