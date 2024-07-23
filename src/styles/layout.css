@@ -29,3 +29,13 @@ a:hover {
   background-color: transparent;
   border: none;
 }
+
+@media (max-width: 768px) {
+  #whatsapp {
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  #whatsapp.hide {
+    right: -80px;
+  }
+}
