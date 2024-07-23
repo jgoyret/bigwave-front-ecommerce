@@ -56,8 +56,8 @@ function Layout() {
               onClick={() => setWhatsappShow((prev) => !prev)}
               className={
                 whatsappShow
-                  ? "bi bi-arrow-right text-dark close-whatsapp me-3 fs-5"
-                  : "bi bi-arrow-bar-left text-dark close-whatsapp me-3 fs-2"
+                  ? "bi bi-arrow-right text-dark close-whatsapp me-2 fs-5"
+                  : "bi bi-arrow-bar-left text-dark close-whatsapp fs-2"
               }
             ></i>
             <button
