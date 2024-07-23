@@ -103,7 +103,7 @@ function About() {
               <h3>Meet the Team</h3>
             </div>
             <div id="div-team" className="d-flex justify-content-evenly">
-              <div className="row mt-5">
+              <div id="team-row" className="row mt-5">
                 <div className="card-client col-12 col-sm-6 col-md-2 col-lg-2 col-xl-2">
                   <div className="user-picture hover-img">
                     <img

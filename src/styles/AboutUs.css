@@ -291,7 +291,7 @@ img {
     filter: none;
   }
 }
-.row{
+.row {
   justify-content: center;
 }
 
@@ -321,12 +321,12 @@ img {
 }
 
 .main-container {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .heading {
   position: relative;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .heading h3 {
@@ -371,5 +371,14 @@ img {
 }
 
 #stepper {
-  padding-left: 50px;
+  margin-top: 50px;
+}
+#aboutText {
+  background-color: #aad054;
+}
+#team {
+  margin-bottom: 0;
+}
+#team-row {
+  margin-top: 0px !important;
 }
