@@ -184,7 +184,7 @@ function Checkout() {
         });
 
         const response = await fetch(
-          "http://localhost:3000/create_preference",
+          `${import.meta.env.VITE_API_URL}/create_preference`,
           {
             method: "POST",
             headers: {
