@@ -14,23 +14,15 @@ import { toast } from "react-toastify";
 import { faker } from "@faker-js/faker";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
+import MercadoPagoButton from "../components/MercadoPagoButton";
+import Checkout2 from "./Checkout2";
 
 function Checkout() {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
-  const [userInfo, setUserInfo] = useState([]);
-  // const [toConfirmOrder, setToConfirmOrder] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const subTotal = cart.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
-  const shipping = 50;
-  const taxes = 30;
-  const totalAmount = (subTotal + taxes + shipping).toFixed(2);
 
   // CSS outlined input text field
   const OutlinedTextField = styled(
@@ -65,6 +57,14 @@ function Checkout() {
     },
   });
 
+  const subTotal = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+  const shipping = 20; // Coste fijo de envío
+  const taxes = 5; // Coste fijo de impuestos
+  const totalAmount = subTotal + shipping + taxes;
+
   // Esquema de validación con Yup
   const validationSchema = Yup.object().shape({
     address: Yup.string().required("Address is required"),
@@ -74,10 +74,22 @@ function Checkout() {
     state: Yup.string().required("State is required"),
     postalcode: Yup.string().required("Postal code is required"),
     phone: Yup.string().required("Phone is required"),
-    cardnumber: Yup.string().required("Card number is required"),
-    cardholder: Yup.string().required("Card holder is required"),
-    expirationdate: Yup.string().required("Expiration date is required"),
-    cvv: Yup.string().required("CVV is required"),
+    cardnumber: Yup.string().when("paymentMethod", {
+      is: (val) => val === "credit card",
+      then: Yup.string().required("Card number is required"),
+    }),
+    cardholder: Yup.string().when("paymentMethod", {
+      is: (val) => val === "credit card",
+      then: Yup.string().required("Card holder is required"),
+    }),
+    expirationdate: Yup.string().when("paymentMethod", {
+      is: (val) => val === "credit card",
+      then: Yup.string().required("Expiration date is required"),
+    }),
+    cvv: Yup.string().when("paymentMethod", {
+      is: (val) => val === "credit card",
+      then: Yup.string().required("CVV is required"),
+    }),
   });
 
   const futureDate = faker.date.future({ years: 5 });
@@ -118,6 +130,7 @@ function Checkout() {
           "Content-Type": "application/json",
         },
       });
+
       if (response.status === 200) {
         for (const item of cart) {
           await axios({
@@ -145,21 +158,73 @@ function Checkout() {
     }
   };
 
-  const handleSubmit = (values) => {
+  const handleSubmit = async (values) => {
     console.log("Form submitted:", values);
-    if (user.token) {
-      // setToConfirmOrder(true);
-      handleAddOrder(values);
-    } else {
+
+    if (!user.token) {
       navigate("/login");
       toast.info("You must be logged in to complete the order");
+      return;
     }
+
+    try {
+      if (values.paymentMethod === "mercado pago") {
+        // Lógica para Mercado Pago
+        const cartItems = cart.map((item) => {
+          const itemProportion = (item.price * item.quantity) / subTotal;
+          const unit_price = item.price + itemProportion * (shipping + taxes);
+          return {
+            id: item.id,
+            title: item.name,
+            description: item.description,
+            picture_url: item.image,
+            quantity: item.quantity,
+            unit_price: parseFloat(unit_price.toFixed(2)), // Redondear a 2 decimales
+          };
+        });
+
+        const response = await fetch(
+          "http://localhost:3000/create_preference",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ items: cartItems }),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        const mp = new window.MercadoPago(import.meta.env.VITE_PUBLIC_KEY, {
+          locale: "es-UY",
+        });
+
+        mp.checkout({
+          preference: {
+            id: data.id,
+          },
+          autoOpen: true,
+        });
+      } else {
+        // Lógica para otros métodos de pago
+        await handleAddOrder(values);
+      }
+    } catch (error) {
+      console.error("Error al procesar el pago:", error);
+    }
+
     console.log("Form submitted:", values);
   };
 
   useEffect(() => {
-    !cart.length > 0 && navigate("/");
-  }, []);
+    if (cart.length === 0) {
+      navigate("/");
+    }
+  }, [cart.length, navigate]);
 
   return (
     cart.length > 0 && (
@@ -371,14 +436,8 @@ function Checkout() {
                         values.paymentMethod === "mercado pago" ? "" : "d-none"
                       }
                     >
-                      <h6>Scan to pay: </h6>
-                      <Tippy content="Not implemented" placement="right">
-                        <img
-                          className="styledQR"
-                          src="../../public/QR.png"
-                          alt=""
-                        />
-                      </Tippy>
+                      <MercadoPagoButton />
+                      <Checkout2 />
                     </div>
                     <div
                       className={
@@ -431,7 +490,7 @@ function Checkout() {
                       {subTotal.toFixed(2) < 50 ? (
                         <div className="d-flex justify-content-between">
                           <p>Shipping</p>
-                          <p>50.00 USD</p>
+                          <p>20.00 USD</p>
                         </div>
                       ) : (
                         <div className="d-flex justify-content-between">
@@ -442,7 +501,7 @@ function Checkout() {
 
                       <div className="d-flex justify-content-between">
                         <p>Taxes</p>
-                        <p>30.00 USD</p>
+                        <p>5.00 USD</p>
                       </div>
                       <hr />
                       <div className="d-flex justify-content-between align-items-center">
